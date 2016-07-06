@@ -18,6 +18,8 @@ import java.sql.*;
 
 public class UserService extends HttpServlet {
 
+    private UserService userService = new UserService();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -32,12 +34,21 @@ public class UserService extends HttpServlet {
         final String USER = "SA";
         final String PASS = "";
 
+        userService.login();
 
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+    }
+
+    private void login() {
+
+    }
+
+    private void authorize() {
 
     }
 
