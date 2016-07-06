@@ -35,6 +35,7 @@ public class Login {
                         rs.getString("password").equals(pass)) {
                     if (rs.getInt("id_role") == 1) {
 
+                        //For test
                         RequestDispatcher dispatcher = request.getRequestDispatcher("/trainer.jsp");
                         dispatcher.forward(request, response);
 
