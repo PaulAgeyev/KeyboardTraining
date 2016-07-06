@@ -31,7 +31,6 @@ public class UserService extends HttpServlet {
 
         final String USER = "SA";
         final String PASS = "";
-
     }
 
     @Override
