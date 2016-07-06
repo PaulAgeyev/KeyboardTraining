@@ -18,24 +18,16 @@ import java.sql.*;
 
 public class UserService extends HttpServlet {
 
-    private UserService userService = new UserService();
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setContentType("text/html");
+       // response.setContentType("text/html");
 
         String l = request.getParameter("login");
         String p = request.getParameter("password");
 
-        final String DB_URL="jdbc:hsqldb:mem:FD";
-
-        final String USER = "SA";
-        final String PASS = "";
-
-        userService.login();
-
+        login(l,p,request,response);
     }
 
     @Override
@@ -44,13 +36,16 @@ public class UserService extends HttpServlet {
 
     }
 
-    private void login() {
+    private void login(String login, String pass, HttpServletRequest request, HttpServletResponse response) {
+
+        try {
+            Login l = new Login(login,pass,request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
-
-    private void authorize() {
-
-    }
-
 
 }
