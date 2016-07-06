@@ -32,6 +32,8 @@ public class MainServlet extends HttpServlet {
             Connection c = DriverManager.getConnection(DB_URL, USER, PASS);
             Statement stm = c.createStatement();
 
+            //TEST
+
             String sql;
 
             sql = "CREATE TABLE IF NOT EXISTS tbl_users " +
@@ -41,18 +43,8 @@ public class MainServlet extends HttpServlet {
                     "FirstName varchar(255)," +
                     "LastName varchar(255));";
 
-            ResultSet rs;
+
             stm.executeQuery(sql);
-
-            sql = "SELECT Login, id_role, Password, FirstName, LastName FROM tbl_users";
-
-            rs = stm.executeQuery(sql);
-
-            while (rs.next()) {
-
-                request.setAttribute("textA", rs.getString("Login"));
-
-            }
 
 
         } catch (ClassNotFoundException e) {
