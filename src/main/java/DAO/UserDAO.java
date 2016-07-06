@@ -7,14 +7,16 @@ import java.util.ArrayList;
 /**
  * Created by pavel on 05.07.16.
  */
-interface UserDAO {
+public interface UserDAO {
 
     ArrayList<User> findAll();
     ArrayList<User> findByLogin();
+    ArrayList<User> findByPassword();
     ArrayList<User> findByName();
     ArrayList<User> findByLastName();
 
-    boolean insertUser(User user);
+
+    void insertUser(User user);
     boolean updateUser(User user);
     boolean deleteUser(User user);
 

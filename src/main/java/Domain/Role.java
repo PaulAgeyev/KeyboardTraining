@@ -5,15 +5,11 @@ package Domain;
  */
 public class Role {
 
-    private int role;
+    private int id_role;
     private String name;
 
     public int getRole() {
-        return role;
-    }
-
-    public void setRole(int role) {
-        this.role = role;
+        return id_role;
     }
 
     public String getName() {

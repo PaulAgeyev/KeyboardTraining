@@ -5,17 +5,17 @@ package Domain;
  */
 public class Assigment {
 
-    private int id;
+    private int id_assignment;
     private int time;
     private int error;
     private String text;
 
     public int getId() {
-        return id;
+        return id_assignment;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_assignment = id;
     }
 
     public int getTime() {

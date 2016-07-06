@@ -6,9 +6,18 @@ package Domain;
 public class User {
 
     private String login;
+    private int id_role;
     private String password;
     private String firstName;
     private String lastName;
+
+    public User(String login, int id_role, String password, String firstName, String lastName) {
+        this.login = login;
+        this.id_role = id_role;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public String getLogin() {
         return login;
@@ -17,6 +26,10 @@ public class User {
     public void setLogin(String login) {
         this.login = login;
     }
+
+    public void setId_role(int id_role) {this.id_role=id_role; }
+
+    public int getId_role() {return id_role; }
 
     public String getPassword() {
         return password;

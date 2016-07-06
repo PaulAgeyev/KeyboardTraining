@@ -14,14 +14,13 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        super.doPost(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        /*try {
+        try {
 
             final String DB_URL="jdbc:hsqldb:mem:FD";
 
@@ -35,21 +34,23 @@ public class MainServlet extends HttpServlet {
 
             String sql;
 
-            sql = "CREATE TABLE IF NOT EXISTS S (s1 int)";
+            sql = "CREATE TABLE IF NOT EXISTS tbl_users " +
+                    "(Login VARCHAR (255)," +
+                    "id_role int," +
+                    "Password varchar(88)," +
+                    "FirstName varchar(255)," +
+                    "LastName varchar(255));";
 
-            ResultSet rs = stm.executeQuery(sql);
+            ResultSet rs;
+            stm.executeQuery(sql);
 
-            sql = "INSERT INTO S (s1) VALUES (444)";
-
-            rs = stm.executeQuery(sql);
-
-            sql = "SELECT s1 FROM S";
+            sql = "SELECT Login, id_role, Password, FirstName, LastName FROM tbl_users";
 
             rs = stm.executeQuery(sql);
 
             while (rs.next()) {
 
-                request.setAttribute("textA", rs.getInt("S1"));
+                request.setAttribute("textA", rs.getString("Login"));
 
             }
 
@@ -58,9 +59,7 @@ public class MainServlet extends HttpServlet {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        }*/
-
-        request.setAttribute("textA", "Hello World!");
+        }
 
         response.setContentType("text/html");
 
