@@ -1,9 +1,11 @@
 package com.teaminternational;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+@PropertySource("classpath:application.properties")
 @Configuration
 public class MvcConfig extends WebMvcConfigurerAdapter {
 

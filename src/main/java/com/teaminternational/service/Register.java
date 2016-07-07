@@ -16,7 +16,7 @@ import com.teaminternational.domain.User;
 
 public class Register extends HttpServlet {
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    /*public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         response.setContentType("text/html");
@@ -32,6 +32,6 @@ public class Register extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);
 
-    }
+    }*/
 
 }

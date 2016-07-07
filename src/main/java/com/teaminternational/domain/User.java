@@ -1,17 +1,31 @@
 package com.teaminternational.domain;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
 /**
  * Created by pavel on 05.07.16.
  */
-public class User {
 
+@Entity
+@Table(name = "tbl_users")
+public class User implements Serializable{
+
+    @Id
+    private long id;
+    @NotNull
     private String login;
+    @NotNull
     private int id_role;
+    @NotNull
     private String password;
+    @NotNull
     private String firstName;
+    @NotNull
     private String lastName;
 
-    public User(String login, int id_role, String password, String firstName, String lastName) {
+    public User(long id,String login, int id_role, String password, String firstName, String lastName) {
         this.login = login;
         this.id_role = id_role;
         this.password = password;

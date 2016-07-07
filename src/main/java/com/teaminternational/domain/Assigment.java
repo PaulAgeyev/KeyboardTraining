@@ -1,16 +1,27 @@
 package com.teaminternational.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by pavel on 05.07.16.
  */
+@Entity
+@Table(name = "tbl_assignments")
 public class Assigment {
 
-    private int id_assignment;
+    @Id
+    private long id_assignment;
+    @NotNull
     private int time;
+    @NotNull
     private int error;
+    @NotNull
     private String text;
 
-    public int getId() {
+    public long getId() {
         return id_assignment;
     }
 

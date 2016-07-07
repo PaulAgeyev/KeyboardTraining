@@ -1,13 +1,26 @@
 package com.teaminternational.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
 /**
  * Created by pavel on 05.07.16.
  */
-public class Progress {
 
+@Entity
+@Table(name = "tbl_progress")
+public class Progress implements Serializable {
+
+    @Id
     private int id_progress;
+    @NotNull
     private String login;
+    @NotNull
     private int id_assignment;
+    @NotNull
     private int progress;
 
     public int getId_progress() {
