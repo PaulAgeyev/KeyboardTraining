@@ -1,7 +1,9 @@
 package com.teaminternational.dao;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.*;
 import com.teaminternational.domain.User;
+import org.springframework.data.repository.query.Param;
 
 
 /**
@@ -9,5 +11,6 @@ import com.teaminternational.domain.User;
  */
 public interface UserRepository extends Repository<User, Long> {
 
-    //void insertUser();
+    /*@Query("SELECT t.title FROM Todo t where t.id = :id")
+    String ById(@Param("id") Long id);*/
 }
