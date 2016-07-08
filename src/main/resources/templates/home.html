@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-    <head>
-        <title>Spring Security Example</title>
-    </head>
-    <body>
-        <h1>Welcome!</h1>
+<head>
+    <title>KeyboardTraining</title>
+    <script type="text/javascript" src="/Users/pavel/Documents/KeyboardTraining/src/main/webapp/js/key.js"></script>
+    <link href= "/Users/pavel/Documents/KeyboardTraining/src/main/webapp/css/style.css" rel="stylesheet"/>
+</head>
+<body>
 
-        <p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
-    </body>
+<div id = "id1">
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</div>
+
+<div id = "id2">
+<p>Click <a th:href="@{/login}">here</a> to login</p>
+<p>Click <a th:href="@{/registration}">here</a> to sign up</p>
+</div>
+
+<div id="logo">
+    <h1>Trainer</h1>
+</div>
+<div id="typing">
+    <div id="info">
+        <div>Набрано: </div>
+        <div>Время: </div>
+        <div>Ошибки: </div>
+    </div>
+    <div id="text_type">
+        <span id="next">text from bd</span><br/>
+    </div>
+    <div>
+        <form name="input_form" id="input_form" action="">
+            <textarea name="input_text" id="input_text"  spellcheck="false"></textarea>
+        </form>
+    </div>
+</div>
+
+<h2>[ Training application ]</h2>
+
+</body>
 </html>
