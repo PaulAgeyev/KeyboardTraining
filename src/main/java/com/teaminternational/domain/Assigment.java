@@ -1,48 +1,34 @@
 package com.teaminternational.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
  * Created by pavel on 05.07.16.
  */
 @Entity
-@Table(name = "tbl_assignments")
+@Table(name = "Assignment")
 public class Assigment {
 
     @Id
-    private long id_assignment;
-    @NotNull
-    private int time;
-    @NotNull
-    private int error;
-    @NotNull
+    @Column(name = "assigment_id")
+    @GeneratedValue
+    private long assigment_id;
+
+    @Column(name = "text")
     private String text;
 
+    public Assigment(long id, String text) {
+        this.assigment_id = id;
+        this.text = text;
+    }
+
     public long getId() {
-        return id_assignment;
+        return assigment_id;
     }
 
-    public void setId(int id) {
-        this.id_assignment = id;
-    }
-
-    public int getTime() {
-        return time;
-    }
-
-    public void setTime(int time) {
-        this.time = time;
-    }
-
-    public int getError() {
-        return error;
-    }
-
-    public void setError(int error) {
-        this.error = error;
+    public void setId(long id) {
+        this.assigment_id = id;
     }
 
     public String getText() {

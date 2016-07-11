@@ -9,8 +9,8 @@
 <html>
 <head>
     <title>Trainer</title>
-    <script type="text/javascript" src="js/key.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="../resources/templates/key.js"></script>
+    <link href="../resources/templates/style.css" rel="stylesheet">
 </head>
 
 <body>

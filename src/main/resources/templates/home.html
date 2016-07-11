@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>KeyboardTraining</title>
-    <script type="text/javascript" src="/Users/pavel/Documents/KeyboardTraining/src/main/webapp/js/key.js"></script>
-    <link href= "/Users/pavel/Documents/KeyboardTraining/src/main/webapp/css/style.css" rel="stylesheet"/>
+    <script type="text/javascript" src="key.js"></script>
+    <link href= "style.css" rel="stylesheet"/>
+
 </head>
 <body>
-
 <div id = "id1">
 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 <form th:action="@{/logout}" method="post">
@@ -37,8 +37,6 @@
         </form>
     </div>
 </div>
-
-<h2>[ Training application ]</h2>
 
 </body>
 </html>

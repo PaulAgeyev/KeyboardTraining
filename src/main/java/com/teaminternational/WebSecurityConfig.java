@@ -11,21 +11,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.sql.Connection;
+import java.util.Iterator;
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
 
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    JdbcTemplate jdbcTemplate;
 
 
     @Resource
@@ -59,6 +62,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+
         auth
                 /*.inMemoryAuthentication()
                 .withUser("user").password("password").roles("USER").and()
@@ -66,11 +70,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .jdbcAuthentication()
                 .dataSource(dataSource)
-                .withDefaultSchema()
+                /*.withDefaultSchema()
                 .withUser("user").password("password").roles("USER").and()
-                .withUser("admin").password("password").roles("USER", "ADMIN");
-    }
+                .withUser("admin").password("password").roles("USER", "ADMIN");*/
+                .usersByUsernameQuery("select login, password, 'true' FROM user where user_id=1")
+                .authoritiesByUsernameQuery("");
 
+    }
 
 
     @Bean

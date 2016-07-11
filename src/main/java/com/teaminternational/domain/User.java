@@ -9,28 +9,49 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name = "tbl_users")
+@Table(name = "User")
 public class User implements Serializable{
 
     @Id
-    private long id;
-    @NotNull
+    @Column(name = "user_id")
+    @GeneratedValue
+    private long user_id;
+
+    @Column(name = "login")
     private String login;
-    @NotNull
-    private int id_role;
-    @NotNull
+
+    @Column(name = "password")
     private String password;
-    @NotNull
+
+    @Column(name = "firstName")
     private String firstName;
-    @NotNull
+
+    @Column(name = "lastName")
     private String lastName;
 
-    public User(long id,String login, int id_role, String password, String firstName, String lastName) {
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role_id;
+
+    public User() {
+
+    }
+
+    public User(long id, String login, String password, String firstName, String lastName, Role role_id) {
+        this.user_id = id;
         this.login = login;
-        this.id_role = id_role;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.role_id = role_id;
+    }
+
+    public long getId() {
+        return user_id;
+    }
+
+    public void setId(long id) {
+        this.user_id = id;
     }
 
     public String getLogin() {
@@ -40,10 +61,6 @@ public class User implements Serializable{
     public void setLogin(String login) {
         this.login = login;
     }
-
-    public void setId_role(int id_role) {this.id_role=id_role; }
-
-    public int getId_role() {return id_role; }
 
     public String getPassword() {
         return password;
@@ -67,5 +84,13 @@ public class User implements Serializable{
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Role getIdRole() {
+        return role_id;
+    }
+
+    public void setIdRole(Role id_role) {
+        this.role_id = id_role;
     }
 }
