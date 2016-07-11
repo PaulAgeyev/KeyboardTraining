@@ -13,8 +13,6 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-sdfsdfsdf
-
 
 <body>
 
@@ -23,9 +21,9 @@ sdfsdfsdf
 </div>
 <div id="typing">
     <div id="info">
-        <div>Набрано: </div>
-        <div>Время: </div>
-        <div>Ошибки: </div>
+        <div id="typed"></div>
+        <div id="timer">Время: 00:00</div>
+        <div id="errors"></div>
     </div>
     <div id="text_type">
         <span id="next">text from bd</span><br>
@@ -41,4 +39,6 @@ sdfsdfsdf
 </div>
 </body>
 </html>
+
+
 
