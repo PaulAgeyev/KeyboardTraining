@@ -13,26 +13,14 @@ var isKeyDown = function () {
 	return keyDown;
 }
 
-var getWidthTeaxtarea = function (){
+/*var getWidthTeaxtarea = function (){
+ char_textarea = document.getElementById('text_type').offsetWidth ;
+ alert(char_textarea) ;
+ document.body.style.width = char_textarea/0.8+'px';
+ alert( body.style.width );
+ }*/
 
-	//document.getElementById('text_type').width
-	console.log ("w="+document.getElementById("text_type").width);
 
-	client_w=document.body.clientWidth;
-	textarea_length = client_w /12 ;
-	//textarea_length = textarea_length.toFixed();
-	setTextLength (textarea_length);
-	a = text_db.slice(0,820);
-	document.getElementById('next').innerHTML = a;
-	console.log("str=" + a);
-	a = text_db.slice(textarea_length,textarea_length*2);
-	console.log("str=" + a);
-}
-
-var setTextLength = function (textarea_length) {
-	char_textarea = textarea_length;
-	console.log("char_textarea=" + char_textarea);
-}
 
 window.onload = function() {
 
@@ -49,34 +37,52 @@ window.onload = function() {
 		clearKey();
 	}
 
-	getWidthTeaxtarea();
 
 	//document.getElementById('next').innerHTML = text_db;
 	document.getElementById('errors').innerHTML = "Ошибки: " + errors;
-	document.getElementById('typed').innerHTML = "Набрано: 0/" + text.length;
+	document.getElementById('typed').innerHTML = "Набрано: 0/" + text_db.length;
+	console.log( "text_db.length=" + text_db.length );
+	//document.getElementById('next').innerHTML = text_db.substr(0,110);
+	l = 110; // elements in string
 
-	document.getElementById('next').innerHTML = text_db.substr(0,820/12);
 
-	/*for ( i = 0; i < text_db.length; i += 2*text_db.length/char_textarea, j *= 2 )	{
-	 var a = text.slice(i, j);
-	 str = a.join('');document.getElementById('next').innerHTML += str;
-	 console.log("str=" + str);
+	for ( i = 0, j = i + l;	 	i+l <= text_db.length;  	i += l)
+		TextBuf.push ( text_db.substr(i, j) );
+	TextBuf.push ( text_db.substr(i, text_db.length) );
+
+	TextBufSize = TextBuf.length;
+	console.log( "text_db.length=" + text_db.length );
+
+	str = TextBuf.shift();
+	document.getElementById('next').innerHTML = str;
+	console.log( "str=" + 	str );
+	console.log( "l=" + TextBuf.length );
+	text = str.split('');
+
+	/*for (i = 0; i < len; i++ )	{
+	 console.log( "l=" + TextBuf.length );
+	 console.log( "mas[]=" + 	TextBuf.shift() );
 	 }*/
-}
 
+}
+var TextBufSize;
+var TextBuf = new Array();
 var input_key = 0;
 var str_input = '',	str_color_start = '', str_color_end = '', str_color_err = '';
-var text_db="The Old Man and the Sea is the story of a battle between an old, experienced Cuban fisherman and a large marlin. The novel opens with the explanation that the fisherman, who is named Santiago, has gone 84 days without catching a fish. In fact, he is so unlucky that his young apprentice, Manolin, has been forbidden by his parents to sail with the old man and been ordered to fish with more successful fishermen. Still dedicated to the old man, however, the boy visits Santiago's shack each night.";
-text_db += '\n';
-var text=text_db.split('');
+var text_db = "the old man and the Sea is the story of a battle between an old, experienced cuban fisherman and a large marlin. The novel opens with the explanation that the fisherman, who is named Santiago, has gone 84 days without catching a fish. In fact, he is so unlucky that his young apprentice, Manolin, has been forbidden by his parents to sail with the old man and been ordered to fish with more successful fishermen. Still dedicated to the old man, however, the boy visits Santiago's shack each night.";
+//text_db += '\n';
 
+
+var text;// = str.split('');
+var str;
 
 var counter = -1
 var char_e;
 var fl = 0;
-var key=1;
+var key = 1;
 var errors = 0;
 var typed = 0;
+var exit = 1;
 
 
 /*window.onresize=function(){
@@ -90,63 +96,92 @@ window.onkeypress=function(){
 	input_key = isKeyDown();
 	char_e = String.fromCharCode(input_key);
 	document.getElementById('input_text').value = str_input;
-	//console.log("e= "+char_e);
-	if (key < text.length) {
-		//console.log("key="+key+" length="+text.length);
-		++counter;
-		if (char_e) {  //console.log("text="+text[counter]);
-			if (char_e == text[counter]) {
-				typed++;
-				++key;
-				str_input += char_e;
-				//console.log("+ e="+char_e + "  text="+text[counter]);
-				if (str_color_err != '') {
-					str_color_start += str_color_err;
-					str_color_err = '';
-				}
-				else
-					str_color_start += '<span class="letter_ok">' + char_e + '</span>';
-				document.getElementById('text_type').innerHTML = str_color_start;
-				if (counter<text.length) {
-					document.getElementById('text_type').innerHTML += '<span class="current">' + text[++counter]+ '</span>';
-				}
-				if (counter<text.length) {
-					var aar = text.slice(++counter, text.length);
-					counter-=2;
-					str_color_end = aar.join('');
-					//console.log("c="+str_color_end);
-					document.getElementById('text_type').innerHTML += '<span class="next">' + str_color_end + '</span>';
-				}
-				document.getElementById('typed').innerHTML = "Набрано: " + typed +'/' + text.length;
-				fl = 0;
-			}
-			else {
-				if (fl == 0) {
-					errors ++;
-					str_color_err += '<span class="letter_bad">' + text[counter] + '</span>';
+	//console.log( "TextBufSize=" + TextBufSize );
+	if (exit < TextBufSize ) {
+		//console.log( "exit=" + exit );
+		console.log( "key=" + key );
+		console.log( "length=" + text.length );
+		if (key < text.length)
+
+		{
+			//console.log("text[counter]="+text[counter++]+" length="+text.length);counter--;
+			++counter;
+			if (char_e) {  //console.log("text="+text[counter]);
+				if (char_e == text[counter]) {
+					typed++;
+					++key;
+					str_input += char_e;
+					//console.log("+ e="+char_e + "  text="+text[counter]);
+					if (str_color_err != '') {
+						str_color_start += str_color_err;
+						str_color_err = '';
+					}
+					else
+						str_color_start += '<span class="letter_ok">' + char_e + '</span>';
 					document.getElementById('text_type').innerHTML = str_color_start;
 					if (counter<text.length) {
-						document.getElementById('text_type').innerHTML += '<span class="current">' + text[counter]+ '</span>';
+						document.getElementById('text_type').innerHTML += '<span class="current">' + text[++counter]+ '</span>';
 					}
 					if (counter<text.length) {
 						var aar = text.slice(++counter, text.length);
-						--counter;
+						counter-=2;
 						str_color_end = aar.join('');
 						//console.log("c="+str_color_end);
 						document.getElementById('text_type').innerHTML += '<span class="next">' + str_color_end + '</span>';
 					}
-					fl = 1;
-					//console.log("- e="+char_e + "  text="+text[counter]);
+					document.getElementById('typed').innerHTML = "Набрано: " + typed +'/' + text_db.length;
+					fl = 0;
 				}
-				--counter;
-				document.getElementById('errors').innerHTML = "Ошибки: " + errors;
+				else {
+					if (fl == 0) {
+						errors ++;
+						str_color_err += '<span class="letter_bad">' + text[counter] + '</span>';
+						document.getElementById('text_type').innerHTML = str_color_start;
+						if (counter<text.length) {
+							document.getElementById('text_type').innerHTML += '<span class="current">' + text[counter]+ '</span>';
+						}
+						if (counter<text.length) {
+							var aar = text.slice(++counter, text.length);
+							--counter;
+							str_color_end = aar.join('');
+							//console.log("c="+str_color_end);
+							document.getElementById('text_type').innerHTML += '<span class="next">' + str_color_end + '</span>';
+						}
+						fl = 1;
+						//console.log("- e="+char_e + "  text="+text[counter]);
+					}
+					--counter;
+					document.getElementById('errors').innerHTML = "Ошибки: " + errors;
+				}
+
 			}
-
 		}
+		else { // здесь буду изменять массив который использую по textBufmas [exit];;;;
+
+			exit++;
+			counter = -1;
+			fl = 0;
+			key = 1;
+			//text=TextBuf.shift().split('');
+			str_input = '',	str_color_start = '', str_color_end = '', str_color_err = '';
+
+			str = TextBuf.shift();
+
+			console.log( "else =" + 	str );
+
+			//document.getElementById('next').innerHTML = str;
+
+			console.log( "str=" + 	str );
+			console.log( "l=" + TextBuf.length );
+			console.log( "key_else=" + key );
+			console.log( "length=" + text.length );
+
+			text = str.split('');
+			console.log("Finish");
+		}
+
 	}
-	else console.log("Finish");
-
-
+	else console.log("END!");
 }
 
 var timer;
