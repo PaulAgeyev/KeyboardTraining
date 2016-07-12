@@ -4,8 +4,65 @@
     <title>KeyboardTraining</title>
     <script type="text/javascript" src="key.js"></script>
     <link href= "style.css" rel="stylesheet"/>
-
 </head>
+<style>
+    body {
+        width: 98%;
+        min-width: 1024px;
+        height: 95%;
+        background-color: #7FFFD4;;
+        color: #694221;
+        font-family: Bookman Old Style, sans-serif;
+        font-size: 14pt;
+    }
+    #logo {
+        color: black;
+        font-size: 18pt;
+        text-align:center;
+        height: 200px;
+        line-height: 150px;
+    }
+    #typing {
+        margin-left:10%;
+        width:80%;
+    }
+    #info {
+        border: 1px solid #b0bdcc;
+        padding: 3px 1px;
+        height:30px;
+
+    }
+    #info div {
+        float: left;
+        text-align:center;
+        width:33%;
+    }
+    #text_type{
+        border: 2px solid #b0bdcc;
+        border-radius: 4px;
+        min-height: 23px;
+        padding: 8px 5px;
+    }
+    textarea {
+        font-family: Bookman Old Style, sans-serif;
+        width: 100%;
+        height: 30px;
+        resize: none;
+        font-size: 14pt;
+    }
+    .next {   color: #000;}
+    .current {
+        color: green;
+        border-bottom: 2px solid green;
+    }
+    .letter_bad {
+        color: red;
+        border-bottom: 2px solid red;
+    }
+    .letter_ok {
+        color: grey;
+    }
+</style>
 <body>
 <div id = "id1">
 <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
@@ -24,19 +81,22 @@
 </div>
 <div id="typing">
     <div id="info">
-        <div>Набрано: </div>
-        <div>Время: </div>
-        <div>Ошибки: </div>
+        <div id="typed"></div>
+        <div id="timer">Время: 00:00</div>
+        <div id="errors"></div>
     </div>
     <div id="text_type">
         <span id="next">text from bd</span><br/>
+        <!--<span class="current">letter will input green color</span><br>
+        <span class="letter_ok">letter true=grey </span><br>
+        <span class="letter_bad">letter false=red </span><br>-->
     </div>
     <div>
         <form name="input_form" id="input_form" action="">
-            <textarea name="input_text" id="input_text"  spellcheck="false"></textarea>
+            <!--<input name="input_text" id="input_text"  > </input> -->
+            <textarea name="input_text" id="input_text"  spellcheck="false" onkeydown="if(event.keyCode == 13){ if (event.shiftKey==1) { return true;} else { return false;}}" ></textarea>
         </form>
     </div>
 </div>
-
 </body>
 </html>

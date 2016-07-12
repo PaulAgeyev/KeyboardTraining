@@ -3,22 +3,15 @@ package com.teaminternational.ui.controller;
 import com.teaminternational.dao.UserRepository;
 import com.teaminternational.domain.Role;
 import com.teaminternational.domain.User;
-import org.hibernate.Query;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
-import java.awt.print.Pageable;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -53,6 +46,7 @@ class UserContoller{
             Object o = it.next();
             System.out.println(o.toString());
         }
+
     }
 
     @RequestMapping(value = "/login")
@@ -80,15 +74,16 @@ class UserContoller{
         return mav;
     }
 
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-        public ModelAndView simple2() {
+       @RequestMapping(value = "/registration", method = RequestMethod.GET)
+        public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", "KUUUURWA");
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("registration");
 
         System.out.println("GET");
 
-        return mav;
+        return "registration";
     }
 
 

@@ -1,17 +1,11 @@
 package com.teaminternational;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
-
-import com.teaminternational.dao.impl.UserDaoImpl;
-import com.teaminternational.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import org.springframework.core.env.Environment;
-import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,9 +13,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import java.sql.Connection;
-import java.util.Iterator;
-import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -70,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 /*.withUser("user").password("password").roles("USER").and()
                 .withUser("admin").password("password").roles("USER", "ADMIN");*/
                 .usersByUsernameQuery("select login, password, 'true' FROM User where login=?")
-                .authoritiesByUsernameQuery("select u.login, r.name FROM User u INNER JOIN Role r ON u.role_id = r.role_id where login=?");
+                .authoritiesByUsernameQuery("select u.login, r.name FROM User u INNER JOIN Role r ON u.role_id11 = r.role_id where login=?");
 
     }
 
