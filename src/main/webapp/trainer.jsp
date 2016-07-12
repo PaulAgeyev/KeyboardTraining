@@ -13,6 +13,7 @@
     <link href="../resources/templates/style.css" rel="stylesheet">
 </head>
 
+
 <body>
 
 <div id="logo">
@@ -20,9 +21,9 @@
 </div>
 <div id="typing">
     <div id="info">
-        <div>Набрано: </div>
-        <div>Время: </div>
-        <div>Ошибки: </div>
+        <div id="typed"></div>
+        <div id="timer">Время: 00:00</div>
+        <div id="errors"></div>
     </div>
     <div id="text_type">
         <span id="next">text from bd</span><br>
@@ -32,10 +33,15 @@
     </div>
     <div>
         <form name="input_form" id="input_form" action="">
-            <textarea name="input_text" id="input_text"  spellcheck="false"></textarea>
+            <!--<input name="input_text" id="input_text"  > </input> -->
+            <textarea name="input_text" id="input_text"  spellcheck="false" onkeydown="if(event.keyCode == 13){ if (event.shiftKey==1) { return true;} else { return false;}}" ></textarea>
         </form>
     </div>
 </div>
 </body>
 </html>
+
+
+
+
 
