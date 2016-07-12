@@ -33,12 +33,15 @@
     </div>
     <div>
         <form name="input_form" id="input_form" action="">
-            <textarea name="input_text" id="input_text"  spellcheck="false"></textarea>
+            <!--<input name="input_text" id="input_text"  > </input> -->
+            <textarea name="input_text" id="input_text"  spellcheck="false" onkeydown="if(event.keyCode == 13){ if (event.shiftKey==1) { return true;} else { return false;}}" ></textarea>
         </form>
     </div>
 </div>
 </body>
 </html>
+
+
 
 
 

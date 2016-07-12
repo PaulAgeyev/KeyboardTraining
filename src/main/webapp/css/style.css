@@ -1,4 +1,5 @@
 body {
+	width: 98%;
 	min-width: 1024px;
 	height: 95%;
 	background-color: #7FFFD4;;
@@ -35,8 +36,9 @@ body {
 	padding: 8px 5px;
 }
 textarea {
+	font-family: Bookman Old Style, sans-serif;
 	width: 100%;
-	height: 200px;
+	height: 30px;
 	resize: none;
 	font-size: 14pt;
 }

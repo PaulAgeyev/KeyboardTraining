@@ -47,11 +47,11 @@ window.onload = function() {
 
 
 	for ( i = 0, j = i + l;	 	i+l <= text_db.length;  	i += l)
-		TextBuf.push ( text_db.substr(i, j) );
+		TextBuf.push ( text_db.substr(i, j));
 	TextBuf.push ( text_db.substr(i, text_db.length) );
 
 	TextBufSize = TextBuf.length;
-	console.log( "text_db.length=" + text_db.length );
+	console.log( "TextBufSize.length=" + TextBufSize);
 
 	str = TextBuf.shift();
 	document.getElementById('next').innerHTML = str;
@@ -59,7 +59,7 @@ window.onload = function() {
 	console.log( "l=" + TextBuf.length );
 	text = str.split('');
 
-	/*for (i = 0; i < len; i++ )	{
+	/*for (i = 1; i < TextBufSize; i++ )	{
 	 console.log( "l=" + TextBuf.length );
 	 console.log( "mas[]=" + 	TextBuf.shift() );
 	 }*/
@@ -69,11 +69,11 @@ var TextBufSize;
 var TextBuf = new Array();
 var input_key = 0;
 var str_input = '',	str_color_start = '', str_color_end = '', str_color_err = '';
-var text_db = "the old man and the Sea is the story of a battle between an old, experienced cuban fisherman and a large marlin. The novel opens with the explanation that the fisherman, who is named Santiago, has gone 84 days without catching a fish. In fact, he is so unlucky that his young apprentice, Manolin, has been forbidden by his parents to sail with the old man and been ordered to fish with more successful fishermen. Still dedicated to the old man, however, the boy visits Santiago's shack each night.";
+var text_db = "the old man and the Sea is the story of a battle between an old, experienced cuban fisherman and a large marlin. The novel.";
 //text_db += '\n';
 
 
-var text;// = str.split('');
+var text;
 var str;
 
 var counter = -1
@@ -82,7 +82,7 @@ var fl = 0;
 var key = 1;
 var errors = 0;
 var typed = 0;
-var exit = 1;
+var exit = 0;
 
 
 /*window.onresize=function(){
@@ -98,9 +98,9 @@ window.onkeypress=function(){
 	document.getElementById('input_text').value = str_input;
 	//console.log( "TextBufSize=" + TextBufSize );
 	if (exit < TextBufSize ) {
-		//console.log( "exit=" + exit );
-		console.log( "key=" + key );
-		console.log( "length=" + text.length );
+		console.log( "exit=" + exit );
+		//console.log( "key=" + key );
+		//console.log( "length=" + text.length );
 		if (key < text.length)
 
 		{
@@ -159,24 +159,24 @@ window.onkeypress=function(){
 		else { // здесь буду изменять массив который использую по textBufmas [exit];;;;
 
 			exit++;
-			counter = -1;
-			fl = 0;
-			key = 1;
-			//text=TextBuf.shift().split('');
-			str_input = '',	str_color_start = '', str_color_end = '', str_color_err = '';
-
-			str = TextBuf.shift();
-
-			console.log( "else =" + 	str );
-
+			typed++;
+			document.getElementById('typed').innerHTML = "Набрано: " + typed +'/' + text_db.length;
+			if (exit < TextBufSize) {
+				counter = -1;
+				fl = 0;
+				key = 1;
+				str_input = '',	str_color_start = '', str_color_end = '', str_color_err = '';
+				str = TextBuf.shift();
+				text = str.split('');
+			}
+			//console.log( "else =" + 	str );
 			//document.getElementById('next').innerHTML = str;
+			/*console.log( "str=" + 	str );
+			 console.log( "l=" + TextBuf.length );
+			 console.log( "key_else=" + key );
+			 console.log( "length=" + text.length );*/
 
-			console.log( "str=" + 	str );
-			console.log( "l=" + TextBuf.length );
-			console.log( "key_else=" + key );
-			console.log( "length=" + text.length );
 
-			text = str.split('');
 			console.log("Finish");
 		}
 
