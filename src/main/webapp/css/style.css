@@ -1,0 +1,56 @@
+body {
+	width: 98%;
+	min-width: 1024px;
+	height: 95%;
+	background-color: #7FFFD4;;
+	color: #694221;
+	font-family: Bookman Old Style, sans-serif;
+	font-size: 14pt;
+}
+#logo {
+	color: #black;
+	font-size: 18pt;
+	text-align:center;
+	height: 200px;
+	line-height: 150px;
+}
+#typing {
+	margin-left:10%;
+	width:80%;
+}
+#info {
+	border: 1px solid #b0bdcc;
+	padding: 3px 1px;
+	height:30px;
+
+}
+#info div {
+	float: left;
+	text-align:center;
+	width:33%;
+}
+#text_type{
+	border: 2px solid #b0bdcc;
+	border-radius: 4px;
+	min-height: 23px;
+	padding: 8px 5px;
+}
+textarea {
+	font-family: Bookman Old Style, sans-serif;
+	width: 100%;
+	height: 30px;
+	resize: none;
+	font-size: 14pt;
+}
+.next {   color: #000;}
+.current {
+	color: green;
+	border-bottom: 2px solid green;
+}
+.letter_bad {
+	color: red;
+	border-bottom: 2px solid red;
+}
+.letter_ok {
+	color: grey;
+}
