@@ -29,20 +29,25 @@ import java.util.List;
 @Controller
 class UserContoller{
 
+    Role roleU = new Role(2,"ROLE_USER");
 
     @Autowired
     public UserContoller(JdbcTemplate jdbcTemplate) {
 
         jdbcTemplate.update(
                 "INSERT INTO Role " +
-                        "VALUES (1, 'ROLE_USER')");
+                        "VALUES (1, 'ROLE_ADMIN')");
+
+        jdbcTemplate.update(
+                "INSERT INTO Role " +
+                        "VALUES (2, 'ROLE_USER')");
 
 
         jdbcTemplate.update(
                 "INSERT INTO User " +
                         "VALUES (1, 'Paul', 'Ageyev', 'roter', 'root', 1)");
 
-        List l = jdbcTemplate.queryForList("select login, password FROM user where login = 'roter'");
+        List l = jdbcTemplate.queryForList("select u.login, r.name FROM User u INNER JOIN Role r ON u.user_id = r.role_id");
         Iterator it = l.iterator();
         while(it.hasNext())
         {
@@ -66,7 +71,7 @@ class UserContoller{
         user.setLastName(request.getParameter("lastName"));
         user.setPassword(request.getParameter("username"));
         user.setLogin(request.getParameter("password"));
-        user.setIdRole(new Role(1, "USER_ROLE"));
+        user.setIdRole(roleU);
 
         repository.save(user);
 
@@ -78,8 +83,6 @@ class UserContoller{
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
         public ModelAndView simple2() {
-
-        User user = new User();
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("registration");

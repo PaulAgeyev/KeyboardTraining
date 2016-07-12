@@ -64,17 +64,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
         auth
-                /*.inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER").and()
-                .withUser("admin").password("password").roles("ADMIN");*/
-
                 .jdbcAuthentication()
                 .dataSource(dataSource)
                 //.withDefaultSchema()
                 /*.withUser("user").password("password").roles("USER").and()
                 .withUser("admin").password("password").roles("USER", "ADMIN");*/
                 .usersByUsernameQuery("select login, password, 'true' FROM User where login=?")
-                .authoritiesByUsernameQuery("select login, 'ROLE_USER' FROM User where login=?");
+                .authoritiesByUsernameQuery("select u.login, r.name FROM User u INNER JOIN Role r ON u.role_id = r.role_id where login=?");
 
     }
 
