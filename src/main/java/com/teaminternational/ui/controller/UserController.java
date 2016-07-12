@@ -42,7 +42,6 @@ class UserContoller{
                 "INSERT INTO Role " +
                         "VALUES (2, 'ROLE_USER')");
 
-
         jdbcTemplate.update(
                 "INSERT INTO User " +
                         "VALUES (1, 'Paul', 'Ageyev', 'roter', 'root', 1)");
