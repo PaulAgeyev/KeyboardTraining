@@ -1,9 +1,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html>
 <head>
     <title>Admin</title>
 </head>
+
+<style>
+    body {
+        width: 98%;
+        min-width: 1024px;
+        height: 95%;
+        background-color: #7FFFD4;;
+        color: #694221;
+        font-family: Bookman Old Style, sans-serif;
+        font-size: 14pt;
+    }
+    a, a:hover {text-decoration: none; color: #694221;}
+    #logo {
+        color: black;
+        font-size: 18pt;
+        text-align:center;
+        height: 100px;
+        line-height: 100px;
+    }
+    #admin {width: 80%; margin-left: 10%;}
+    #create {width:100%; height:30px; margin-top: 15px; text-align: center; padding-top: 10px; background-color: pink; margin-bottom: 20px;}
+    #text_lesson {width: 78%; float: left}
+    #text_lesson textarea {
+        font-family: Bookman Old Style, sans-serif;
+        width: 100%;
+        height: 70px;
+        resize: none;
+        font-size: 14pt;
+    }
+    #crud {width:10%; height:30px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px; margin-top: 15px; }
+</style>
+
 <body>
-<h1>Hello admin</h1>
-    <a href="">Добавить урок</a>
+<div id="logo"><h1>Assignment</h1></div>
+<div id="admin">
+    <a href = ""> <div id="create">CREATE </div> </a>
+
+    <form name="admin_form" id="admin_form" action="">
+        <fieldset>
+            <legend id ="lesson">Lesson: 1</legend>
+            <div id="text_lesson"> <textarea name="text_lesson" id="text_db"  spellcheck="false" > text_db </textarea> </div>
+            <a href = ""> <div id="crud">UPDATE</div> </a>
+            <a href = ""> <div id="crud">DELETE</div> </a>
+        </fieldset>
+    </form>
+</div>
+
 </body>
 </html>
+
