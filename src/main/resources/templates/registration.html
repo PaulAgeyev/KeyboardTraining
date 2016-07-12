@@ -6,9 +6,11 @@
 </head>
 <body>
 
-<form th:action="@{/home}" method="post">
+<form th:action="@{/registration}" method="post">
     <div><label> User Name : <input type="text" name="username"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><label> First name : <input type="text" name="firstName"/> </label></div>
+    <div><label> Second name : <input type="text" name="lastName"/> </label></div>
     <div><input type="submit" value="Sign Up"/></div>
 </form>
 </body>

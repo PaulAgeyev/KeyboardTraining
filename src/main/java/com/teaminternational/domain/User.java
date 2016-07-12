@@ -33,7 +33,7 @@ public class User implements Serializable{
     @JoinColumn(name = "role_id")
     private Role role_id;
 
-    public User() {
+    public User(){
 
     }
 

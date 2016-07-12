@@ -19,7 +19,11 @@ public class Role implements Serializable{
     @Column(name = "name")
     private String name;
 
-    Role(long id, String name) {
+    public Role() {
+
+    }
+
+    public Role(long id, String name) {
         this.role_id = id;
         this.name = name;
     }

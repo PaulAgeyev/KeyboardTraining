@@ -70,11 +70,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .jdbcAuthentication()
                 .dataSource(dataSource)
-                /*.withDefaultSchema()
-                .withUser("user").password("password").roles("USER").and()
+                //.withDefaultSchema()
+                /*.withUser("user").password("password").roles("USER").and()
                 .withUser("admin").password("password").roles("USER", "ADMIN");*/
-                .usersByUsernameQuery("select login, password, 'true' FROM user where user_id=1")
-                .authoritiesByUsernameQuery("");
+                .usersByUsernameQuery("select login, password, 'true' FROM User where login=?")
+                .authoritiesByUsernameQuery("select login, 'ROLE_USER' FROM User where login=?");
 
     }
 
