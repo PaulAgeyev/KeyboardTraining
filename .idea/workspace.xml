@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f7047c-5bea-42d8-81e1-5182c15fdac9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentService.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Assigment.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Assigment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Progress.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Progress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KeyboardTraining.iws" />
@@ -69,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainingController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TrainingController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.38265306">
+              <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProgressRepository.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProgressRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26785713">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
               <folding />
             </state>
@@ -1515,7 +1508,7 @@
       <workItem from="1468307968034" duration="4028000" />
       <workItem from="1468313821423" duration="9373000" />
       <workItem from="1468330004897" duration="2203000" />
-      <workItem from="1468390561851" duration="8206000" />
+      <workItem from="1468390561851" duration="8233000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1467716665147</created>
@@ -1685,11 +1678,17 @@
       <option name="project" value="LOCAL" />
       <updated>1468391963735</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="updated">
+      <created>1468402796612</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1468402796612</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154047000" />
+    <option name="totallyTimeSpent" value="154074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2201,21 +2200,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26785713">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
+        <state vertical-scroll-proportion="0.38265306">
+          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

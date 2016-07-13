@@ -30,7 +30,7 @@ public class TrainingController {
     public String g(@RequestParam(value="lesson", required=false, defaultValue="Lesson: ") String name, Model model) {
 
 
-        ProgressRepository
+        ProgressRepository progressRepository;
 
         model.addAttribute("lesson", name);
 
