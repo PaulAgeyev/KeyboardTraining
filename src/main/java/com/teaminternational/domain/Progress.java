@@ -13,6 +13,8 @@ import java.util.Date;
 @Table(name = "Progress")
 public class Progress implements Serializable {
 
+    //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
+
     @Id
     @Column(name = "progress_id")
     @GeneratedValue
@@ -33,9 +35,10 @@ public class Progress implements Serializable {
     private int error;
 
     @Column(name = "time")
-    private Date time;
+    private int time;
 
-    public Progress(User user, Assigment assigment, int progress, int error, Date time) {
+    public Progress(int id, User user, Assigment assigment, int progress, int error, int time) {
+        this.progress_id = id;
         this.user_id = user;
         this.assigment_id = assigment;
         this.progress = progress;
@@ -43,8 +46,51 @@ public class Progress implements Serializable {
         this.time = time;
     }
 
-    public int getId() {
+    public int getProgressId() {
         return progress_id;
     }
 
+    public void setProgressId(int progress_id) {
+        this.progress_id = progress_id;
+    }
+
+    public User getUserId() {
+        return user_id;
+    }
+
+    public void setUserId(User user_id) {
+        this.user_id = user_id;
+    }
+
+    public Assigment getAssigmentId() {
+        return assigment_id;
+    }
+
+    public void setAssigmentId(Assigment assigment_id) {
+        this.assigment_id = assigment_id;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
+
+    public int getError() {
+        return error;
+    }
+
+    public void setError(int error) {
+        this.error = error;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
 }

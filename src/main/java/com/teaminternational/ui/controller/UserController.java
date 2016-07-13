@@ -31,15 +31,33 @@ class UserContoller{
                 "INSERT INTO Role " +
                         "VALUES (1, 'ROLE_ADMIN')");
 
-        /*jdbcTemplate.update(
+        jdbcTemplate.update(
                 "INSERT INTO Role " +
-                        "VALUES (2, 'ROLE_USER')");*/
+                        "VALUES (2, 'ROLE_USER')");
 
         jdbcTemplate.update(
                 "INSERT INTO User " +
                         "VALUES (1, 'Paul', 'Ageyev', 'roter', 'root', 1)");
 
-        List l = jdbcTemplate.queryForList("select u.login, r.name FROM User u INNER JOIN Role r ON u.role_id = r.role_id");
+        jdbcTemplate.update(
+                "INSERT INTO User " +
+                        "VALUES (2, 'Steven', 'McLaren', 'stev', 'stev', 2)");
+
+        jdbcTemplate.update(
+                "INSERT INTO Assignment " +
+                        "VALUES (1, 'TEXT')");
+
+
+        //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
+        jdbcTemplate.update(
+                "INSERT INTO Progress " +
+                        "VALUES (1, 0, 0, 0, 1, 1)");
+        jdbcTemplate.update(
+                "INSERT INTO Progress " +
+                        "VALUES (2, 0, 0, 0, 1, 2)");
+
+
+        List l = jdbcTemplate.queryForList("select * from progress");
         Iterator it = l.iterator();
         while(it.hasNext())
         {
@@ -49,15 +67,23 @@ class UserContoller{
 
     }
 
-    @RequestMapping(value = "/login")
-    public ModelAndView simple() {
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ModelAndView method1() {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("login");
         return mav;
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView method2() {
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("login");
+        return mav;
+    }
+
+
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public ModelAndView simple3(HttpServletRequest request) {
+    public ModelAndView method3(HttpServletRequest request) {
 
         User user = new User();
         user.setFirstName(request.getParameter("firstName"));
@@ -74,9 +100,8 @@ class UserContoller{
         return mav;
     }
 
-       @RequestMapping(value = "/registration", method = RequestMethod.GET)
-        public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public String method4(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
 
         model.addAttribute("name", name);
 

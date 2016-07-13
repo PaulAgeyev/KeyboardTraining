@@ -2,6 +2,8 @@ package com.teaminternational.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by pavel on 05.07.16.
@@ -31,6 +33,9 @@ public class User implements Serializable{
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role_id;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user_id")
+    private Set<Progress> progressSet = new HashSet<Progress>();
 
     public User(){
 
