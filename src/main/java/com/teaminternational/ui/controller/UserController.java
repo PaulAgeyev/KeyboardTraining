@@ -53,10 +53,7 @@ class UserContoller{
 
         jdbcTemplate.update(
                 "INSERT INTO Progress " +
-                        "VALUES (1, 0, 0, 0, 1, 1)");
-        jdbcTemplate.update(
-                "INSERT INTO Progress " +
-                        "VALUES (2, 0, 0, 0, 1, 2)");
+                        "VALUES (1, 0, 0, 0, 1, 2)");
 
 
         List l = jdbcTemplate.queryForList("select * from progress");

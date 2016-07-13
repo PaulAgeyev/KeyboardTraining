@@ -7,6 +7,8 @@ import org.springframework.expression.spel.ast.Assign;
 /**
  * Created by pavel on 07.07.16.
  */
-interface AssigmentRepository extends Repository<Assignment, Long> {
+public interface AssigmentRepository extends Repository<Assignment, Long> {
+
+    Assignment getAll();
 
 }
