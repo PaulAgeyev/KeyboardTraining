@@ -40,14 +40,23 @@
 <div id="admin">
     <a href = ""> <div id="create">CREATE </div> </a>
 
-    <form name="admin_form" id="admin_form" action="">
+    <form name="admin_form" id="admin_form" action="" th:each="message : ${message}">
         <fieldset>
-            <legend id ="lesson">Lesson: 1</legend>
-            <div id="text_lesson"> <textarea name="text_lesson" id="text_db"  spellcheck="false" > text_db </textarea> </div>
+
+            <legend id ="lesson" th:text=" ${message.lesson}" >Lesson: 1</legend>
+            <div id="text_lesson"> <textarea name="text_lesson" id="text_db"  spellcheck="false"  th:text="${message.text}" > text_db </textarea> </div>
             <a href = ""> <div id="crudu">UPDATE</div> </a>
             <a href = ""> <div id="crudd">DELETE</div> </a>
         </fieldset>
     </form>
+
+<!--
+    <tr th:each="message : ${message}">
+        <td th:text="${message.lesson}">1</td>
+        <td th:text="${message.text}">2</td>
+    </tr>
+-->
+
 </div>
 
 </body>

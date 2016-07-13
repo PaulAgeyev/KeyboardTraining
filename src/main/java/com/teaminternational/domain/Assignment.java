@@ -20,12 +20,14 @@ public class Assignment {
     private String text;
 
     @Column(name = "lesson")
-    private String lesson;
+    private int lesson;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "assignment_id")
     private Set<Progress> progressSet = new HashSet<Progress>();
 
-    public Assignment(long id, String text, String lesson) {
+    public Assignment() {}
+
+    public Assignment(long id, String text, int lesson) {
         this.assignment_id = id;
         this.text = text;
         this.lesson = lesson;
@@ -47,7 +49,7 @@ public class Assignment {
         this.text = text;
     }
 
-    public String getLesson() {return lesson;}
+    public int getLesson() {return lesson;}
 
-    public void setLesson(String lesson) {this.lesson = lesson;}
+    public void setLesson(int lesson) {this.lesson = lesson;}
 }
