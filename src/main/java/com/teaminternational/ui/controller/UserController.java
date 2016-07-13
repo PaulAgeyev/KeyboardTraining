@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -49,6 +50,7 @@ class UserContoller{
 
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
+
         jdbcTemplate.update(
                 "INSERT INTO Progress " +
                         "VALUES (1, 0, 0, 0, 1, 1)");

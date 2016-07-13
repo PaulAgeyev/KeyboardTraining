@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,12 +26,15 @@ public class TrainingController {
 
     }
 
+    @Autowired
+    ProgressRepository progressRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String g(@RequestParam(value="lesson", required=false, defaultValue="Lesson: ") String name, Model model) {
+    public String g(@RequestParam(value="lesson", required=false, defaultValue="Lesson: ") String name, Model model, HttpServletRequest request) {
 
+        System.out.println(request.getRemoteUser());
 
-        ProgressRepository progressRepository;
+        System.out.println(progressRepository.count());
 
         model.addAttribute("lesson", name);
 

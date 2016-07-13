@@ -1,18 +1,18 @@
 package com.teaminternational.dao;
 
-import java.util.ArrayList;
+import com.teaminternational.domain.Assignment;
 
-import com.teaminternational.domain.Assigment;
+import java.util.ArrayList;
 
 /**
  * Created by pavel on 05.07.16.
  */
 public interface AssigmentDAO {
 
-    ArrayList<Assigment> findByID();
+    ArrayList<Assignment> findByID();
 
-    void insertAssigment(Assigment assigment);
-    boolean updateAssigment(Assigment assigment);
-    boolean deleteAssigment(Assigment assigment);
+    void insertAssigment(Assignment assigment);
+    boolean updateAssigment(Assignment assigment);
+    boolean deleteAssigment(Assignment assigment);
 
 }

@@ -1,7 +1,6 @@
 package com.teaminternational.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,30 +9,30 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "Assignment")
-public class Assigment {
+public class Assignment {
 
     @Id
-    @Column(name = "assigment_id")
+    @Column(name = "assignment_id")
     @GeneratedValue
-    private long assigment_id;
+    private long assignment_id;
 
     @Column(name = "text")
     private String text;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "assigment_id")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "assignment_id")
     private Set<Progress> progressSet = new HashSet<Progress>();
 
-    public Assigment(long id, String text) {
-        this.assigment_id = id;
+    public Assignment(long id, String text) {
+        this.assignment_id = id;
         this.text = text;
     }
 
     public long getId() {
-        return assigment_id;
+        return assignment_id;
     }
 
     public void setId(long id) {
-        this.assigment_id = id;
+        this.assignment_id = id;
     }
 
     public String getText() {
