@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 /*.withUser("user").password("password").roles("USER").and()
                 .withUser("admin").password("password").roles("USER", "ADMIN");*/
                 .usersByUsernameQuery("select login, password, 'true' FROM User where login=?")
-                .authoritiesByUsernameQuery("select u.login, r.name FROM User u INNER JOIN Role r ON u.role_id11 = r.role_id where login=?");
+                .authoritiesByUsernameQuery("select u.login, r.name FROM User u INNER JOIN Role r ON u.role_id = r.role_id where login=?");
 
     }
 

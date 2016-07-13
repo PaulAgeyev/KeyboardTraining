@@ -31,15 +31,15 @@ class UserContoller{
                 "INSERT INTO Role " +
                         "VALUES (1, 'ROLE_ADMIN')");
 
-        jdbcTemplate.update(
+        /*jdbcTemplate.update(
                 "INSERT INTO Role " +
-                        "VALUES (2, 'ROLE_USER')");
+                        "VALUES (2, 'ROLE_USER')");*/
 
         jdbcTemplate.update(
                 "INSERT INTO User " +
                         "VALUES (1, 'Paul', 'Ageyev', 'roter', 'root', 1)");
 
-        List l = jdbcTemplate.queryForList("select u.login, r.name FROM User u INNER JOIN Role r ON u.user_id = r.role_id");
+        List l = jdbcTemplate.queryForList("select u.login, r.name FROM User u INNER JOIN Role r ON u.role_id = r.role_id");
         Iterator it = l.iterator();
         while(it.hasNext())
         {
@@ -76,7 +76,9 @@ class UserContoller{
 
        @RequestMapping(value = "/registration", method = RequestMethod.GET)
         public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", "KUUUURWA");
+
+
+        model.addAttribute("name", name);
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("registration");
