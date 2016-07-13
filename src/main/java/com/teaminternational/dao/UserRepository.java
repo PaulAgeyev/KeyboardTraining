@@ -21,7 +21,6 @@ public interface UserRepository extends Repository<User, Long> {
                                    @Param("firsNname") String firstName);*/
 
 
-    //User save(User entity);
 
     /*@Query(value = "SELECT c FROM User c WHERE c.user_id=1", nativeQuery = true)
     User findo();*/
@@ -29,5 +28,4 @@ public interface UserRepository extends Repository<User, Long> {
 
     User save(User entity);
 
-    long count();
 }

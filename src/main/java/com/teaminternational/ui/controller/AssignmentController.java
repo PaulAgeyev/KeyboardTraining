@@ -27,7 +27,7 @@ public class AssignmentController {
     @RequestMapping(value = "/panel", method = RequestMethod.POST)
     public ModelAndView method3(HttpServletRequest request) {
 
-    repository.getAll();
+    //repository.getAll();
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("panel");

@@ -46,10 +46,11 @@ class UserContoller{
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (1, 'TEXT')");
+                        "VALUES (1, 'TEXT',1)");
 
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
+
 
         jdbcTemplate.update(
                 "INSERT INTO Progress " +

@@ -1,6 +1,7 @@
 package com.teaminternational.dao;
 
 import com.teaminternational.domain.*;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 import org.springframework.expression.spel.ast.Assign;
 
@@ -9,6 +10,7 @@ import org.springframework.expression.spel.ast.Assign;
  */
 public interface AssigmentRepository extends Repository<Assignment, Long> {
 
-    Assignment getAll();
+    /*@Query("SELECT")
+    Assignment getAll();*/
 
 }

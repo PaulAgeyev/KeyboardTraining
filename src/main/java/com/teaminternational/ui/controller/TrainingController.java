@@ -26,17 +26,16 @@ public class TrainingController {
 
     }
 
-    @Autowired
-    ProgressRepository progressRepository;
+    /*@Autowired
+    ProgressRepository progressRepository;*/
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String g(@RequestParam(value="lesson", required=false, defaultValue="Lesson: ") String name, Model model, HttpServletRequest request) {
+    public String g(Model model, HttpServletRequest request) {
 
-        System.out.println(request.getRemoteUser());
+        model.addAttribute("user",request.getRemoteUser());
 
-        System.out.println(progressRepository.count());
-
-        model.addAttribute("lesson", name);
+        //progressRepository.curve();
+        model.addAttribute("lesson", "");
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("home");
