@@ -9,6 +9,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -27,15 +28,27 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private Environment env;
 
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+
+        web
+                .ignoring()
+
+                .antMatchers("/style.css");
+        web
+                .ignoring()
+
+                .antMatchers("/key.js");
+    }
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-       /* http
+        http
                 .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .antMatchers("/registration").permitAll()
-
                 .antMatchers("/panel").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -47,8 +60,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .logout()
-                .permitAll();*/
-
+                .permitAll();
 
     }
 
