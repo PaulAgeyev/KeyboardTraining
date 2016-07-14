@@ -32,6 +32,24 @@ public class AssignmentController {
         mav.addObject("message", repository.findAll());
         return mav;
     }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public ModelAndView method3(HttpServletRequest request) {
+
+        Assignment assignment = new Assignment();
+        assignment.setId(Integer.parseInt(request.getParameter("assignment_id")));
+        assignment.setLesson(Integer.parseInt((request.getParameter("lesson_change"))));
+        assignment.setText(request.getParameter("text_db"));
+//        System.out.println("id="+assignment.getId()+" lesson="+assignment.getLesson()+" text="+assignment.getText());
+        repository.save(assignment);
+
+        ModelAndView mav = new ModelAndView("/panel");
+        System.out.println("POST");
+        return mav;
+    }
+
+
+
     /*
     @RequestMapping(value = "/panel", method = RequestMethod.GET)
     public ModelAndView method3(HttpServletRequest request) {
