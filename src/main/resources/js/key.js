@@ -184,6 +184,7 @@ window.onkeypress=function(){
 	else console.log("END!");
 }
 
+var recordMinutes, recordSecs;
 var timer;
 function start_timer()
 {
