@@ -25,6 +25,8 @@ public interface UserRepository extends Repository<User, Long> {
     /*@Query(value = "SELECT c FROM User c WHERE c.user_id=1", nativeQuery = true)
     User findo();*/
 
+    @Query(value = "SELECT * FROM User where user.login=?1", nativeQuery = true)
+    User findByLogin(String login);
 
     User save(User entity);
 
