@@ -183,23 +183,17 @@ window.onkeypress=function(){
 	}
 	else {
 		console.log("END!");
-		recordMinutes = minutes;
-		recordSecs = secs;
-		console.log ("min="+recordMinutes+"sec="+recordSecs);
-
+		clearInterval(timer);
 	}
 
 }
 
 var timer;
-var minutes = "00", secs = "00";
-var recordMinutes, recordSecs;
-
 function start_timer()
 {
 	if (timer) clearInterval(timer);
-	//minutes = "00";
-	//secs = "00";
+	minutes = "00";
+	secs = "00";
 
 	document.getElementById('timer').innerHTML = 'Время: '+ minutes + ":" + secs;
 	timer = setInterval(
