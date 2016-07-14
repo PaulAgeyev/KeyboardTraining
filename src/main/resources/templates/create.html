@@ -1,6 +1,7 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Admin</title>
+    <title>Create</title>
 </head>
 
 <style>
@@ -36,22 +37,20 @@
 </style>
 
 <body>
-<div id="logo"><h1>Assignment</h1></div>
-<div id="admin">
-    <form name="form" id="form" th:action="@{/create}" method="post">
-        <div id="create"><button type="submit">CREATE</button> </div>
-    </form>
-    <form name="admin_form" id="admin_form" th:action="@{/update}" method="post"  th:each="message : ${message}">
-        <fieldset>
-            <legend id ="lesson" th:inline="text"> Lesson: [[ ${message.lesson}]]</legend>
-            <div id="text_lesson"> <textarea name="text_db" id="idtext_db"  spellcheck="false"  th:text="${message.text}" > text_db </textarea> </div>
-            <input type="hidden" name="lesson_change" id="idlesson_change" th:value="${message.lesson}"/>
-            <input type="hidden" name="assignment_id" id="idassignment_id" th:value="${message.Id}"/>
-            <div id="crudu"><button type="submit">UPDATE</button></div>
-            <div id="crudd"><button type="submit" th:formaction="@{/delete}" >DELETE</button></div>
-        </fieldset>
-    </form>
-</div>
+    <h1>CREATE</h1>
+
+    <div id="admin">
+        <form name="admin_form" id="admin_form" th:action="@{/createindb}" method="post">
+            <fieldset>
+                <legend>Fill in all fields</legend>
+                Lesson:
+                <input type="number" name="lesson" id="lesson" /><br/><br/>
+                Text:<br/>
+                <div id="text_lesson"> <textarea name="text_db" id="text_db">  </textarea> </div>
+                <div id="crudu"><button type="submit">CREATE</button></div>
+            </fieldset>
+        </form>
+    </div>
 
 </body>
 </html>
