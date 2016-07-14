@@ -34,7 +34,7 @@ public class AssignmentController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public ModelAndView method3(HttpServletRequest request) {
+    public ModelAndView method1(HttpServletRequest request) {
 
         Assignment assignment = new Assignment();
         assignment.setId(Integer.parseInt(request.getParameter("assignment_id")));
@@ -43,29 +43,24 @@ public class AssignmentController {
 //        System.out.println("id="+assignment.getId()+" lesson="+assignment.getLesson()+" text="+assignment.getText());
         repository.save(assignment);
 
-        ModelAndView mav = new ModelAndView("/panel");
-        System.out.println("POST");
+        ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
     }
 
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public ModelAndView method2(HttpServletRequest request) {
 
+        Assignment assignment = new Assignment();
+        assignment.setId(Integer.parseInt(request.getParameter("assignment_id")));
+        assignment.setLesson(Integer.parseInt((request.getParameter("lesson_change"))));
+        assignment.setText(request.getParameter("text_db"));
+        System.out.println("id="+assignment.getId()+" lesson="+assignment.getLesson()+" text="+assignment.getText());
+        //repository.delete(assignment);
 
-    /*
-    @RequestMapping(value = "/panel", method = RequestMethod.GET)
-    public ModelAndView method3(HttpServletRequest request) {
-        System.out.println("REposfgfdg\n");
-         List< Assignment> s = repository.findAll();
-
-        for ( Assignment r :s ) {
-
-
-            System.out.println("lesson="+ r.getLesson()+"\n text="+r.getText());
-        }
-
-        System.out.println("size="+s.size());
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("panel");
-        System.out.println("POST");
+        repository.delete(Long.parseLong(request.getParameter("assignment_id")));
+//repository.delete(assignment);
+        ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
-    }*/
+    }
+
 }

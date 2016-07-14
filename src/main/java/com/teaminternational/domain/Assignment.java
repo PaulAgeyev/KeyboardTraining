@@ -22,8 +22,10 @@ public class Assignment {
     @Column(name = "lesson")
     private int lesson;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "assignment_id")
+
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "assignment_id")
     private Set<Progress> progressSet = new HashSet<Progress>();
+
 
     public Assignment() {}
 

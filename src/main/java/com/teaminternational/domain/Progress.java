@@ -20,11 +20,12 @@ public class Progress implements Serializable {
     @GeneratedValue
     private int progress_id;
 
-    @ManyToOne
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "user_id")
     private User user_id;
 
-    @ManyToOne
+
+    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "assignment_id")
     private Assignment assignment_id;
 
@@ -36,6 +37,8 @@ public class Progress implements Serializable {
 
     @Column(name = "time")
     private int time;
+
+    public Progress(){}
 
     public Progress(int id, User user, Assignment assignment, int progress, int error, int time) {
         this.progress_id = id;
