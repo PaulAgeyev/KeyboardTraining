@@ -21,12 +21,12 @@ import java.util.List;
  * Created by pavel on 07.07.16.
  */
 @Controller
-class UserContoller{
+class UserController{
 
     Role roleU = new Role(2,"ROLE_USER");
 
     @Autowired
-    public UserContoller(JdbcTemplate jdbcTemplate) {
+    public UserController(JdbcTemplate jdbcTemplate) {
 
         jdbcTemplate.update(
                 "INSERT INTO Role " +
@@ -42,16 +42,11 @@ class UserContoller{
 
         jdbcTemplate.update(
                 "INSERT INTO User " +
-                        "VALUES (2, 'Steven', 'McLaren', 'stev', 'stev', 2)");
+                        "VALUES (2, 'Steven', 'McLaren', 'steven', 'steven', 2)");
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (1, 1,'TEXT Adminka=)')");
-
-        jdbcTemplate.update(
-                "INSERT INTO Assignment " +
-                        "VALUES (2, 2,'Niva')");
-
+                        "VALUES (1, 1, 'TEXT')");
 
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
@@ -62,7 +57,7 @@ class UserContoller{
                         "VALUES (1, 0, 0, 0, 1, 2)");
 
 
-        List l = jdbcTemplate.queryForList("select * from progress");
+        List l = jdbcTemplate.queryForList("select * from user");
         Iterator it = l.iterator();
         while(it.hasNext())
         {

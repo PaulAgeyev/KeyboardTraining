@@ -12,26 +12,30 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
 @Configuration
 @EnableWebSecurity
-
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     JdbcTemplate jdbcTemplate;
 
-
     @Resource
     private Environment env;
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http
-        .authorizeRequests()
+       /* http
+                .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .antMatchers("/registration").permitAll()
+
                 .antMatchers("/panel").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -43,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
 
                 .logout()
-                .permitAll();
+                .permitAll();*/
 
 
     }
@@ -57,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth
                 .jdbcAuthentication()
                 .dataSource(dataSource)
-                //.withDefaultSchema()
+                        //.withDefaultSchema()
                 /*.withUser("user").password("password").roles("USER").and()
                 .withUser("admin").password("password").roles("USER", "ADMIN");*/
                 .usersByUsernameQuery("select login, password, 'true' FROM User where login=?")

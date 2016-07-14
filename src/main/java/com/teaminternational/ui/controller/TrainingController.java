@@ -1,8 +1,13 @@
 package com.teaminternational.ui.controller;
 
 import com.teaminternational.dao.ProgressRepository;
+import com.teaminternational.dao.UserRepository;
+import com.teaminternational.domain.Progress;
+import com.teaminternational.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,21 +31,35 @@ public class TrainingController {
 
     }
 
-    /*@Autowired
-    ProgressRepository progressRepository;*/
+    @Autowired
+    ProgressRepository progressRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String g(Model model, HttpServletRequest request) {
 
-        model.addAttribute("user",request.getRemoteUser());
+        model.addAttribute("user", request.getRemoteUser());
 
-        //progressRepository.curve();
-        model.addAttribute("lesson", "");
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (principal instanceof UserDetails) {
+            UserDetails userDetails = (UserDetails) principal;
+
+            System.out.println(userRepository.findByLogin(userDetails.getUsername()));
+            User user = userRepository.findByLogin(userDetails.getUsername());
+            System.out.println(user.getId());
+
+            Progress progress = progressRepository.findByUserID(user.getId());
+            System.out.println(progress.getAssigmentId().getLesson());
+
+            model.addAttribute("lesson", "Lesson: " + progress.getAssigmentId().getLesson());
+            model.addAttribute("text", progress.getAssigmentId().getText());
+        }
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("home");
-
-        System.out.println("GET L");
 
         return "home";
     }
