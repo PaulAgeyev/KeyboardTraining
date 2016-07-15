@@ -39,7 +39,7 @@ public class TrainingController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView h(Model model, HttpServletRequest request) {
 
-        ModelAndView mav = null;
+        ModelAndView mav = new ModelAndView("home");
 
         model.addAttribute("user", request.getRemoteUser());
 
