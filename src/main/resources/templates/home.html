@@ -10,20 +10,8 @@
 <body>
 <input type="hidden" id="text" th:value="${text}"/>
 
-<div id = "id1">
-    <h2 th:text="${user}"/>
-    <h2 th:text="${lesson}"/>
+<div th:text="${user}"/>
 
-    <form th:action="@{/logout}" method="post">
-
-        <input type="submit" value="Sign Out"/>
-    </form>
-</div>
-
-<div id = "id2">
-    <p>Click <a th:href="@{/login}">here</a> to login</p>
-    <p>Click <a th:href="@{/registration}">here</a> to sign up</p>
-</div>
 <div id="logo">
     <h1>Trainer</h1>
 </div>
