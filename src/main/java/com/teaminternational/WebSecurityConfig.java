@@ -39,6 +39,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .ignoring()
 
                 .antMatchers("/key.js");
+        web
+                .ignoring()
+
+                .antMatchers("jquery.js");
     }
 
 

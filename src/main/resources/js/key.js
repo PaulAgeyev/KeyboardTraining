@@ -21,8 +21,16 @@ var isKeyDown = function () {
  }*/
 
 
+$(document).ready(function() {
 
-window.onload = function() {
+	json = $('#text').val();
+
+	console.log(json);
+
+	var obj = jQuery.parseJSON(json);
+	console.log(obj);
+	text_db = obj.text;
+
 
 	input_text.onkeypress = function (e) {
 		if (!timer) start_timer();
@@ -36,7 +44,6 @@ window.onload = function() {
 	input_text.onkeyup = function () {
 		clearKey();
 	}
-
 
 	//document.getElementById('next').innerHTML = text_db;
 	document.getElementById('errors').innerHTML = "Ошибки: " + errors;
@@ -59,17 +66,21 @@ window.onload = function() {
 	console.log( "l=" + TextBuf.length );
 	text = str.split('');
 
-	/*for (i = 1; i < TextBufSize; i++ )	{
-	 console.log( "l=" + TextBuf.length );
-	 console.log( "mas[]=" + 	TextBuf.shift() );
-	 }*/
 
-}
+});
+
+/*
+window.onload = function() {
+
+
+
+}*/
+
 var TextBufSize;
 var TextBuf = new Array();
 var input_key = 0;
 var str_input = '',	str_color_start = '', str_color_end = '', str_color_err = '';
-var text_db = "the old man and the Sea is the story of a battle between an old, experienced cuban fisherman and a large marlin. The novel.";
+var text_db;
 //text_db += '\n';
 
 
