@@ -2,29 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>KeyboardTraining</title>
+    <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="key.js"></script>
     <link href= "style.css" rel="stylesheet"/>
 </head>
 
 <body>
-<div id = "id1">
-    <h2 th:text="${user}"/>
-    <h2 th:text="${lesson}"/>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
-</div>
+<input type="hidden" id="text" th:value="${text}"/>
 
-
-<div id = "id2" th:if= ${userDetails} == 0">
-<p>Click <a th:href="@{/login}">here</a> to login</p>
-<p>Click <a th:href="@{/registration}">here</a> to sign up</p>
-    <a th:href="@{/privateCabinet}">Private Cabinet</a>
-</div>
+<div th:text="${user}"/>
 
 <div id="logo">
     <h1>Trainer</h1>
 </div>
+
 <div id="typing">
     <div id="info">
         <div id="typed"></div>
@@ -32,7 +23,7 @@
         <div id="errors"></div>
     </div>
     <div id="text_type">
-        <span id="next"><i th:text="${text}"/></span><br/>
+        <span id="next"></span><br/>
         <!--<span class="current">letter will input green color</span><br>
         <span class="letter_ok">letter true=grey </span><br>
         <span class="letter_bad">letter false=red </span><br>-->
