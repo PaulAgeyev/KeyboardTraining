@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.cache.NullUserCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,6 +45,8 @@ public class TrainingController {
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
+        Integer key = 0;
+
         if (principal instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) principal;
 
@@ -56,9 +59,12 @@ public class TrainingController {
 
             model.addAttribute("lesson", "Lesson: " + progress.getAssigmentId().getLesson());
             model.addAttribute("text", progress.getAssigmentId().getText());
+            key = 1;
         }
 
         ModelAndView mav = new ModelAndView();
+
+        mav.addObject("userDetails", key);
         mav.setViewName("home");
 
         return "home";
