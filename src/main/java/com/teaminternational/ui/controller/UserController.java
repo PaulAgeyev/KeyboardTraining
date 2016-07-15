@@ -46,7 +46,7 @@ class UserController{
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (1, 1, 'TEXT')");
+                        "VALUES (1, 1, 'VAAASYA')");
 
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
