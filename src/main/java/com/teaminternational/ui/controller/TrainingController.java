@@ -1,24 +1,22 @@
 package com.teaminternational.ui.controller;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.google.gson.Gson;
 import com.teaminternational.dao.ProgressRepository;
 import com.teaminternational.dao.UserRepository;
 import com.teaminternational.domain.Progress;
 import com.teaminternational.domain.User;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.cache.NullUserCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by pavel on 13.07.16.
@@ -39,13 +37,13 @@ public class TrainingController {
     UserRepository userRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String g(Model model, HttpServletRequest request) {
+    public ModelAndView h(Model model, HttpServletRequest request) {
+
+        ModelAndView mav = null;
 
         model.addAttribute("user", request.getRemoteUser());
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-        Integer key = 0;
 
         if (principal instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) principal;
@@ -57,17 +55,17 @@ public class TrainingController {
             Progress progress = progressRepository.findByUserID(user.getId());
             System.out.println(progress.getAssigmentId().getLesson());
 
-            model.addAttribute("lesson", "Lesson: " + progress.getAssigmentId().getLesson());
-            model.addAttribute("text", progress.getAssigmentId().getText());
-            key = 1;
+            mav = new ModelAndView("home");
+
+            JSONObject resultJson = new JSONObject();
+
+            resultJson.put("text",progress.getAssigmentId().getText());
+
+            mav.addObject("lesson", "Lesson: " + progress.getAssigmentId().getLesson());
+            mav.addObject("text", resultJson.toString());
+
         }
-
-        ModelAndView mav = new ModelAndView();
-
-        mav.addObject("userDetails", key);
-        mav.setViewName("home");
-
-        return "home";
+        return mav;
     }
 
 }
