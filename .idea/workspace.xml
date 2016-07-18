@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63f7047c-5bea-42d8-81e1-5182c15fdac9" name="Default" comment="updated">
+    <list default="true" id="63f7047c-5bea-42d8-81e1-5182c15fdac9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Assignment.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Assignment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Progress.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Progress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/css/style.css" afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/key.js" afterPath="$PROJECT_DIR$/src/main/resources/js/key.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/privateCabinet.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/privateCabinet.html" />
     </list>
     <ignored path="KeyboardTraining.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -58,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="key.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="key.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3508">
-              <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
+            <state relative-caret-position="244">
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -141,8 +130,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/privateCabinet.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/js/key.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/js/key.js" />
       </list>
     </option>
   </component>
@@ -1582,7 +1571,7 @@
       <workItem from="1468663121050" duration="15763000" />
       <workItem from="1468703119353" duration="4660000" />
       <workItem from="1468745175967" duration="8586000" />
-      <workItem from="1468823944710" duration="548000" />
+      <workItem from="1468823944710" duration="826000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1467716665147</created>
@@ -1857,11 +1846,18 @@
       <option name="project" value="LOCAL" />
       <updated>1468581514859</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="updated">
+      <created>1468824555619</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1468824555619</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241179000" />
+    <option name="totallyTimeSpent" value="241457000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2178,6 +2174,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="57" column="43" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2185,6 +2184,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2192,6 +2194,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2297,14 +2302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3508">
-          <caret line="293" column="0" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -2317,6 +2314,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
           <folding />
         </state>
       </provider>

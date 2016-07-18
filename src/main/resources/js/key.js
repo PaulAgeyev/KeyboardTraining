@@ -33,6 +33,7 @@ var clearKey = function () {
 var isKeyDown = function () {
 	return keyDown;
 }
+//HJBJH
 
 var CodeKey = function () {
 	if (input_key == 96 || input_key == 126) PressKey = 96;
