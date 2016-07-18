@@ -3,6 +3,7 @@ package com.teaminternational.domain;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
 
 /**
  * Created by pavel on 05.07.16.
@@ -21,6 +22,19 @@ public class Assignment {
 
     @Column(name = "lesson")
     private int lesson;
+
+
+    @Transient
+    private List<Progress> progress ;
+
+    public List<Progress> getProgress() {
+        return progress;
+    }
+
+    public void setProgress( List<Progress> progress) {
+        this.progress = progress;
+    }
+
 
 
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "assignment_id")

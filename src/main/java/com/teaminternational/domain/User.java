@@ -34,7 +34,7 @@ public class User implements Serializable{
     @JoinColumn(name = "role_id")
     private Role role_id;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user_id")
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY, mappedBy = "user_id")
     private Set<Progress> progressSet = new HashSet<Progress>();
 
     public User(){

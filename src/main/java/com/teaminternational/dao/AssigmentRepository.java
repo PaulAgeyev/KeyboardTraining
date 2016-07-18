@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface AssigmentRepository extends JpaRepository <Assignment, Long> {
 
-    @Query (value = "SELECT * FROM Assignment where Assignment.assignment_id=?1", nativeQuery = true)
-    Assignment findByAssignmentID (Assignment id);
+    @Query(value = "SELECT * FROM Progress p INNER JOIN Assignment a ON p.assignment_id = a.assignment_id WHERE p.user_id=?1 "
+            ,  nativeQuery = true)
+    List<Assignment> findAssignmentByUserID(long id );
 }

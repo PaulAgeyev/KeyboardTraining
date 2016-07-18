@@ -12,8 +12,11 @@ import java.util.List;
  */
 public interface ProgressRepository extends JpaRepository<Progress, Long> {
 
-    @Query(value = "SELECT * FROM Progress where Progress.user_id=?1", nativeQuery = true)
-    Progress findByUserID(long id);
+    @Query(value = "SELECT * FROM Progress p  WHERE p.user_id=?1 "
+            ,  nativeQuery = true)
+    Progress findByUserID(long id );
 
+    @Query (value = "SELECT * FROM Progress p where p.assignment_id=?1", nativeQuery = true)
+    List<Progress> findByAssignmentID (long id);
 
 }

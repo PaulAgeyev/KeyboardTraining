@@ -47,21 +47,21 @@ class UserController{
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
                         "VALUES (1, 1, 'TEXT')");
-/*
+
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
                         "VALUES (3, 2, 'the old man and the Sea is the story of a battle between an old, experienced cuban fisherman and a large marlin. The novel.')");
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
-*/
+
 
         jdbcTemplate.update(
                 "INSERT INTO Progress " +
                         "VALUES (1, 0, 0, 0, 1, 2)");
- /*       jdbcTemplate.update(
+       jdbcTemplate.update(
                 "INSERT INTO Progress " +
                         "VALUES (2, 4, 5, 6, 3, 2)");
-*/
+
 
         List l = jdbcTemplate.queryForList("select * from user");
         Iterator it = l.iterator();

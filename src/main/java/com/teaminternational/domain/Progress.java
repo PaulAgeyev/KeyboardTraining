@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
+
 /**
  * Created by pavel on 05.07.16.
  */
@@ -18,14 +19,14 @@ public class Progress implements Serializable {
     @Id
     @Column(name = "progress_id")
     @GeneratedValue
-    private int progress_id;
+    private long progress_id;
 
-    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+    @ManyToOne()
     @JoinColumn(name = "user_id")
     private User user_id;
 
 
-    @ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+    @ManyToOne()
     @JoinColumn(name = "assignment_id")
     private Assignment assignment_id;
 
@@ -40,7 +41,7 @@ public class Progress implements Serializable {
 
     public Progress(){}
 
-    public Progress(int id, User user, Assignment assignment, int progress, int error, int time) {
+    public Progress(long id, User user, Assignment assignment, int progress, int error, int time) {
         this.progress_id = id;
         this.user_id = user;
         this.assignment_id = assignment;
@@ -49,11 +50,11 @@ public class Progress implements Serializable {
         this.time = time;
     }
 
-    public int getProgressId() {
+    public long getProgressId() {
         return progress_id;
     }
 
-    public void setProgressId(int progress_id) {
+    public void setProgressId(long progress_id) {
         this.progress_id = progress_id;
     }
 

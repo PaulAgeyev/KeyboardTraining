@@ -3,7 +3,9 @@ package com.teaminternational.ui.controller;
 import com.teaminternational.dao.AssigmentRepository;
 //import com.teaminternational.domain.Role;
 //import com.teaminternational.domain.User;
+import com.teaminternational.dao.UserRepository;
 import com.teaminternational.domain.Assignment;
+import com.teaminternational.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.jws.soap.SOAPBinding;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.Iterator;
@@ -25,10 +29,21 @@ public class AssignmentController {
     @Autowired
     private AssigmentRepository repository;
 
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping(value = "panel", method = RequestMethod.GET)
     public ModelAndView messages() {
         ModelAndView mav = new ModelAndView("panel");
+        List<Assignment> a = repository.findAll();
+        for (Assignment aa: a)
+            System.out.println("id="+aa.getId()+" lesson="+aa.getLesson()+" text="+aa.getText());
+
+        List<User> b = userRepository.findAll();
+        for(User bb : b)
+            System.out.println("id_user="+bb.getId()+" fname="+bb.getFirstName()+" lname="+bb.getLastName());
+
+
         mav.addObject("message", repository.findAll());
         return mav;
     }
@@ -49,6 +64,9 @@ public class AssignmentController {
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public ModelAndView method2(HttpServletRequest request) {
+
+        System.out.println("id_assignment="+Long.parseLong(request.getParameter("assignment_id")));
+
         repository.delete(Long.parseLong(request.getParameter("assignment_id")));
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;

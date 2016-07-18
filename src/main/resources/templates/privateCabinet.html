@@ -43,8 +43,8 @@
     <div id="logo"><h1 th:inline="text">"Hello, [[${user.firstName}]] [[${user.lastName}]] "</h1></div>
     <div id="admin">
 
-        <form name="admin_form" id="admin_form" th:action="@{/remove}" method="post">  <!--th:each="assignment : ${assignment}" th:each="progress : ${progress}" -->
-            <fieldset>
+        <form name="admin_form" id="admin_form" th:action="@{/remove}" method="post" th:each="assignment : ${assignments}">  <!--th:each="assignment : ${assignment}" th:each="progress : ${progress}" -->
+            <fieldset th:each="progress : ${assignment.getProgress()}">
 
                 <legend id ="lesson" th:inline="text">Lesson: [[ ${assignment.lesson}]]</legend>
 
@@ -53,8 +53,6 @@
                     <div id="progress" th:inline="text">Errors: [[${progress.error}]] </div>
                     <div id="progress" th:inline="text" >Time: [[${progress.time}]]</div>
                     <div id="progress" th:inline="text" >Progress: [[${progress.progress}]]</div>
-                    <a href = ""> <div id="progress">Remove</div> </a>
-                    <a href = ""> <div id="progress">Pass again</div> </a>
 
                     <input type="hidden" name="assignment_id" id="idassignment_id" th:value="${assignment.Id}"/>
                     <input type="hidden" name="user_id" id="user_id" th:value="${user.Id}"/>
