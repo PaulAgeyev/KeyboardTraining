@@ -163,6 +163,9 @@ function serverPost() {
 		success: function(data, textStatus, xhr) {
 			window.location.href = "http://localhost:8080/";
 		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			window.location.href = "http://localhost:8080/"
+		}
 	});
 }
 

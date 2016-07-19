@@ -7,6 +7,7 @@ import com.teaminternational.domain.Assignment;
 import com.teaminternational.domain.Progress;
 import com.teaminternational.domain.User;
 import org.json.JSONObject;
+import org.springframework.aop.AopInvocationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -96,8 +97,12 @@ public class TrainingController {
         {
             Assignment assignment = assigmentRepository.getID(positionLesson);
 
-            resultJson.put("text", assignment.getText());
+            try {
+                resultJson.put("text", assignment.getText());
+            }
+            catch (NullPointerException e) {
 
+            }
             mav.addObject("lesson", "Lesson: " + positionLesson);
             mav.addObject("text", resultJson.toString());
 
