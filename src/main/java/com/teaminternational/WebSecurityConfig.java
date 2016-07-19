@@ -42,28 +42,34 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web
                 .ignoring()
 
-                .antMatchers("jquery.js");
+                .antMatchers("/jquery.js");
     }
 
+    @Autowired
+    CustomSuccessHandler customSuccessHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http
+                .csrf().disable()
+
                 .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/panel").hasRole("ADMIN")
+                .antMatchers("/moderator").permitAll()
                 .anyRequest().authenticated()
                 .and()
 
                 .formLogin()
                 .loginPage("/login")
-
+                .successHandler(customSuccessHandler)
                 .permitAll()
                 .and()
 
                 .logout()
+                .logoutSuccessUrl("/")
                 .permitAll();
 
     }

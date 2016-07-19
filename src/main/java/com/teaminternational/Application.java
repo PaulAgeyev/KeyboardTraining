@@ -1,6 +1,5 @@
 package com.teaminternational;
 
-import com.teaminternational.dao.impl.UserDaoImpl;
 import com.teaminternational.domain.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

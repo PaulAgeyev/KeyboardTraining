@@ -27,37 +27,22 @@ import java.util.List;
 public class AssignmentController {
 
     @Autowired
-    private AssigmentRepository repository;
-
-    @Autowired
-    private UserRepository userRepository;
+    private AssigmentRepository assigmentRepository;
 
     @RequestMapping(value = "panel", method = RequestMethod.GET)
     public ModelAndView messages() {
         ModelAndView mav = new ModelAndView("panel");
-        List<Assignment> a = repository.findAll();
-        for (Assignment aa: a)
-            System.out.println("id="+aa.getId()+" lesson="+aa.getLesson()+" text="+aa.getText());
-
-        List<User> b = userRepository.findAll();
-        for(User bb : b)
-            System.out.println("id_user="+bb.getId()+" fname="+bb.getFirstName()+" lname="+bb.getLastName());
-
-
-        mav.addObject("message", repository.findAll());
+        mav.addObject("message", assigmentRepository.findAllbyLesson());
         return mav;
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ModelAndView method1(HttpServletRequest request) {
-
         Assignment assignment = new Assignment();
         assignment.setId(Integer.parseInt(request.getParameter("assignment_id")));
         assignment.setLesson(Integer.parseInt((request.getParameter("lesson_change"))));
         assignment.setText(request.getParameter("text_db"));
-//        System.out.println("id="+assignment.getId()+" lesson="+assignment.getLesson()+" text="+assignment.getText());
-        repository.save(assignment);
-
+        assigmentRepository.save(assignment);
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
     }
@@ -65,32 +50,24 @@ public class AssignmentController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public ModelAndView method2(HttpServletRequest request) {
 
-        System.out.println("id_assignment="+Long.parseLong(request.getParameter("assignment_id")));
-
-        repository.delete(Long.parseLong(request.getParameter("assignment_id")));
+        assigmentRepository.delete(Long.parseLong(request.getParameter("assignment_id")));
         ModelAndView mav = new ModelAndView("redirect:/panel");
+
         return mav;
     }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public ModelAndView method4() {
-        System.out.println("create post\n");
         ModelAndView mav = new ModelAndView("create");
         return mav;
     }
 
     @RequestMapping(value = "createindb", method = RequestMethod.POST)
     public ModelAndView method5(HttpServletRequest request) {
-
         Assignment assignment = new Assignment();
-       // assignment.setId(Integer.parseInt(request.getParameter("assignment_id")));
         assignment.setLesson(Integer.parseInt((request.getParameter("lesson"))));
         assignment.setText(request.getParameter("text_db"));
-        System.out.println("lesson="+assignment.getLesson()+" text="+assignment.getText());
-
-
-        repository.save(assignment);
-        System.out.println("conntroller repository post\n");
+        assigmentRepository.save(assignment);
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
     }

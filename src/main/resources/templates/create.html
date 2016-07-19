@@ -3,7 +3,10 @@
 <head>
     <title>Create</title>
 </head>
-
+<div th:inline="text">[[${#httpServletRequest.remoteUser}]]</div>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 <style>
     body {
         width: 98%;
@@ -37,6 +40,7 @@
 </style>
 
 <body>
+
     <h1>CREATE</h1>
 
     <div id="admin">

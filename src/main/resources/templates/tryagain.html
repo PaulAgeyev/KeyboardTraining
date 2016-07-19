@@ -3,29 +3,21 @@
 <head>
     <title>KeyboardTraining</title>
     <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="key.js"></script>
+    <script type="text/javascript" src="keyForLesson.js"></script>
     <link href= "style.css" rel="stylesheet"/>
 </head>
-
 <body>
 <input type="hidden" id="text" th:value="${text}"/>
+<input type="hidden" id="text2" th:value="${lesson}"/>
 
 <div th:if="${user} != null">
     <div th:text="${user}"/>
-    <div th:text="${lesson}"/>
+    <label>Lesson: </label><div th:text="${lesson}"/>
     <p> <a th:href="@{/profile}">Profile</a></p>
     <form th:action="@{/logout}" method="post">
 
         <input type="submit" value="Sign Out"/>
     </form>
-</div>
-
-<div th:if="${user} == null">
-    <div id = "id2">
-        <div th:text="${lesson}"/>
-        <p><a th:href="@{/login}">Sign in</a></p>
-        <p><a th:href="@{/registration}">Sign up</a></p>
-    </div>
 </div>
 
 <div id="logo">

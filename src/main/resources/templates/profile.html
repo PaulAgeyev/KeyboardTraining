@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Profile</title>
+</head>
+
+<style>
+    body {
+        width: 98%;
+        min-width: 1024px;
+        height: 95%;
+        background-color: #7FFFD4;
+        color: #694221;
+        font-family: Bookman Old Style, sans-serif;
+        font-size: 14pt;
+    }
+
+    #logo {
+        color: black;
+        font-size: 18pt;
+        text-align:center;
+        height: 100px;
+        line-height: 100px;
+    }
+    #admin {width: 80%; margin-left: 10%; }
+    #text_lesson {width: 78%; float: left}
+    #progress_div { width:22%; float:left;}
+    #progress {
+        font-family: Bookman Old Style, sans-serif;
+        width: 100%;
+
+        margin-top:5px;
+        float:right;
+        background-color: pink;;
+    }
+
+</style>
+
+<body>
+<div th:inline="text">[[${#httpServletRequest.remoteUser}]]</div>
+<p><a th:href="@{/}">Training Page</a></p>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+<div id="logo"><h1>Profile</h1></div>
+<div id="logo"><h1 th:inline="text">"Hello, [[${user.firstName}]] [[${user.lastName}]] "</h1></div>
+<div id="admin">
+
+    <form name="admin_form" id="admin_form" th:action="@{/tryagain}" method="get" th:each="assignment : ${assignments}">  <!--th:each="assignment : ${assignment}" th:each="progress : ${progress}" -->
+        <fieldset th:each="progress : ${assignment.getProgress()}">
+            <input type="hidden" name="loaded" th:value="${assignment.lesson}"/>
+            <legend id ="lesson" th:inline="text">Lesson: [[ ${assignment.lesson}]]</legend>
+            <div id="text_lesson" th:text="${assignment.text}">  </div>
+            <div id="progress_div">
+                <div id="progress" th:inline="text">Errors: [[${progress.error}]] </div>
+                <div id="progress" th:inline="text" >Time: [[${progress.time}]]</div>
+                <div id="progress" th:inline="text" >Progress: [[${progress.progress}]]</div>
+                <button id="progress" type="submit">Try again</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+</body>
+</html>

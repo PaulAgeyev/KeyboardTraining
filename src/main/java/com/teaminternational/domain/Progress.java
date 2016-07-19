@@ -25,7 +25,6 @@ public class Progress implements Serializable {
     @JoinColumn(name = "user_id")
     private User user_id;
 
-
     @ManyToOne()
     @JoinColumn(name = "assignment_id")
     private Assignment assignment_id;
@@ -37,11 +36,11 @@ public class Progress implements Serializable {
     private int error;
 
     @Column(name = "time")
-    private int time;
+    private String time;
 
     public Progress(){}
 
-    public Progress(long id, User user, Assignment assignment, int progress, int error, int time) {
+    public Progress(long id, User user, Assignment assignment, int progress, int error, String time) {
         this.progress_id = id;
         this.user_id = user;
         this.assignment_id = assignment;
@@ -90,11 +89,11 @@ public class Progress implements Serializable {
         this.error = error;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time = time;
     }
 }

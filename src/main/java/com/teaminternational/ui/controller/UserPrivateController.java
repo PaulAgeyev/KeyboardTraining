@@ -7,6 +7,7 @@ import com.teaminternational.domain.Progress;
 import com.teaminternational.domain.User;
 import com.teaminternational.domain.Assignment;
 import org.codehaus.groovy.runtime.NullObject;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.support.NullValue;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -40,56 +41,57 @@ public class UserPrivateController {
 
     @Autowired
     private UserRepository userRepository;
-/*
-    @RequestMapping(value = "/privateCabinet", method = RequestMethod.POST)
-    public ModelAndView u(Model model, HttpServletRequest request) {
-        ModelAndView mav = new ModelAndView("/privateCabinet");
-        System.out.println("post AVTOR!!\n");
-        return mav;
-    }*/
 
-    @RequestMapping(value = "/privateCabinet", method = RequestMethod.GET)
-    public ModelAndView y() {
-
-        //model.addAttribute("user", request.getRemoteUser());
-
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    public ModelAndView view() {
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
         if (principal instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) principal;
             User user = userRepository.findByLogin(userDetails.getUsername());
-            System.out.println("id="+user.getId()+" lname="+user.getLastName()+" fname="+user.getFirstName());
             List<Assignment> assignments = assignmentRepository.findAssignmentByUserID(user.getId());
-        //if (assignments.toArray().length == 0) user.setFirstName("Nikita!!!");
-
 
             for (int i = 0; i < assignments.toArray().length; i++)
-                assignments.get(i).setProgress(progressRepository.findByAssignmentID(assignments.get(i).getId()));
+                assignments.get(i).setProgress(progressRepository.findByAssignmentID(assignments.get(i).getId(), user.getId()));
 
-            for (Assignment a : assignments) {
-                System.out.println("lesson="+a.getLesson()+" text="+a.getText());
-                for (Progress p :a.getProgress())
-                    System.out.println("error="+p.getError()+" time="+p.getTime()+" progress="+p.getProgress()+" id="+p.getProgressId());
-
-            }
-            ModelAndView mav = new ModelAndView("privateCabinet");
+            ModelAndView mav = new ModelAndView("profile");
+            if (assignments.toArray().length == 0)
+                mav.addObject("isEmptyAssignmaent", "You don't have passed lessons!");
             mav.addObject("user", user);
             mav.addObject("assignments", assignments);
             return mav;
         }
-        ModelAndView mav = new ModelAndView("/privateCabinet");
+        ModelAndView mav = new ModelAndView("/");
         return mav;
     }
 
     @RequestMapping(value = "/remove", method = RequestMethod.POST)
     public ModelAndView method1(HttpServletRequest request) {
-        System.out.println("gfhgm="+Long.parseLong(request.getParameter("progress_id")));
-
         progressRepository.delete(Long.parseLong(request.getParameter("progress_id")));
-       // ModelAndView mav = new ModelAndView("redirect:/privateCabinet");
-
-        ModelAndView mav = new ModelAndView("redirect:/privateCabinet");
+        ModelAndView mav = new ModelAndView("redirect:/profile");
         return mav;
     }
+
+    @RequestMapping(value = "/tryagain", method = RequestMethod.GET)
+    public ModelAndView method2(HttpServletRequest request) {
+
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        UserDetails userDetails = (UserDetails) principal;
+        User user = userRepository.findByLogin(userDetails.getUsername());
+
+        int lesson = Integer.parseInt(request.getParameter("loaded"));
+
+        ModelAndView mav = new ModelAndView("tryagain");
+        mav.addObject("user", request.getRemoteUser());
+        mav.addObject("lesson", lesson);
+
+        String text = assignmentRepository.getTextbyLesson(lesson);
+
+        JSONObject resultJson = new JSONObject();
+        resultJson.put("text", text);
+        mav.addObject("text", resultJson.toString());
+
+        return mav;
+    }
+
 }

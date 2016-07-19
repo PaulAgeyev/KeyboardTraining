@@ -1,8 +1,12 @@
 package com.teaminternational.ui.controller;
 
+import com.teaminternational.dao.AssigmentRepository;
+import com.teaminternational.dao.ProgressRepository;
 import com.teaminternational.dao.UserRepository;
+import com.teaminternational.domain.Assignment;
 import com.teaminternational.domain.Role;
 import com.teaminternational.domain.User;
+import com.teaminternational.domain.Progress;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -22,6 +26,16 @@ import java.util.List;
  */
 @Controller
 class UserController{
+
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private ProgressRepository progressRepository;
+
+    @Autowired
+    private AssigmentRepository assigmentRepository;
 
     Role roleU = new Role(2,"ROLE_USER");
 
@@ -46,22 +60,26 @@ class UserController{
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (1, 1, 'TEXT')");
+                        "VALUES (1, 1, 'text')");
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (3, 2, 'the old man and the Sea is the story of a battle between an old, experienced cuban fisherman and a large marlin. The novel.')");
+                        "VALUES (2, 2, 'text2')");
+        jdbcTemplate.update(
+                "INSERT INTO Assignment " +
+                        "VALUES (3, 3, 'text3')");
+        jdbcTemplate.update(
+                "INSERT INTO Assignment " +
+                        "VALUES (4, 4, 'text4')");
+        jdbcTemplate.update(
+                "INSERT INTO Assignment " +
+                        "VALUES (5, 5, 'text5')");
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
-
 
         jdbcTemplate.update(
                 "INSERT INTO Progress " +
                         "VALUES (1, 0, 0, 0, 1, 2)");
-       jdbcTemplate.update(
-                "INSERT INTO Progress " +
-                        "VALUES (2, 4, 5, 6, 3, 2)");
-
 
         List l = jdbcTemplate.queryForList("select * from user");
         Iterator it = l.iterator();
@@ -73,54 +91,56 @@ class UserController{
 
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ModelAndView method1() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("login");
-        return mav;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView method2() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("login");
-        return mav;
-    }
-
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public ModelAndView method3(HttpServletRequest request) {
+    public ModelAndView registrationPost(HttpServletRequest request) {
+
+        ModelAndView mav = new ModelAndView("home");
 
         User user = new User();
         user.setFirstName(request.getParameter("firstName"));
         user.setLastName(request.getParameter("lastName"));
-        user.setPassword(request.getParameter("username"));
-        user.setLogin(request.getParameter("password"));
+        user.setPassword(request.getParameter("password"));
+        user.setLogin(request.getParameter("username"));
         user.setIdRole(roleU);
 
-        repository.save(user);
+        User findUser = userRepository.findByLogin(user.getLogin());
+        if (findUser == null) {
 
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("home");
-        System.out.println("POST");
+            userRepository.save(user);
+
+            User registeredUser = userRepository.findByLogin(user.getLogin());
+            //System.out.println(registeredUser.getLogin());
+
+            Assignment assignment = assigmentRepository.getFirstLesson();
+            //System.out.println(assignment.getLesson());
+
+            Progress progress = new Progress();
+            progress.setUserId(registeredUser);
+            progress.setAssigmentId(assignment);
+            progress.setError(0);
+            progress.setProgress(0);
+            progress.setTime("00:00");
+
+            progressRepository.save(progress);
+            mav.setViewName("home");
+        }
+        else {
+            mav.setViewName("registration");
+            mav.addObject("text","This login already exists");
+        }
+
         return mav;
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public String method4(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+    public String registrationGet(@RequestParam(value="text", required=false, defaultValue="") String name, Model model) {
 
-        model.addAttribute("name", name);
+        model.addAttribute("text", name);
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("registration");
 
-        System.out.println("GET");
-
         return "registration";
     }
-
-
-    @Autowired
-    private UserRepository repository;
-
 }
