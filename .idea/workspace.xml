@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f7047c-5bea-42d8-81e1-5182c15fdac9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/key.js" afterPath="$PROJECT_DIR$/src/main/resources/js/key.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" afterPath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KeyboardTraining.iws" />
@@ -27,7 +27,31 @@
     <favorites_list name="KeyboardTraining" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.41558442">
+              <caret line="125" column="39" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1468934934000" expanded="true" signature="1373:1443" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="1494:1563" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="1614:1708" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="1759:1859" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="1910:1983" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="2034:2108" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="2158:2232" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="2282:2356" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="2406:2480" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="2601:2676" placeholder="INSERT INTO ..." />
+                <marker date="1468934934000" expanded="true" signature="2725:2743" placeholder="select * fro..user..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,7 +119,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Progress.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserProgressController.java" />
@@ -103,6 +126,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/js/key.js" />
         <option value="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -1168,7 +1192,7 @@
       <workItem from="1468823944710" duration="1892000" />
       <workItem from="1468826125909" duration="37132000" />
       <workItem from="1468908784615" duration="18771000" />
-      <workItem from="1468933955703" duration="573000" />
+      <workItem from="1468933955703" duration="879000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1467716665147</created>
@@ -1428,11 +1452,17 @@
       <option name="project" value="LOCAL" />
       <updated>1468934322338</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="updated">
+      <created>1468934662981</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1468934662981</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298999000" />
+    <option name="totallyTimeSpent" value="299305000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1445,7 +1475,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="690" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1467,7 +1497,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3074018" sideWeight="0.49261084" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3074018" sideWeight="0.49261084" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30936456" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1595,6 +1625,17 @@
           <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1468934934000" expanded="true" signature="1373:1443" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1494:1563" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1614:1708" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1759:1859" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1910:1983" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2034:2108" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2158:2232" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2282:2356" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2406:2480" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2601:2676" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2725:2743" placeholder="select * fro..user..." />
           </folding>
         </state>
       </provider>
@@ -1704,6 +1745,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1751,6 +1793,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.038560413">
           <caret line="36" column="54" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1782,13 +1825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1923077">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1800,6 +1836,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58441556">
           <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="23" />
+          <folding>
+            <element signature="method#Assignment#1;class#Assignment#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1840,24 +1879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64935064">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15584415">
-          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1917,6 +1938,43 @@
         <state vertical-scroll-proportion="0.61298704">
           <caret line="196" column="4" selection-start-line="196" selection-start-column="4" selection-end-line="197" selection-end-column="88" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29085872">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85714287">
+          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41558442">
+          <caret line="125" column="39" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1468934934000" expanded="true" signature="1373:1443" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1494:1563" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1614:1708" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1759:1859" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="1910:1983" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2034:2108" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2158:2232" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2282:2356" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2406:2480" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2601:2676" placeholder="INSERT INTO ..." />
+            <marker date="1468934934000" expanded="true" signature="2725:2743" placeholder="select * fro..user..." />
+          </folding>
         </state>
       </provider>
     </entry>

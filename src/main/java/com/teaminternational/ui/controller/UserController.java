@@ -95,7 +95,7 @@ class UserController{
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView registrationPost(HttpServletRequest request) {
 
-        ModelAndView mav = new ModelAndView("home");
+        ModelAndView mav = new ModelAndView("");
 
         User user = new User();
         user.setFirstName(request.getParameter("firstName"));
@@ -123,7 +123,7 @@ class UserController{
             progress.setTime("00:00");
 
             progressRepository.save(progress);
-            mav.setViewName("home");
+            mav.setViewName("redirect:/");
         }
         else {
             mav.setViewName("registration");
