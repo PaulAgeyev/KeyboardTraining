@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f7047c-5bea-42d8-81e1-5182c15fdac9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/key.js" afterPath="$PROJECT_DIR$/src/main/resources/js/key.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" afterPath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KeyboardTraining.iws" />
@@ -27,30 +27,7 @@
     <favorites_list name="KeyboardTraining" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="key.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.296296">
-              <caret line="166" column="58" selection-start-line="166" selection-start-column="58" selection-end-line="166" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4103896">
-              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -122,10 +99,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserProgressController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/tryagain.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/js/key.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/js/key.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
       </list>
     </option>
   </component>
@@ -1191,7 +1168,7 @@
       <workItem from="1468823944710" duration="1892000" />
       <workItem from="1468826125909" duration="37132000" />
       <workItem from="1468908784615" duration="18771000" />
-      <workItem from="1468933955703" duration="337000" />
+      <workItem from="1468933955703" duration="573000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1467716665147</created>
@@ -1445,11 +1422,17 @@
       <option name="project" value="LOCAL" />
       <updated>1468933626897</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="updated">
+      <created>1468934322338</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1468934322338</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298763000" />
+    <option name="totallyTimeSpent" value="298999000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1462,7 +1445,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="690" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1484,7 +1467,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3074018" sideWeight="0.49261084" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3074018" sideWeight="0.49261084" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30936456" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1893,26 +1876,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/keyForLesson.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47368422">
-          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/tryagain.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.296296">
-          <caret line="166" column="58" selection-start-line="166" selection-start-column="58" selection-end-line="166" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1934,6 +1901,22 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/keyForLesson.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7090909">
+          <caret line="199" column="88" selection-start-line="199" selection-start-column="88" selection-end-line="199" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61298704">
+          <caret line="196" column="4" selection-start-line="196" selection-start-column="4" selection-end-line="197" selection-end-column="88" />
+          <folding />
         </state>
       </provider>
     </entry>

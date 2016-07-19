@@ -194,7 +194,8 @@ $(document).ready(function() {
 	TrueKey = CodeUpKey(str[0]);
 	LightTrueKey = TrueKey;
 	document.getElementById(TrueKey).style.backgroundColor = "blue" ;
-
+	if (LightShift)
+		document.getElementById('key_shift_lft_long').style.backgroundColor = "yellow" ;
 	input_text.onfocus = function () {if (!timer) start_timer();}
 
 	input_text.onkeypress = function (e) {
