@@ -10,14 +10,24 @@
 <body>
 	<div id="logo"><h1>Hello, Super Admin</h1></div>
 	<h2>Choose bags </h2>
-	<form th:action="@{/}" method="post">
-		<div><input type="checkbox" name="option1" value="a1"/>Bag 1</div>
-		<div><input type="checkbox" name="option2" value="a2"/>Bag 2</div>
+	<form th:action="@{/moderator}" method="post">
+		<div th:each = "checkedBox : ${checkedBox}">
+			<div th:switch="${checkedBox.isStatus()}">
+				<p th:case="true">	<input type="checkbox" th:name="${checkedBox.moderator_id}" th:value="${checkedBox.moderator_id}" checked="checked" th:text="${checkedBox.bug}"  />	</p>
+				<p th:case="false">	<input type="checkbox" th:name="${checkedBox.moderator_id}" th:value="${checkedBox.moderator_id}" th:text="${checkedBox.bug}"  />	</p>
+			</div>
+		</div>
+
+
+	<!--	<div><input type="checkbox" name="option2" value="a2"/>Bag 2</div>
 		<div><input type="checkbox" name="option3" value="a3"/>Bag 3</div>
 		<div><input type="checkbox" name="option4" value="a4"/>Bag 4</div>
 		<div><input type="checkbox" name="option5" value="a5"/>Bag 5</div>
+-->
+
+
 		<div><input type="submit" value="Apply"/></div>
-   </form>
+	</form>
 
 </body>
 </html>
