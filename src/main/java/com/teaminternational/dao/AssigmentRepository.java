@@ -40,4 +40,19 @@ public interface AssigmentRepository extends JpaRepository <Assignment, Long> {
             ,  nativeQuery = true)
     long getLessonbyID(long id);
 
+
+    @Query(value = "SELECT * FROM Assignment a WHERE a.assignment_id Not In " +
+            "(SELECT aa.assignment_id FROM Assignment aa INNER JOIN Progress pp ON aa.assignment_id = pp.assignment_id WHERE pp.user_id = ?1)" +
+            "ORDER BY a.lesson"
+            ,  nativeQuery = true)
+    List<Assignment> getAssignmentsListPass(long user_id);
+
+    /*@Query(value = "SELECT min(a.lesson) FROM :id"
+            ,  nativeQuery = true)
+    long getMinPassLesson( @Param("id")List<Assignment> a);
+
+    /*SELECT Min(Запрос1.lesson) AS [Min-lesson]
+    FROM Запрос1;
+*/
+
 }

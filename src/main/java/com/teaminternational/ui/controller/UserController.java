@@ -129,7 +129,7 @@ class UserController{
             progress.setProgress(0);
             progress.setTime("00:00");
 
-            progressRepository.save(progress);
+           // progressRepository.save(progress);
             mav.setViewName("redirect:/");
         }
         else {

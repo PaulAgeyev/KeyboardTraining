@@ -51,6 +51,7 @@ public class TrainingController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home(Model model, HttpServletRequest request) {
+        System.out.println("---");
 
         JSONObject resultJson = new JSONObject();
 
@@ -70,27 +71,20 @@ public class TrainingController {
 
             User user = userRepository.findByLogin(userDetails.getUsername());
 
-            List<Progress> progress = progressRepository.findByUserID(user.getId());
+            List<Assignment> listAssignment = assigmentRepository.getAssignmentsListPass(user.getId());
+        for (Assignment a : listAssignment) {
+            System.out.println("TECONTr: lesson="+a.getLesson()+"text="+a.getText());
+        }
 
-            ArrayList<Integer> values = new ArrayList<>();
-
-            int max = 0;
-
-            Progress progressHandler = new Progress();
-
-            for (int i = 0; i < progress.size(); i ++) {
-                if (progress.get(i).getAssigmentId().getLesson() > max) {
-                    progressHandler = progress.get(i);
-                    max = progress.get(i).getAssigmentId().getLesson();
-                }
+            if (listAssignment.size() != 0) {
+                resultJson.put("text", listAssignment.get(0).getText());
+                mav.addObject("lesson", "Lesson: " + listAssignment.get(0).getNameLesson());
+                mav.addObject("text", resultJson.toString());
+                return mav;
             }
+            else
+                return new ModelAndView("redirect:" + "profile");
 
-            resultJson.put("text",progressHandler.getAssigmentId().getText());
-
-            mav.addObject("lesson", "Lesson: " + progressHandler.getAssigmentId().getNameLesson());
-            mav.addObject("text", resultJson.toString());
-
-            return mav;
 
         }
         else

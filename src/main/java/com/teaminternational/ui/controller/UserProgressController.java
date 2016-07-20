@@ -47,12 +47,30 @@ public class UserProgressController {
 
             User user = userRepository.findByLogin(userDetails.getUsername());
 
-            List<Progress> progress1 = progressRepository.findByUserID(user.getId());
+           // List<Progress> progress1 = progressRepository.findByUserID(user.getId());
 
-            ArrayList<Integer> values = new ArrayList<>();
+           // ArrayList<Integer> values = new ArrayList<>();
+
+             int max = 0;
+            System.out.println("saveasdasdsadasd!!!!");
+
+            List<Assignment> listAssignment = assigmentRepository.getAssignmentsListPass(user.getId());
+            for (Assignment a : listAssignment) {
+                System.out.println("PROGRESS: lesson="+a.getLesson()+"text="+a.getText());
+            }
+            //if (max != 0) {
+            max = listAssignment.get(0).getLesson();
+
+            long assignment_id = listAssignment.get(0).getId();
 
             Progress progressHandler = new Progress();
-            int max = 0;
+
+            //Progress tmp = progressRepository.findID(assignment_id, user.getId());
+
+           // progressHandler.set
+            /*resultJson.put("text", listAssignment.get(0).getText());
+            mav.addObject("lesson", "Lesson: " + listAssignment.get(0).getNameLesson());
+
 
             for (int i = 0; i < progress1.size(); i++) {
                 values.add(progress1.get(i).getAssigmentId().getLesson());
@@ -71,11 +89,21 @@ public class UserProgressController {
             progressHandler.setAssigmentId(assignment);
             progressHandler.setProgress(progress);
             progressHandler.setError(errors);
+            progressHandler.setTime(time);*/
+
+            //int lesson = progressHandler.getAssigmentId().getLesson();
+            //long lessonId = assigmentRepository.getIdbyLesson(lesson);
+            ///Assignment assignment = assigmentRepository.getID(lessonId);
+
+            progressHandler.setUserId(user);
+            progressHandler.setAssigmentId(listAssignment.get(0));
+            progressHandler.setProgress(progress);
+            progressHandler.setError(errors);
             progressHandler.setTime(time);
-
+            System.out.println("USER progress Conroller" );
             progressRepository.save(progressHandler);
-
-            Progress progress3 = new Progress();
+            System.out.println("USER progress Conroller2" );
+        /*    Progress progress3 = new Progress();
 
 
             lessonId = 0;
@@ -97,7 +125,7 @@ public class UserProgressController {
             progress3.setError(0);
             progress3.setTime("");
 
-            progressRepository.save(progress3);
+            progressRepository.save(progress3);*/
 
         }
         else {
