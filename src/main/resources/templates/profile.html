@@ -50,7 +50,7 @@
     <form name="admin_form" id="admin_form" th:action="@{/tryagain}" method="get" th:each="assignment : ${assignments}">  <!--th:each="assignment : ${assignment}" th:each="progress : ${progress}" -->
         <fieldset th:each="progress : ${assignment.getProgress()}">
             <input type="hidden" name="loaded" th:value="${assignment.lesson}"/>
-            <legend id ="lesson" th:inline="text">Lesson: [[ ${assignment.lesson}]]</legend>
+            <legend id ="lesson" th:inline="text">Lesson: [[ ${assignment.nameLesson}]]</legend>
             <div id="text_lesson" th:text="${assignment.text}">  </div>
             <div id="progress_div">
                 <div id="progress" th:inline="text">Errors: [[${progress.error}]] </div>

@@ -23,6 +23,9 @@ public class Assignment {
     @Column(name = "lesson")
     private int lesson;
 
+    @Column(name = "nameLesson")
+    private String nameLesson;
+
 
     @Transient
     private List<Progress> progress ;
@@ -43,10 +46,11 @@ public class Assignment {
 
     public Assignment() {}
 
-    public Assignment(long id, String text, int lesson) {
+    public Assignment(long id, String text, int lesson, String nameLesson) {
         this.assignment_id = id;
         this.text = text;
         this.lesson = lesson;
+        this.nameLesson = nameLesson;
     }
 
     public long getId() {
@@ -68,4 +72,12 @@ public class Assignment {
     public int getLesson() {return lesson;}
 
     public void setLesson(int lesson) {this.lesson = lesson;}
+
+    public String getNameLesson() {
+        return nameLesson;
+    }
+
+    public void setNameLesson(String nameLesson) {
+        this.nameLesson = nameLesson;
+    }
 }

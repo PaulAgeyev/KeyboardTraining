@@ -31,8 +31,12 @@
         resize: none;
         font-size: 14pt;
     }
-    #crudu {width:10%; height:30px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px; margin-top: 15px; }
-    #crudd {width:10%; height:30px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px; margin-top: 15px; }
+    #crudu {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
+    #crudd {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
+    #rename {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
+    #exchange {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
+
+
 </style>
 <div th:inline="text">[[${#httpServletRequest.remoteUser}]]</div>
 <form th:action="@{/logout}" method="post">
@@ -44,16 +48,31 @@
     <form name="form" id="form" th:action="@{/create}" method="post">
         <div id="create"><button type="submit">CREATE</button> </div>
     </form>
-    <form name="admin_form" id="admin_form" th:action="@{/update}" method="post"  th:each="message : ${message}">
-        <fieldset>
-            <legend id ="lesson" th:inline="text"> Lesson: [[ ${message.lesson}]]</legend>
-            <div id="text_lesson"> <textarea name="text_db" id="idtext_db"  spellcheck="false"  th:text="${message.text}" > text_db </textarea> </div>
-            <input type="hidden" name="lesson_change" id="idlesson_change" th:value="${message.lesson}"/>
-            <input type="hidden" name="assignment_id" id="idassignment_id" th:value="${message.Id}"/>
-            <div id="crudu"><button type="submit">UPDATE</button></div>
-            <div id="crudd"><button type="submit" th:formaction="@{/delete}" >DELETE</button></div>
-        </fieldset>
-    </form>
+
+
+
+        <form  name="admin_form" id="admin_form" th:action="@{/update}" method="post"  th:each="message : ${message}">
+
+            <div style="width: 5%; float: left" th:inline="text">[[ ${message.lesson}]]</div>
+
+
+            <fieldset>
+                <legend id ="lesson" th:inline="text"> Lesson: "[[ ${message.nameLesson}]]"  </legend>
+
+
+                <div id="text_lesson"> <textarea name="text_db" id="idtext_db"  spellcheck="false"  th:text="${message.text}" > text_db </textarea> </div>
+                <input type="hidden" name="lesson_change" id="idlesson_change" th:value="${message.lesson}"/>
+                <input type="hidden" name="assignment_id" id="assignment_id" th:value="${message.Id}"/>
+                <input type="hidden" name="NameLesson" id="NameLesson" th:value="${message.nameLesson}"/>
+
+                <div id="crudu"><button type="submit">UPDATE</button></div>
+                <div id="crudd"><button type="submit" th:formaction="@{/delete}" >DELETE</button></div>
+                <div id="rename"><button type="submit" th:formaction="@{/rename}" >Rename</button></div>
+                <div id="exchange"><button type="submit" th:formaction="@{/exchange}" >Exchange</button></div>
+            </fieldset>
+
+        </form>
+
 </div>
 
 </body>

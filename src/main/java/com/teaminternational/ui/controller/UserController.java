@@ -60,26 +60,33 @@ class UserController{
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (1, 1, 'text')");
+                        "VALUES (1, 1, 'Practicing letter A', 'text')");
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (2, 2, 'text2')");
+                        "VALUES (2, 100, 'Practicing letter B','text2')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (3, 3, 'text3')");
+                        "VALUES (3, 200, 'Practicing letter C', 'text3')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (4, 4, 'text4')");
+                        "VALUES (4, 300, 'Practicing letter D', 'text4')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (5, 5, 'text5')");
+                        "VALUES (5, 400, 'Practicing letter E', 'text5')");
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
 
         jdbcTemplate.update(
                 "INSERT INTO Progress " +
                         "VALUES (1, 0, 0, 0, 1, 2)");
+
+        jdbcTemplate.update(
+                "INSERT INTO Moderator " +
+                        "VALUES (1, 'BUG 1',1)");
+        jdbcTemplate.update(
+                "INSERT INTO Moderator " +
+                        "VALUES (2, 'BUG 2',1)");
 
         List l = jdbcTemplate.queryForList("select * from user");
         Iterator it = l.iterator();

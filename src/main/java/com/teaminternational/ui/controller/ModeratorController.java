@@ -35,9 +35,7 @@ public class ModeratorController {
     @RequestMapping(value = "moderator", method = RequestMethod.GET)
     public ModelAndView ShowBug() {
         ModelAndView mav = new ModelAndView("/moderator");
-
         mav.addObject("checkedBox", moderatorRepository.findAll());
-
         System.out.println("ShowBug");
         return mav;
     }
@@ -47,6 +45,17 @@ public class ModeratorController {
         ModelAndView mav = new ModelAndView("moderator");
         Moderator moderator = new Moderator();
         //moderator.setStatus();
+
+        /*
+        List<Moderator> moderators = moderatorRepository.findAll();
+        for (Moderator m : moderators) {
+            if ( reques.getParameter(Long.toString(m.getModerator_id())) == )
+                int i = Integer.parseInt(reques.getParameter(Long.toString(m.getModerator_id())));
+            System.out.println("i="+i);
+
+        }
+        */
+
         System.out.println("SelectBug");
         return mav;
     }

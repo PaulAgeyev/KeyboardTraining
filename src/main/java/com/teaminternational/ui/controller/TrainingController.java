@@ -87,7 +87,7 @@ public class TrainingController {
 
             resultJson.put("text",progressHandler.getAssigmentId().getText());
 
-            mav.addObject("lesson", "Lesson: " + progressHandler.getAssigmentId().getLesson());
+            mav.addObject("lesson", "Lesson: " + progressHandler.getAssigmentId().getNameLesson());
             mav.addObject("text", resultJson.toString());
 
             return mav;
@@ -103,7 +103,7 @@ public class TrainingController {
             catch (NullPointerException e) {
 
             }
-            mav.addObject("lesson", "Lesson: " + positionLesson);
+            mav.addObject("lesson", "Lesson: " + assignment.getNameLesson());
             mav.addObject("text", resultJson.toString());
 
             return mav;

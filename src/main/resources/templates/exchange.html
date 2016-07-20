@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Exchange Lesson</title>
+</head>
+<body>
+
+    <form th:action="@{/saveExchangeLesson}" method="post">
+        Enter lesson for change: <br/>
+        <input type="number" name="exchangeLesson" id="exchangeLesson" />
+        <input type="hidden" name="assignment_id" id="idassignment_id" th:value="${assignment_id}"/>
+        <button type="submit">Exchange Lesson</button>
+    </form>
+
+</body>
+</html>
