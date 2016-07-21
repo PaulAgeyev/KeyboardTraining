@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Finish</title>
+</head>
+<body>
+
+<div th:if="${user} != null">
+    <div th:text="${user}"/>
+    <p> <a th:href="@{/profile}">Profile</a></p>
+    <form th:action="@{/logout}" method="post">
+
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+
+<h1>You passed all lessons on this day!</h1>
+
+</body>
+</html>

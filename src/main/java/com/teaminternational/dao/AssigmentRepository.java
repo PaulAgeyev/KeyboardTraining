@@ -47,12 +47,4 @@ public interface AssigmentRepository extends JpaRepository <Assignment, Long> {
             ,  nativeQuery = true)
     List<Assignment> getAssignmentsListPass(long user_id);
 
-    /*@Query(value = "SELECT min(a.lesson) FROM :id"
-            ,  nativeQuery = true)
-    long getMinPassLesson( @Param("id")List<Assignment> a);
-
-    /*SELECT Min(Запрос1.lesson) AS [Min-lesson]
-    FROM Запрос1;
-*/
-
 }

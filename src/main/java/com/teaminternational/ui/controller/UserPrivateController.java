@@ -51,11 +51,12 @@ public class UserPrivateController {
             User user = userRepository.findByLogin(userDetails.getUsername());
             List<Assignment> assignments = assignmentRepository.findAssignmentByUserID(user.getId());
 
-            for (int i = 0; i < assignments.toArray().length; i++)
+            for (int i = 0; i < assignments.size(); i++)
                 assignments.get(i).setProgress(progressRepository.findByAssignmentID(assignments.get(i).getId(), user.getId()));
 
             ModelAndView mav = new ModelAndView("profile");
-            if (assignments.toArray().length == 0)
+
+            if (assignments.size() == 0)
                 mav.addObject("isEmptyAssignmaent", "You don't have passed lessons!");
             mav.addObject("user", user);
             mav.addObject("assignments", assignments);
@@ -80,10 +81,12 @@ public class UserPrivateController {
         User user = userRepository.findByLogin(userDetails.getUsername());
 
         int lesson = Integer.parseInt(request.getParameter("loaded"));
+        String lessonName = request.getParameter("nameLesson");
 
         ModelAndView mav = new ModelAndView("tryagain");
         mav.addObject("user", request.getRemoteUser());
         mav.addObject("lesson", lesson);
+        mav.addObject("nameLesson",lessonName);
 
         String text = assignmentRepository.getTextbyLesson(lesson);
 

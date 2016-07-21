@@ -12,7 +12,9 @@
 
 <div th:if="${user} != null">
     <div th:text="${user}"/>
-    <label>Lesson: </label><div th:text="${lesson}"/>
+
+    <label>Name Lesson: </label><div th:text="${nameLesson}"/>
+
     <p> <a th:href="@{/profile}">Profile</a></p>
     <form th:action="@{/logout}" method="post">
 

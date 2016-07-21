@@ -46,87 +46,15 @@ public class UserProgressController {
             UserDetails userDetails = (UserDetails) principal;
 
             User user = userRepository.findByLogin(userDetails.getUsername());
-
-           // List<Progress> progress1 = progressRepository.findByUserID(user.getId());
-
-           // ArrayList<Integer> values = new ArrayList<>();
-
-             int max = 0;
-            System.out.println("saveasdasdsadasd!!!!");
-
             List<Assignment> listAssignment = assigmentRepository.getAssignmentsListPass(user.getId());
-            for (Assignment a : listAssignment) {
-                System.out.println("PROGRESS: lesson="+a.getLesson()+"text="+a.getText());
-            }
-            //if (max != 0) {
-            max = listAssignment.get(0).getLesson();
-
-            long assignment_id = listAssignment.get(0).getId();
 
             Progress progressHandler = new Progress();
-
-            //Progress tmp = progressRepository.findID(assignment_id, user.getId());
-
-           // progressHandler.set
-            /*resultJson.put("text", listAssignment.get(0).getText());
-            mav.addObject("lesson", "Lesson: " + listAssignment.get(0).getNameLesson());
-
-
-            for (int i = 0; i < progress1.size(); i++) {
-                values.add(progress1.get(i).getAssigmentId().getLesson());
-                //System.out.println(progress1.get(i).getAssigmentId().getLesson());
-                if (progress1.get(i).getAssigmentId().getLesson() > max) {
-                    max = progress1.get(i).getAssigmentId().getLesson();
-                    progressHandler = progress1.get(i);
-                }
-            }
-
-            int lesson = progressHandler.getAssigmentId().getLesson();
-            long lessonId = assigmentRepository.getIdbyLesson(lesson);
-            Assignment assignment = assigmentRepository.getID(lessonId);
-
-            progressHandler.setUserId(user);
-            progressHandler.setAssigmentId(assignment);
-            progressHandler.setProgress(progress);
-            progressHandler.setError(errors);
-            progressHandler.setTime(time);*/
-
-            //int lesson = progressHandler.getAssigmentId().getLesson();
-            //long lessonId = assigmentRepository.getIdbyLesson(lesson);
-            ///Assignment assignment = assigmentRepository.getID(lessonId);
-
             progressHandler.setUserId(user);
             progressHandler.setAssigmentId(listAssignment.get(0));
             progressHandler.setProgress(progress);
             progressHandler.setError(errors);
             progressHandler.setTime(time);
-            System.out.println("USER progress Conroller" );
             progressRepository.save(progressHandler);
-            System.out.println("USER progress Conroller2" );
-        /*    Progress progress3 = new Progress();
-
-
-            lessonId = 0;
-            int j = 1;
-
-            while (lessonId == 0 ) {
-                try {
-                    lessonId = assigmentRepository.getIdbyLesson(lesson + j++);
-                } catch (AopInvocationException e) {
-
-                }
-            }
-            //lessonId = assigmentRepository.getIdbyLesson(lesson + 1);
-            assignment = assigmentRepository.getID(lessonId);
-
-            progress3.setUserId(user);
-            progress3.setAssigmentId(assignment);
-            progress3.setProgress(0);
-            progress3.setError(0);
-            progress3.setTime("");
-
-            progressRepository.save(progress3);*/
-
         }
         else {
             TrainingController.positionLesson +=1;
@@ -141,13 +69,10 @@ public class UserProgressController {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) principal;
-
             User user = userRepository.findByLogin(userDetails.getUsername());
-
             long assId = assigmentRepository.getIdbyLesson(lesson);
 
             Progress progress1 = progressRepository.findID(assId, user.getId());
-
             progress1.setProgress(progress);
             progress1.setError(errors);
             progress1.setTime(time);

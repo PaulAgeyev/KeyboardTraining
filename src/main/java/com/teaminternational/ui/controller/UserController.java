@@ -103,7 +103,6 @@ class UserController{
     public ModelAndView registrationPost(HttpServletRequest request) {
 
         ModelAndView mav = new ModelAndView("");
-
         User user = new User();
         user.setFirstName(request.getParameter("firstName"));
         user.setLastName(request.getParameter("lastName"));
@@ -113,30 +112,15 @@ class UserController{
 
         User findUser = userRepository.findByLogin(user.getLogin());
         if (findUser == null) {
-
             userRepository.save(user);
-
             User registeredUser = userRepository.findByLogin(user.getLogin());
-            //System.out.println(registeredUser.getLogin());
-
             Assignment assignment = assigmentRepository.getFirstLesson();
-            //System.out.println(assignment.getLesson());
-
-            Progress progress = new Progress();
-            progress.setUserId(registeredUser);
-            progress.setAssigmentId(assignment);
-            progress.setError(0);
-            progress.setProgress(0);
-            progress.setTime("00:00");
-
-           // progressRepository.save(progress);
             mav.setViewName("redirect:/");
         }
         else {
             mav.setViewName("registration");
             mav.addObject("text","This login already exists");
         }
-
         return mav;
     }
 
@@ -144,10 +128,8 @@ class UserController{
     public String registrationGet(@RequestParam(value="text", required=false, defaultValue="") String name, Model model) {
 
         model.addAttribute("text", name);
-
         ModelAndView mav = new ModelAndView();
         mav.setViewName("registration");
-
         return "registration";
     }
 }

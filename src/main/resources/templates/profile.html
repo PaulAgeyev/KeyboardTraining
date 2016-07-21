@@ -47,9 +47,13 @@
 <div id="logo"><h1 th:inline="text">"Hello, [[${user.firstName}]] [[${user.lastName}]] "</h1></div>
 <div id="admin">
 
+
+    <div th:text="${isEmptyAssignmaent}">  </div>
+
     <form name="admin_form" id="admin_form" th:action="@{/tryagain}" method="get" th:each="assignment : ${assignments}">  <!--th:each="assignment : ${assignment}" th:each="progress : ${progress}" -->
         <fieldset th:each="progress : ${assignment.getProgress()}">
             <input type="hidden" name="loaded" th:value="${assignment.lesson}"/>
+            <input type="hidden" name ="nameLesson" th:value="${assignment.nameLesson}"/>
             <legend id ="lesson" th:inline="text">Lesson: [[ ${assignment.nameLesson}]]</legend>
             <div id="text_lesson" th:text="${assignment.text}">  </div>
             <div id="progress_div">

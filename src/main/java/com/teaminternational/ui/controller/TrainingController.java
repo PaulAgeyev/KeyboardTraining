@@ -36,11 +36,6 @@ public class TrainingController {
     public static int positionLesson = 1;
 
     @Autowired
-    public TrainingController(JdbcTemplate jdbcTemplate) {
-
-    }
-
-    @Autowired
     AssigmentRepository assigmentRepository;
 
     @Autowired
@@ -51,7 +46,6 @@ public class TrainingController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home(Model model, HttpServletRequest request) {
-        System.out.println("---");
 
         JSONObject resultJson = new JSONObject();
 
@@ -68,13 +62,8 @@ public class TrainingController {
                 return new ModelAndView("redirect:" + "panel");
             }
 
-
             User user = userRepository.findByLogin(userDetails.getUsername());
-
             List<Assignment> listAssignment = assigmentRepository.getAssignmentsListPass(user.getId());
-        for (Assignment a : listAssignment) {
-            System.out.println("TECONTr: lesson="+a.getLesson()+"text="+a.getText());
-        }
 
             if (listAssignment.size() != 0) {
                 resultJson.put("text", listAssignment.get(0).getText());
@@ -83,25 +72,29 @@ public class TrainingController {
                 return mav;
             }
             else
-                return new ModelAndView("redirect:" + "profile");
-
-
+                return new ModelAndView("redirect:" + "finish");
         }
         else
         {
-            Assignment assignment = assigmentRepository.getID(positionLesson);
-
-            try {
+            if (assigmentRepository.findAll().size() >= positionLesson) {
+                Assignment assignment = assigmentRepository.getID(positionLesson);
                 resultJson.put("text", assignment.getText());
+                mav.addObject("lesson", "Lesson: " + assignment.getNameLesson());
+                mav.addObject("text", resultJson.toString());
+                return mav;
             }
-            catch (NullPointerException e) {
-
-            }
-            mav.addObject("lesson", "Lesson: " + assignment.getNameLesson());
-            mav.addObject("text", resultJson.toString());
-
-            return mav;
+            else
+                positionLesson = 1;
+            return new ModelAndView("redirect:" + "/");
         }
     }
 
+
+    @RequestMapping(value = "finish", method = RequestMethod.GET)
+    public ModelAndView finish(Model model, HttpServletRequest request) {
+        ModelAndView mav = new ModelAndView("finish");
+        mav.addObject("user",request.getParameter("user"));
+        System.out.println("user="+  request.getParameter("user") );
+        return mav;
+    }
 }
