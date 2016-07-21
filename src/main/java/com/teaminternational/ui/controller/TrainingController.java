@@ -33,7 +33,7 @@ import java.util.List;
 public class TrainingController {
 
     //for anonymous user
-    public static int positionLesson = 1;
+    public static int positionLesson = -1;
 
     @Autowired
     AssigmentRepository assigmentRepository;
@@ -76,16 +76,28 @@ public class TrainingController {
         }
         else
         {
-            if (assigmentRepository.findAll().size() >= positionLesson) {
-                Assignment assignment = assigmentRepository.getID(positionLesson);
-                resultJson.put("text", assignment.getText());
-                mav.addObject("lesson", "Lesson: " + assignment.getNameLesson());
+            List<Assignment> aa = assigmentRepository.findAllbyLesson();
+            Assignment a = new Assignment();
+            int i;
+
+            for (i = 0; i< aa.size(); i++) {
+                a = aa.get(i);
+                if (a.getLesson() > positionLesson) {
+                    positionLesson = a.getLesson();
+                    break;
+                }
+            }
+
+            if (a.getLesson() >= positionLesson) {
+                resultJson.put("text", a.getText());
+                mav.addObject("lesson", "Lesson: " + a.getNameLesson());
                 mav.addObject("text", resultJson.toString());
                 return mav;
             }
-            else
-                positionLesson = 1;
-            return new ModelAndView("redirect:" + "/");
+            else {
+                positionLesson = 0;
+                return new ModelAndView("redirect:" + "/");
+            }
         }
     }
 

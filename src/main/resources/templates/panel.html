@@ -43,11 +43,16 @@
     <input type="submit" value="Sign Out"/>
 </form>
 <body>
+
+<div th:text="${EmptyLesson}" ></div>
+
+
 <div id="logo"><h1>Assignment</h1></div>
 <div id="admin">
     <form name="form" id="form" th:action="@{/create}" method="post">
         <div id="create"><button type="submit">CREATE</button> </div>
     </form>
+
 
 
 

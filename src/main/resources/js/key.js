@@ -165,7 +165,7 @@ function serverPost() {
 			window.location.href = currentLocation;
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
-
+			window.location.href = currentLocation;
 		}
 	});
 }
@@ -181,9 +181,8 @@ $(document).ready(function() {
 	var obj = jQuery.parseJSON(json);
 	console.log(obj);
 	text_db = obj.text;
-
-	document.getElementById('errors').innerHTML = "Ошибки: " + errors;
-	document.getElementById('typed').innerHTML = "Набрано: 0/" + text_db.length;
+	document.getElementById('errors').innerHTML = "Errors: " + errors;
+	document.getElementById('typed').innerHTML = "Typed: 0/" + text_db.length;
 	l = 110; // elements in string
 
 	for ( i = 0, j = i + l;	 	i+l <= text_db.length;  	i += l)
@@ -196,9 +195,9 @@ $(document).ready(function() {
 
 	TrueKey = CodeUpKey(str[0]);
 	LightTrueKey = TrueKey;
-	document.getElementById(TrueKey).style.backgroundColor = "blue" ;
+	document.getElementById(TrueKey).style.backgroundColor = "#b0bdcc" ;
 	if (LightShift)
-		document.getElementById('key_shift_lft_long').style.backgroundColor = "yellow" ;
+		document.getElementById('key_shift_lft_long').style.backgroundColor = "#B89F99" ;
 	input_text.onfocus = function () {if (!timer) start_timer();}
 
 	input_text.onkeypress = function (e) {
@@ -231,9 +230,9 @@ window.onkeypress=function(){
 				if(key < text.length) {
 					LightCounter = counter + 1;
 					TrueKey = CodeUpKey(str[LightCounter]);
-					if (LightShift) document.getElementById('key_shift_lft_long').style.backgroundColor = "yellow" ;
+					if (LightShift) document.getElementById('key_shift_lft_long').style.backgroundColor = "#B89F99" ;
 					else document.getElementById('key_shift_lft_long').style.backgroundColor = "#fff";
-					document.getElementById(TrueKey).style.backgroundColor = "blue" ;
+					document.getElementById(TrueKey).style.backgroundColor = "#b0bdcc" ;
 					LightTrueKey = TrueKey;
 				}
 				typed++;
@@ -255,7 +254,7 @@ window.onkeypress=function(){
 					str_color_end = aar.join('');
 					document.getElementById('text_type').innerHTML += '<span class="next">' + str_color_end + '</span>';
 				}
-				document.getElementById('typed').innerHTML = "Набрано: " + typed +'/' + text_db.length;
+				document.getElementById('typed').innerHTML = "Typed: " + typed +'/' + text_db.length;
 				fl = 0;
 			}
 			else {
@@ -275,12 +274,12 @@ window.onkeypress=function(){
 					fl = 1;
 				}
 				--counter;
-				document.getElementById('errors').innerHTML = "Ошибки: " + errors;
+				document.getElementById('errors').innerHTML = "Errors: " + errors;
 
 				document.getElementById(LightFalseKey).style.backgroundColor = "#fff";
-				document.getElementById(TrueKey).style.backgroundColor = "blue" ;
+				document.getElementById(TrueKey).style.backgroundColor = "#b0bdcc" ;
 				FalseKey = CodeUpKey(char_e);
-				document.getElementById(FalseKey).style.backgroundColor = "red" ;
+				document.getElementById(FalseKey).style.backgroundColor = "#E89980" ;
 				LightFalseKey = FalseKey;
 			}
 
@@ -288,7 +287,7 @@ window.onkeypress=function(){
 
 				LightCounter = 0;
 				exit++;
-				document.getElementById('typed').innerHTML = "Набрано: " + typed +'/' + text_db.length;
+				document.getElementById('typed').innerHTML = "Typed: " + typed +'/' + text_db.length;
 				if (exit < TextBufSize) {
 					counter = -1;
 					fl = 0;
@@ -304,10 +303,10 @@ window.onkeypress=function(){
 					document.getElementById(LightTrueKey).style.backgroundColor = "#fff";
 
 					TrueKey = CodeUpKey(str[0]);
-					if (LightShift) document.getElementById('key_shift_lft_long').style.backgroundColor = "yellow" ;
+					if (LightShift) document.getElementById('key_shift_lft_long').style.backgroundColor = "#B89F99" ;
 					else document.getElementById('key_shift_lft_long').style.backgroundColor = "#fff";
 					LightTrueKey = TrueKey;
-					document.getElementById(TrueKey).style.backgroundColor = "blue" ;
+					document.getElementById(TrueKey).style.backgroundColor = "#b0bdcc" ;
 				}
 				if (exit == TextBufSize) {
 					console.log("To server!!!");
@@ -330,7 +329,7 @@ function start_timer()
 	if (timer) clearInterval(timer);
 	minutes = "00";
 	secs = "00";
-	document.getElementById('timer').innerHTML = 'Время: '+ minutes + ":" + secs;
+	document.getElementById('timer').innerHTML = 'Time: '+ minutes + ":" + secs;
 	timer = setInterval(
 		function () {
 			secs++;
@@ -340,6 +339,6 @@ function start_timer()
 				minutes =((minutes < 10) ? "0" : "") + minutes;
 			}
 			secs =((secs < 10) ? "0" : "") + secs;
-			document.getElementById('timer').innerHTML = 'Время: '+ minutes + ":" + secs;
+			document.getElementById('timer').innerHTML = 'Time: '+ minutes + ":" + secs;
 		},1000	);
 }
