@@ -1,6 +1,7 @@
 
 var keyDown = 0;
 var input_key = 0;
+var currentLocation;
 
 var TextBufSize;
 var TextBuf = new Array();
@@ -161,15 +162,17 @@ function serverPost() {
 		dataType: 'json',
 		data: str,
 		success: function(data, textStatus, xhr) {
-			window.location.href = "http://localhost:8080/";
+			window.location.href = currentLocation;
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
-			window.location.href = "http://localhost:8080/"
+
 		}
 	});
 }
 
 $(document).ready(function() {
+
+	currentLocation = window.location.href;
 
 	json = $('#text').val();
 

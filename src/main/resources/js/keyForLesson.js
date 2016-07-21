@@ -163,12 +163,14 @@ function serverPost() {
         dataType: 'json',
         data: str,
         success: function(data, textStatus, xhr) {
-            window.location.href = "http://localhost:8080/profile";
+            window.location.href = currentLocation;
         },
     });
 }
 
 $(document).ready(function() {
+
+    currentLocation = window.location.origin + "/profile";
 
     json = $('#text').val();
 

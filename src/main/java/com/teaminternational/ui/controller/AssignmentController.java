@@ -77,7 +77,6 @@ public class AssignmentController {
 
         long assignment_id = Long.parseLong(request.getParameter("assignment_id"));
         String nameLesson = request.getParameter("NameLesson");
-        //System.out.println("rename assignment_id="+assignment_id);
         ModelAndView mav = new ModelAndView("rename");
         mav.addObject("assignment_id", assignment_id);
         mav.addObject("NameLesson", nameLesson);
@@ -91,7 +90,6 @@ public class AssignmentController {
         assignment = assigmentRepository.getID(Long.parseLong(request.getParameter("assignment_id")));
         assignment.setNameLesson(request.getParameter("newNameLesson"));
         assigmentRepository.save(assignment);
-        //System.out.println("saveRenameLesson");
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
     }

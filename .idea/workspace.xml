@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f7047c-5bea-42d8-81e1-5182c15fdac9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/finish.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/MvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/MvcConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserProgressController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserProgressController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/tryagain.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/tryagain.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/key.js" afterPath="$PROJECT_DIR$/src/main/resources/js/key.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" afterPath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
     </list>
     <ignored path="KeyboardTraining.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +31,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AssignmentController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="117" column="30" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+              <folding>
+                <marker date="1469098066102" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
+                <marker date="1469098066102" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
+                <marker date="1469098066102" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
+                <marker date="1469098066102" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
+                <marker date="1469098066102" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
+                <marker date="1469098066102" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
+                <marker date="1469098066102" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
+                <marker date="1469098066102" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
+                <marker date="1469098066102" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
+                <marker date="1469098066102" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
+                <marker date="1469098066102" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
+                <marker date="1469098066102" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
+                <marker date="1469098066102" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
+                <marker date="1469098066102" expanded="true" signature="3092:3110" ph="select * fro... user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssigmentRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AssignmentController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+            <state relative-caret-position="289">
+              <caret line="98" column="0" selection-start-line="96" selection-start-column="20" selection-end-line="98" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrainingController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="80" column="29" selection-start-line="78" selection-start-column="15" selection-end-line="80" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="key.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyForLesson.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/js/keyForLesson.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2856">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueryImpl.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/4.3.11.Final/hibernate-entitymanager-4.3.11.Final.jar!/org/hibernate/jpa/internal/QueryImpl.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,16 +182,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/rename.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/panel.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/exchange.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/MvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserProgressController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/finish.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/tryagain.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -291,6 +362,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyboardTraining" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyboardTraining" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1485,7 +1582,7 @@
       <workItem from="1468936831214" duration="668000" />
       <workItem from="1468996153248" duration="28949000" />
       <workItem from="1469082387962" duration="1555000" />
-      <workItem from="1469084185696" duration="7742000" />
+      <workItem from="1469084185696" duration="9380000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1467716665147</created>
@@ -1823,11 +1920,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469037502130</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="updated">
+      <created>1469097266166</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1469097266166</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338442000" />
+    <option name="totallyTimeSpent" value="340080000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1959,20 +2063,20 @@
         <state relative-caret-position="0">
           <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
           <folding>
-            <marker date="1469094061684" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
-            <marker date="1469094061684" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
-            <marker date="1469094061684" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
-            <marker date="1469094061684" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
-            <marker date="1469094061684" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
-            <marker date="1469094061684" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
-            <marker date="1469094061684" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
-            <marker date="1469094061684" expanded="true" signature="3092:3110" ph="select * fro... user" />
+            <marker date="1469098066102" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
+            <marker date="1469098066102" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
+            <marker date="1469098066102" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
+            <marker date="1469098066102" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
+            <marker date="1469098066102" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
+            <marker date="1469098066102" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
+            <marker date="1469098066102" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
+            <marker date="1469098066102" expanded="true" signature="3092:3110" ph="select * fro... user" />
           </folding>
         </state>
       </provider>
@@ -1997,13 +2101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/4.3.11.Final/hibernate-entitymanager-4.3.11.Final.jar!/org/hibernate/jpa/internal/QueryImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -2109,14 +2206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="196" column="4" selection-start-line="196" selection-start-column="4" selection-end-line="197" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registration.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2157,6 +2246,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="25" column="24" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2178,14 +2268,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -2214,42 +2296,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding>
-            <marker date="1469094061684" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
-            <marker date="1469094061684" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
-            <marker date="1469094061684" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
-            <marker date="1469094061684" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
-            <marker date="1469094061684" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
-            <marker date="1469094061684" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
-            <marker date="1469094061684" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
-            <marker date="1469094061684" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
-            <marker date="1469094061684" expanded="true" signature="3092:3110" ph="select * fro... user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2299,8 +2350,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+        <state relative-caret-position="289">
+          <caret line="98" column="0" selection-start-line="96" selection-start-column="20" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/4.3.11.Final/hibernate-entitymanager-4.3.11.Final.jar!/org/hibernate/jpa/internal/QueryImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="117" column="30" selection-start-line="117" selection-start-column="30" selection-end-line="117" selection-end-column="30" />
+          <folding>
+            <marker date="1469098066102" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
+            <marker date="1469098066102" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
+            <marker date="1469098066102" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
+            <marker date="1469098066102" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
+            <marker date="1469098066102" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
+            <marker date="1469098066102" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
+            <marker date="1469098066102" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
+            <marker date="1469098066102" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
+            <marker date="1469098066102" expanded="true" signature="3092:3110" ph="select * fro... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="80" column="29" selection-start-line="78" selection-start-column="15" selection-end-line="80" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/keyForLesson.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2856">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

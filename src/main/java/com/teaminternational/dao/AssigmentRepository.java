@@ -16,9 +16,9 @@ public interface AssigmentRepository extends JpaRepository <Assignment, Long> {
             ,  nativeQuery = true)
     List<Assignment> findAssignmentByUserID(long id);
 
-    @Query(value = "SELECT * FROM Assignment a where a.lesson = 1"
+    @Query(value = "SELECT * FROM Assignment a ORDER BY a.lesson"
             ,  nativeQuery = true)
-    Assignment getFirstLesson();
+    List<Assignment> getFirstLesson();
 
     @Query(value = "SELECT * FROM Assignment a where a.assignment_id = ?1"
             ,  nativeQuery = true)

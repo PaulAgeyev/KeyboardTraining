@@ -114,7 +114,8 @@ class UserController{
         if (findUser == null) {
             userRepository.save(user);
             User registeredUser = userRepository.findByLogin(user.getLogin());
-            Assignment assignment = assigmentRepository.getFirstLesson();
+            List<Assignment> assignment = assigmentRepository.getFirstLesson();
+            assignment.get(0);
             mav.setViewName("redirect:/");
         }
         else {
