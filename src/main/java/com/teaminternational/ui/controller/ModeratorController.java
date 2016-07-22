@@ -34,7 +34,7 @@ public class ModeratorController {
 
     @RequestMapping(value = "moderator", method = RequestMethod.GET)
     public ModelAndView ShowBug() {
-        ModelAndView mav = new ModelAndView("/moderator");
+        ModelAndView mav = new ModelAndView("moderator");
         mav.addObject("checkedBox", moderatorRepository.findAll());
         System.out.println("ShowBug");
         return mav;
