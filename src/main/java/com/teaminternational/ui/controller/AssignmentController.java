@@ -45,7 +45,7 @@ public class AssignmentController {
         String newTextDb = request.getParameter("text_db");
         if (newTextDb.trim().length() == 0) {
             ModelAndView mav = new ModelAndView("redirect:/panel");
-            mav.addObject("EmptyText", "Fill out the field Text");
+            mav.addObject("EmptyText", "Fill out the field");
             return mav;
         }
 
@@ -179,7 +179,7 @@ public class AssignmentController {
         if (newNameLesson.trim().length() == 0){
             ModelAndView mav = new ModelAndView("redirect:/rename");
             mav.addObject("assignment_id", request.getParameter("assignment_id"));
-            mav.addObject("EmptyLesson", "Fill out the field Rename");
+            mav.addObject("EmptyLesson", "Fill out the field");
             return mav;
         }
         assignment.setNameLesson(newNameLesson.trim());
@@ -200,13 +200,32 @@ public class AssignmentController {
         return mav;
     }
 
+    @RequestMapping(value = "exchange", method = RequestMethod.GET)
+    public ModelAndView exchangeLessonGet(HttpServletRequest request) {
+
+        long assignment_id = Long.parseLong(request.getParameter("assignment_id"));
+        ModelAndView mav = new ModelAndView("exchange");
+        mav.addObject("assignment_id", assignment_id);
+        mav.addObject("EmptyExchange", request.getParameter("EmptyExchange"));
+        return mav;
+    }
+
     @RequestMapping(value = "saveExchangeLesson", method = RequestMethod.POST)
     public ModelAndView saveExchangeLesson (HttpServletRequest request) {
 
         long assignment_id = Long.parseLong(request.getParameter("assignment_id"));
         long exchangeLesson = Long.parseLong(request.getParameter("exchangeLesson"));
-        long exchangeLessonId = assigmentRepository.getIdbyLesson(exchangeLesson);
 
+        int exchange = 0;
+        List<Assignment> assignmentList = assigmentRepository.findAllbyLesson();
+        for (int i = 0; i < assignmentList.size(); i++) {
+            if (assignmentList.get(i).getLesson() == exchangeLesson )
+                exchange = 1;
+            break;
+        }
+
+        if (exchange == 1) {
+        long exchangeLessonId = assigmentRepository.getIdbyLesson(exchangeLesson);
         Assignment assignment = new Assignment();
         assignment = assigmentRepository.getID(assignment_id);
 
@@ -223,6 +242,12 @@ public class AssignmentController {
         assigmentRepository.save(exchangeAssignment);
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
+        }
+        else {
+            ModelAndView mav = new ModelAndView("redirect:/exchange");
+            mav.addObject("EmptyExchange", "Select the correct lesson");
+            return mav;
+        }
     }
 
 }
