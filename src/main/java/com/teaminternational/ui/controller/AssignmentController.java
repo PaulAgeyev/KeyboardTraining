@@ -61,6 +61,7 @@ public class AssignmentController {
     public ModelAndView deleteAssignment (HttpServletRequest request) {
         assigmentRepository.delete(Long.parseLong(request.getParameter("assignment_id")));
         ModelAndView mav = new ModelAndView("redirect:/panel");
+        TrainingController.positionLesson = -1;
         return mav;
     }
 

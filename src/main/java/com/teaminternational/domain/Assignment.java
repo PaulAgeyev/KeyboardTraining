@@ -20,7 +20,7 @@ public class Assignment {
     private long assignment_id;
 
     @Column(name = "text")
-    @Length(max = 1000)
+    @Length(max = 900)
     private String text;
 
     @Column(name = "lesson")

@@ -50,8 +50,6 @@ public class TrainingController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home(Model model, HttpServletRequest request) {
 
-
-
         JSONObject resultJson = new JSONObject();
 
         ModelAndView mav = new ModelAndView("home");
@@ -86,22 +84,24 @@ public class TrainingController {
         else
         {
             List<Assignment> aa = assigmentRepository.findAllbyLesson();
-            Assignment a = new Assignment();
-            int i;
-            if (positionLesson == -1)
-                positionLesson = assigmentRepository.findAllbyLesson().get(0).getLesson();
+            if ( aa.size() != 0) {
+                Assignment a = new Assignment();
+                int i;
+                if (positionLesson == -1)
+                    positionLesson = assigmentRepository.findAllbyLesson().get(0).getLesson();
 
-            for (i = 0; i< aa.size(); i++) {
-                a = aa.get(i);
-                if (a.getLesson() == positionLesson) {
-                    positionLesson = a.getLesson();
-                    break;
+                for (i = 0; i < aa.size(); i++) {
+                    a = aa.get(i);
+                    if (a.getLesson() == positionLesson) {
+                        positionLesson = a.getLesson();
+                        break;
+                    }
                 }
-            }
-            if (a.getLesson() == positionLesson) {
-                resultJson.put("text", a.getText());
-                mav.addObject("lesson", "Lesson: " + a.getNameLesson());
-                mav.addObject("text", resultJson.toString());
+                if (a.getLesson() == positionLesson) {
+                    resultJson.put("text", a.getText());
+                    mav.addObject("lesson", "Lesson: " + a.getNameLesson());
+                    mav.addObject("text", resultJson.toString());
+                }
             }
             return mav;
         }

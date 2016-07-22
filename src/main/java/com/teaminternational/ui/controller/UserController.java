@@ -74,13 +74,13 @@ class UserController{
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (2, 100, 'Apple Inc.','Apple Inc. is an American multinational " +
+                        "VALUES (2, 2, 'Apple Inc.','Apple Inc. is an American multinational " +
                         "technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, " +
                         "computer software, and online services. Its hardware products include the iPhone smartphone, the iPad tablet computer, the Mac personal computer, the iPod portable media player, " +
                         "the Apple Watch smartwatch, and the Apple TV digital media player.')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (3, 200, 'Microsoft Corporation', 'Microsoft Corporation is an American multinational " +
+                        "VALUES (3, 3, 'Microsoft Corporation', 'Microsoft Corporation is an American multinational " +
                         "technology company headquartered in Redmond, " +
                         "Washington, that develops, manufactures, licenses, supports and sells computer software, " +
                         "consumer electronics and personal computers and services. Its best known software products are the " +
@@ -88,14 +88,14 @@ class UserController{
                         "and Internet Explorer and Edge web browsers.')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (4, 300, 'Hewlett-Packard', 'The Hewlett-Packard Company (commonly referred to as HP) was an" +
+                        "VALUES (4, 4, 'Hewlett-Packard', 'The Hewlett-Packard Company (commonly referred to as HP) was an" +
                         " American multinational information technology company headquartered in Palo Alto, California. " +
                         "It developed and provided a wide variety of hardware components as well as software " +
                         "and related services to consumers, small- and medium-sized businesses (SMBs) and large enterprises, " +
                         "including customers in the government, health and education sectors.')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (5, 400, 'Kharkiv', 'Kharkiv is the second-largest city in Ukraine. Located in the north-east of " +
+                        "VALUES (5, 5, 'Kharkiv', 'Kharkiv is the second-largest city in Ukraine. Located in the north-east of " +
                         "the country, it is the largest city of the Slobozhanshchyna historical region. The city has a population of " +
                         "about 1.5 million people. Kharkiv is the administrative centre of Kharkiv Oblast and of " +
                         "the surrounding Kharkiv district. The city was founded in 1654 and after a humble beginning as a " +
