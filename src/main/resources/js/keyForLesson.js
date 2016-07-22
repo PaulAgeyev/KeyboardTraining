@@ -154,7 +154,8 @@ function serverPost() {
         "progress" : proc,
         "errors" : errors,
         "time" : minutes + ":" + secs,
-        "lesson" : lesson
+        "lesson" : lesson,
+        "typed" : typed
     }
 
     $.ajax({
