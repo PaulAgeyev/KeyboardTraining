@@ -184,9 +184,11 @@ $(document).ready(function() {
     text_db = obj.text;
     text_db = text_db.trim();
 
+    window.document.getElementById('input_text').focus();
+
     document.getElementById('errors').innerHTML = "Errors: " + errors;
     document.getElementById('typed').innerHTML = "Typed: 0/" + text_db.length;
-    l = 110; // elements in string
+    l = 117; // elements in string
 
     for ( i = 0, j = i + l;	 	i+l <= text_db.length;  	i += l)
         TextBuf.push ( text_db.substr(i, j));
@@ -201,7 +203,6 @@ $(document).ready(function() {
     document.getElementById(TrueKey).style.backgroundColor = "#b0bdcc" ;
     if (LightShift)
         document.getElementById('key_shift_lft_long').style.backgroundColor = "#B89F99" ;
-    input_text.onfocus = function () {if (!timer) start_timer();}
 
     input_text.onkeypress = function (e) {
         var keycode;
@@ -218,6 +219,7 @@ $(document).ready(function() {
 
 window.onkeypress=function(){
 
+    if (!timer) start_timer();
     input_key = isKeyDown();
     char_e = String.fromCharCode(input_key);
 

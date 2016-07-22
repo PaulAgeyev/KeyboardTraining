@@ -1,5 +1,7 @@
 package com.teaminternational.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +20,7 @@ public class Assignment {
     private long assignment_id;
 
     @Column(name = "text")
+    @Length(max = 1000)
     private String text;
 
     @Column(name = "lesson")
