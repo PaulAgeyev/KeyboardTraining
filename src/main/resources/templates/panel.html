@@ -19,7 +19,7 @@
         <h1><a th:href="@{/}">Keyboard </a>Training</h1>
         <nav id="nav">
             <ul>
-                <li><span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span></li>
+                <li><span th:inline="text"> <b>[[${#httpServletRequest.remoteUser}]]</b></span></li>
                 <li><a th:href="@{/}">Home</a></li>
                 <li>
                     <form th:action="@{/logout}" method="post">
@@ -35,9 +35,14 @@
         <header>
             <h2>Administrator Panel</h2>
             <p>Management for lessons</p>
+            <h3><div th:text="${EmptyText}" ></div></h3>
         </header>
 
         <!-- Text -->
+        <form name="form" id="form" th:action="@{/create}" method="post">
+            <div id="crudumb"><button class = "button" type="submit">Create Lesson</button> </div>
+        </form>
+        <br/>
         <div class = "csss" th:each="message : ${message}">
             <form  name="admin_form" id="admin_form" th:action="@{/update}" method="post">
 
@@ -53,14 +58,13 @@
                     <input type="hidden" name="NameLesson" id="NameLesson" th:value="${message.nameLesson}"/>
 
                     <div class = "dpack">
-                    <div id="crudu"><button type="submit" class = "button">UPDATE</button></div>
-                    <div id="crudd"><button type="submit" class = "button" th:formaction="@{/delete}" >DELETE</button></div>
+                    <div id="crudu"><button type="submit" class = "button">Update</button></div>
+                    <div id="crudd"><button type="submit" class = "button" th:formaction="@{/delete}" >Delete</button></div>
                         <br/>
-                    <div id="rename"><button type="submit" class = "button" th:formaction="@{/rename}" >Rename</button></div>
-                    <div id="exchange"><button type="submit" class = "button" th:formaction="@{/exchange}" >Exchange</button></div>
+                    <div id="rename"><button type="submit" class = "button" style="padding-left: 18.3%; padding-right: 18.2%;" th:formaction="@{/rename}" >Rename</button></div>
+                    <div id="exchange"><button type="submit" class = "button" style="padding-left: 12%; padding-right: 12%;" th:formaction="@{/exchange}" >Exchange</button></div>
                     </div>
                 </fieldset>
-
             </form>
         </div>
     </section>

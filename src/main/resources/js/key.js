@@ -291,7 +291,9 @@ $(document).ready(function() {
 
 	document.getElementById('errors').innerHTML = "Errors: " + errors;
 	document.getElementById('typed').innerHTML = "Typed: 0/" + text_db.length;
-	l = 117; // elements in string
+	var xsa = $( window ).width();
+	console.log(xsa);
+	l = ( xsa / 10 ) - 20; // elements in string
 
 	for ( i = 0, j = i + l;	 	i+l <= text_db.length;  	i += l)
 		TextBuf.push ( text_db.substr(i, j));

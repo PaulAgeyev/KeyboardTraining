@@ -19,7 +19,7 @@
         <h1><a th:href="@{/}">Keyboard </a>Training</h1>
         <nav id="nav">
             <ul>
-                <li><span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span></li>
+                <li><span th:inline="text"> <b>[[${#httpServletRequest.remoteUser}]]</b></span></li>
                 <li><a th:href="@{/}">Home</a></li>
                 <li>
                     <form th:action="@{/logout}" method="post">
@@ -35,7 +35,7 @@
         <header>
             <h2>Administrator Panel</h2>
             <p>Rename lesson</p>
-            <!--<div th:text="${EmptyLesson}" ></div>-->
+            <h3><div th:text="${EmptyLesson}" ></div></h3>
         </header>
 
         <!-- Text -->

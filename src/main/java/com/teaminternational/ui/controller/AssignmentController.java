@@ -36,16 +36,22 @@ public class AssignmentController {
     public ModelAndView messages(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView("panel");
         mav.addObject("message", assigmentRepository.findAllbyLesson());
-
-        mav.addObject("EmptyLesson", request.getParameter("EmptyLesson"));
+        mav.addObject("EmptyText", request.getParameter("EmptyText"));
         return mav;
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public ModelAndView method1(HttpServletRequest request) {
+        String newTextDb = request.getParameter("text_db");
+        if (newTextDb.trim().length() == 0) {
+            ModelAndView mav = new ModelAndView("redirect:/panel");
+            mav.addObject("EmptyText", "Fill out the field Text");
+            return mav;
+        }
+
         Assignment assignment = new Assignment();
         assignment = assigmentRepository.getID(Long.parseLong(request.getParameter("assignment_id")));
-        assignment.setText(request.getParameter("text_db"));
+        assignment.setText(newTextDb.trim());
         assigmentRepository.save(assignment);
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
@@ -57,6 +63,8 @@ public class AssignmentController {
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
     }
+
+
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public ModelAndView method4() {
@@ -94,7 +102,6 @@ public class AssignmentController {
                 List<Assignment> newAssignmentList = new ArrayList<Assignment>();
 
                 int isLesson = 0;
-                //List<Assignment> checkAssignment = assigmentRepository.findAllbyLesson();
                 List<Assignment> assignmentList = assigmentRepository.findAllbyLesson();
                 for (Assignment a : assignmentList) {
                     if (a.getLesson() == newAssignment.getLesson() ) {
@@ -105,31 +112,25 @@ public class AssignmentController {
 
                 if (isLesson == 1) {
                     int numberOfLesson = 0;
-                    System.out.println("isLesson=1");
                     for (int i = 0; i < assignmentList.size(); i++) {
                         assignment = assignmentList.get(i);
                         if (assignment.getLesson() < newAssignment.getLesson())
-                            //newAssignmentList.add(assignment);
                         assigmentRepository.save(assignment);
 
                         else if (assignment.getLesson() == newAssignment.getLesson()) {
-                            //newAssignmentList.add(newAssignment);
                             assigmentRepository.save(newAssignment);
 
                             numberOfLesson = newAssignment.getLesson() + 1;
                             assignment.setLesson(numberOfLesson);
                             assigmentRepository.save(assignment);
-                            //newAssignmentList.add(assignment);
                         } else {
                             ++numberOfLesson;
                             assignment.setLesson(numberOfLesson);
                             assigmentRepository.save(assignment);
-                            //newAssignmentList.add(assignment);
                         }
                     }
                 }
                 else {
-                    System.out.println("!!!isLesson=0");
                     assigmentRepository.save(newAssignment);
                 }
 
@@ -140,12 +141,29 @@ public class AssignmentController {
         return mav;
     }
 
+
+
+
     @RequestMapping(value = "rename", method = RequestMethod.POST)
     public ModelAndView RenameLesson(HttpServletRequest request) {
 
         long assignment_id = Long.parseLong(request.getParameter("assignment_id"));
         String nameLesson = request.getParameter("NameLesson");
+
         ModelAndView mav = new ModelAndView("rename");
+        mav.addObject("assignment_id", assignment_id);
+        mav.addObject("NameLesson", nameLesson);
+        return mav;
+    }
+
+    @RequestMapping(value = "rename", method = RequestMethod.GET)
+    public ModelAndView RenameLessonGet(HttpServletRequest request) {
+
+        long assignment_id = Long.parseLong(request.getParameter("assignment_id"));
+        String nameLesson = request.getParameter("NameLesson");
+
+        ModelAndView mav = new ModelAndView("rename");
+        mav.addObject("EmptyLesson", request.getParameter("EmptyLesson"));
         mav.addObject("assignment_id", assignment_id);
         mav.addObject("NameLesson", nameLesson);
         return mav;
@@ -156,11 +174,22 @@ public class AssignmentController {
 
         Assignment assignment = new Assignment();
         assignment = assigmentRepository.getID(Long.parseLong(request.getParameter("assignment_id")));
-        assignment.setNameLesson(request.getParameter("newNameLesson"));
+        String newNameLesson = request.getParameter("newNameLesson");
+
+        if (newNameLesson.trim().length() == 0){
+            ModelAndView mav = new ModelAndView("redirect:/rename");
+            mav.addObject("assignment_id", request.getParameter("assignment_id"));
+            mav.addObject("EmptyLesson", "Fill out the field Rename");
+            return mav;
+        }
+        assignment.setNameLesson(newNameLesson.trim());
         assigmentRepository.save(assignment);
         ModelAndView mav = new ModelAndView("redirect:/panel");
         return mav;
     }
+
+
+
 
     @RequestMapping(value = "exchange", method = RequestMethod.POST)
     public ModelAndView exchangeLesson(HttpServletRequest request) {

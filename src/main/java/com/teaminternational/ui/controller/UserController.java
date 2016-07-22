@@ -67,20 +67,41 @@ class UserController{
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (1, 1, 'Practicing letter A', 'text')");
+                        "VALUES (1, 1, 'Steve Jobs', 'Steven Paul Jobs was born on February 24, 1955 in San Francisco, California. " +
+                        "His unwed biological parents, Joanne Schieble and Abdulfattah Jandali, put him up for adoption. " +
+                        "Steve was adopted by Paul and Clara Jobs, a lower-middle-class couple, who moved to the " +
+                        "suburban city of Mountain View a couple of years later.')");
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (2, 100, 'Practicing letter B','text2')");
+                        "VALUES (2, 100, 'Apple Inc.','Apple Inc. is an American multinational " +
+                        "technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, " +
+                        "computer software, and online services. Its hardware products include the iPhone smartphone, the iPad tablet computer, the Mac personal computer, the iPod portable media player, " +
+                        "the Apple Watch smartwatch, and the Apple TV digital media player.')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (3, 200, 'Practicing letter C', 'text3')");
+                        "VALUES (3, 200, 'Microsoft Corporation', 'Microsoft Corporation is an American multinational " +
+                        "technology company headquartered in Redmond, " +
+                        "Washington, that develops, manufactures, licenses, supports and sells computer software, " +
+                        "consumer electronics and personal computers and services. Its best known software products are the " +
+                        "Microsoft Windows line of operating systems, Microsoft Office office suite, " +
+                        "and Internet Explorer and Edge web browsers.')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (4, 300, 'Practicing letter D', 'text4')");
+                        "VALUES (4, 300, 'Hewlett-Packard', 'The Hewlett-Packard Company (commonly referred to as HP) was an" +
+                        " American multinational information technology company headquartered in Palo Alto, California. " +
+                        "It developed and provided a wide variety of hardware components as well as software " +
+                        "and related services to consumers, small- and medium-sized businesses (SMBs) and large enterprises, " +
+                        "including customers in the government, health and education sectors.')");
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +
-                        "VALUES (5, 400, 'Practicing letter E', 'text5')");
+                        "VALUES (5, 400, 'Kharkiv', 'Kharkiv is the second-largest city in Ukraine. Located in the north-east of " +
+                        "the country, it is the largest city of the Slobozhanshchyna historical region. The city has a population of " +
+                        "about 1.5 million people. Kharkiv is the administrative centre of Kharkiv Oblast and of " +
+                        "the surrounding Kharkiv district. The city was founded in 1654 and after a humble beginning as a " +
+                        "small fortress grew to be a major centre of Ukrainian industry, trade and culture within the Russian Empire. " +
+                        "Kharkiv was the first capital of the Ukrainian Soviet Socialist Republic December 1917 - January 1935, " +
+                        "after which the capital relocated to Kiev.')");
 
         //PROGRESS ID, ERROR, PROGRESS %,TIME, ASSIGMENT ID, USER_ID
 
