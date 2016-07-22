@@ -32,11 +32,13 @@ import java.util.List;
 @Controller
 public class TrainingController {
 
-    //for anonymous user
-    public static int positionLesson = -1;
+
 
     @Autowired
     AssigmentRepository assigmentRepository;
+
+    //for anonymous user
+    public static int positionLesson = -1;
 
     @Autowired
     ProgressRepository progressRepository;
@@ -44,8 +46,11 @@ public class TrainingController {
     @Autowired
     UserRepository userRepository;
 
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home(Model model, HttpServletRequest request) {
+
+
 
         JSONObject resultJson = new JSONObject();
 
@@ -83,25 +88,22 @@ public class TrainingController {
             List<Assignment> aa = assigmentRepository.findAllbyLesson();
             Assignment a = new Assignment();
             int i;
+            if (positionLesson == -1)
+                positionLesson = assigmentRepository.findAllbyLesson().get(0).getLesson();
 
             for (i = 0; i< aa.size(); i++) {
                 a = aa.get(i);
-                if (a.getLesson() > positionLesson) {
+                if (a.getLesson() == positionLesson) {
                     positionLesson = a.getLesson();
                     break;
                 }
             }
-
-            if (a.getLesson() >= positionLesson) {
+            if (a.getLesson() == positionLesson) {
                 resultJson.put("text", a.getText());
                 mav.addObject("lesson", "Lesson: " + a.getNameLesson());
                 mav.addObject("text", resultJson.toString());
-                return mav;
             }
-            else {
-                positionLesson = 0;
-                return new ModelAndView("redirect:" + "/");
-            }
+            return mav;
         }
     }
 

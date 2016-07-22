@@ -256,7 +256,8 @@ function serverPost() {
 	var str = {
 		"progress" : proc,
 		"errors" : errors,
-		"time" : minutes + ":" + secs
+		"time" : minutes + ":" + secs,
+		"typed" : typed
 	}
 
 	$.ajax({

@@ -39,7 +39,7 @@ public class UserProgressController {
     private ProgressRepository progressRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public @ResponseBody boolean getJson(@RequestParam int progress, @RequestParam int errors, @RequestParam String time) {
+    public @ResponseBody boolean getJson(@RequestParam int progress, @RequestParam int errors, @RequestParam String time, @RequestParam int typed) {
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
@@ -57,7 +57,21 @@ public class UserProgressController {
             progressRepository.save(progressHandler);
         }
         else {
-            TrainingController.positionLesson +=1;
+            List<Assignment> aa = assigmentRepository.findAllbyLesson();
+            Assignment a = new Assignment();
+            int i;
+
+            for (i = 0; i< aa.size(); i++) {
+                a = aa.get(i);
+                if (a.getLesson() == TrainingController.positionLesson) {
+                    break;
+                }
+            }
+            System.out.println("typed="+typed);
+            if ( typed == a.getText().length()) {
+                if (i < aa.size()-1) TrainingController.positionLesson = aa.get(++i).getLesson();
+                else TrainingController.positionLesson = -1;
+            }
         }
             return true;
         }
