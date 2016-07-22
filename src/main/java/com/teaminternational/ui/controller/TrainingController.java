@@ -62,6 +62,10 @@ public class TrainingController {
                 return new ModelAndView("redirect:" + "panel");
             }
 
+            if (userDetails.getAuthorities().toString().equals("[ROLE_MODERATOR]")) {
+                return new ModelAndView("redirect:" + "moderator");
+            }
+
             User user = userRepository.findByLogin(userDetails.getUsername());
             List<Assignment> listAssignment = assigmentRepository.getAssignmentsListPass(user.getId());
 

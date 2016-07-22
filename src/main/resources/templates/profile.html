@@ -1,69 +1,61 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-
 <head>
-    <meta charset="UTF-8"/>
-    <title>Profile</title>
+    <title>Keyboard Training | Profile</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style2.css" />
 </head>
-
-<style>
-    body {
-        width: 98%;
-        min-width: 1024px;
-        height: 95%;
-        background-color: #7FFFD4;
-        color: #694221;
-        font-family: Bookman Old Style, sans-serif;
-        font-size: 14pt;
-    }
-
-    #logo {
-        color: black;
-        font-size: 18pt;
-        text-align:center;
-        height: 100px;
-        line-height: 100px;
-    }
-    #admin {width: 80%; margin-left: 10%; }
-    #text_lesson {width: 78%; float: left}
-    #progress_div { width:22%; float:left;}
-    #progress {
-        font-family: Bookman Old Style, sans-serif;
-        width: 100%;
-
-        margin-top:5px;
-        float:right;
-        background-color: pink;;
-    }
-
-</style>
-
 <body>
-<div th:inline="text">[[${#httpServletRequest.remoteUser}]]</div>
-<p><a th:href="@{/}">Training Page</a></p>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
-<div id="logo"><h1>Profile</h1></div>
-<div id="logo"><h1 th:inline="text">"Hello, [[${user.firstName}]] [[${user.lastName}]] "</h1></div>
-<div id="admin">
+<div id="page-wrapper">
 
+    <!-- Header -->
+    <header id="header">
+        <h1><a th:href="@{/}">Keyboard </a>Training</h1>
+        <nav id="nav">
+            <ul>
+                <li><span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span></li>
+                <li><a th:href="@{/}">Home</a></li>
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="" type="submit" value="Sign Out"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <div th:text="${isEmptyAssignmaent}">  </div>
+    <!-- Main -->
+    <section id="main" class="container">
+        <header>
+            <h2>Statistics</h2>
+            <p>Easily track of your statistic for each lesson</p>
+        </header>
 
-    <form name="admin_form" id="admin_form" th:action="@{/tryagain}" method="get" th:each="assignment : ${assignments}">  <!--th:each="assignment : ${assignment}" th:each="progress : ${progress}" -->
-        <fieldset th:each="progress : ${assignment.getProgress()}">
-            <input type="hidden" name="loaded" th:value="${assignment.lesson}"/>
-            <input type="hidden" name ="nameLesson" th:value="${assignment.nameLesson}"/>
-            <legend id ="lesson" th:inline="text">Lesson: [[ ${assignment.nameLesson}]]</legend>
-            <div id="text_lesson" th:text="${assignment.text}">  </div>
-            <div id="progress_div">
-                <div id="progress" th:inline="text">Errors: [[${progress.error}]] </div>
-                <div id="progress" th:inline="text" >Time: [[${progress.time}]]</div>
-                <div id="progress" th:inline="text" >Progress: [[${progress.progress}]]</div>
-                <button id="progress" type="submit">Try again</button>
-            </div>
-        </fieldset>
-    </form>
+                <!-- Text -->
+                    <div class = "csss" th:each="assignment : ${assignments}">
+                    <form name="admin_form" id="admin_form" th:action="@{/tryagain}" method="get">  <!--th:each="assignment : ${assignment}" th:each="progress : ${progress}" -->
+                        <fieldset th:each="progress : ${assignment.getProgress()}">
+                            <input type="hidden" name="loaded" th:value="${assignment.lesson}"/>
+                            <input type="hidden" name ="nameLesson" th:value="${assignment.nameLesson}"/>
+                            <legend id ="lesson" th:inline="text">Lesson: [[ ${assignment.nameLesson}]]</legend>
+                            <div id="text_lesson_p" th:text="${assignment.text}">  </div>
+                            <div id="progress_div">
+                                <div id="progress" th:inline="text">Errors: [[${progress.error}]] </div>
+                                <div id="progress" th:inline="text" >Time: [[${progress.time}]]</div>
+                                <div id="progress" th:inline="text" >Progress: [[${progress.progress}]]</div>
+                                <button id="progress" class="button" type="submit">Try again</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    </div>
+    </section>
+
 </div>
 
 </body>

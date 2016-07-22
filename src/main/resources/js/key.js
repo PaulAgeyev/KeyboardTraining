@@ -143,6 +143,109 @@ var CodeUpKey = function (input) {
 		case '/': PressKey = 'key_47'; break;
 
 		case ' ': PressKey = 'key_48'; break;
+
+		// For RUS Keyboard
+		case 'Ё': PressKey = 'key_1'; LightShift = 1; break;
+		case '!': PressKey = 'key_2'; LightShift = 1; break;
+		case '"': PressKey = 'key_3'; LightShift = 1; break;
+		case '№': PressKey = 'key_4'; LightShift = 1; break;
+		case ';': PressKey = 'key_5'; LightShift = 1; break;
+		case '%': PressKey = 'key_6'; LightShift = 1; break;
+		case ':': PressKey = 'key_7'; LightShift = 1; break;
+		case '?': PressKey = 'key_8'; LightShift = 1; break;
+		case '*': PressKey = 'key_9'; LightShift = 1; break;
+		case '(': PressKey = 'key_10'; LightShift = 1; break;
+		case ')': PressKey = 'key_11'; LightShift = 1; break;
+		case '_': PressKey = 'key_12'; LightShift = 1; break;
+		case '+': PressKey = 'key_13'; LightShift = 1; break;
+
+		case 'ё': PressKey = 'key_1'; break;
+		case '1': PressKey = 'key_2'; break;
+		case '2': PressKey = 'key_3'; break;
+		case '3': PressKey = 'key_4'; break;
+		case '4': PressKey = 'key_5'; break;
+		case '5': PressKey = 'key_6'; break;
+		case '6': PressKey = 'key_7'; break;
+		case '7': PressKey = 'key_8'; break;
+		case '8': PressKey = 'key_9'; break;
+		case '9': PressKey = 'key_10'; break;
+		case '0': PressKey = 'key_11'; break;
+		case '-': PressKey = 'key_12'; break;
+		case '=': PressKey = 'key_13'; break;
+
+		case 'Й': PressKey = 'key_14'; LightShift = 1; break;
+		case 'Ц': PressKey = 'key_15'; LightShift = 1; break;
+		case 'У': PressKey = 'key_16'; LightShift = 1; break;
+		case 'К': PressKey = 'key_17'; LightShift = 1; break;
+		case 'Е': PressKey = 'key_18'; LightShift = 1; break;
+		case 'Н': PressKey = 'key_19'; LightShift = 1; break;
+		case 'Г': PressKey = 'key_20'; LightShift = 1; break;
+		case 'Ш': PressKey = 'key_21'; LightShift = 1; break;
+		case 'Щ': PressKey = 'key_22'; LightShift = 1; break;
+		case 'З': PressKey = 'key_23'; LightShift = 1; break;
+		case 'Х': PressKey = 'key_24'; LightShift = 1; break;
+		case 'Ъ': PressKey = 'key_25'; LightShift = 1; break;
+		case '/': PressKey = 'key_26'; LightShift = 1; break;
+
+		case 'й': PressKey = 'key_14'; break;
+		case 'ц': PressKey = 'key_15'; break;
+		case 'у': PressKey = 'key_16'; break;
+		case 'к': PressKey = 'key_17'; break;
+		case 'е': PressKey = 'key_18'; break;
+		case 'н': PressKey = 'key_19'; break;
+		case 'г': PressKey = 'key_20'; break;
+		case 'ш': PressKey = 'key_21'; break;
+		case 'щ': PressKey = 'key_22'; break;
+		case 'з': PressKey = 'key_23'; break;
+		case 'х': PressKey = 'key_24'; break;
+		case 'ъ': PressKey = 'key_25'; break;
+		case '\\': PressKey = 'key_26'; break;
+
+		case 'Ф': PressKey = 'key_27'; LightShift = 1; break;
+		case 'Ы': PressKey = 'key_28'; LightShift = 1; break;
+		case 'В': PressKey = 'key_29'; LightShift = 1; break;
+		case 'А': PressKey = 'key_30'; LightShift = 1; break;
+		case 'П': PressKey = 'key_31'; LightShift = 1; break;
+		case 'Р': PressKey = 'key_32'; LightShift = 1; break;
+		case 'О': PressKey = 'key_33'; LightShift = 1; break;
+		case 'Л': PressKey = 'key_34'; LightShift = 1; break;
+		case 'Д': PressKey = 'key_35'; LightShift = 1; break;
+		case 'Ж': PressKey = 'key_36'; LightShift = 1; break;
+		case 'Э': PressKey = 'key_37'; LightShift = 1; break;
+
+		case 'ф': PressKey = 'key_27'; break;
+		case 'ы': PressKey = 'key_28'; break;
+		case 'в': PressKey = 'key_29'; break;
+		case 'а': PressKey = 'key_30'; 	break;
+		case 'п': PressKey = 'key_31'; 	break;
+		case 'р': PressKey = 'key_32'; break;
+		case 'о': PressKey = 'key_33'; break;
+		case 'л': PressKey = 'key_34'; break;
+		case 'д': PressKey = 'key_35'; break;
+		case 'ж': PressKey = 'key_36'; break;
+		case 'э': PressKey = 'key_37'; break;
+
+		case 'Я': PressKey = 'key_38'; LightShift = 1; break;
+		case 'Ч': PressKey = 'key_39'; LightShift = 1; break;
+		case 'С': PressKey = 'key_40'; LightShift = 1; break;
+		case 'М': PressKey = 'key_41'; LightShift = 1; break;
+		case 'И': PressKey = 'key_42'; LightShift = 1; break;
+		case 'Т': PressKey = 'key_43'; LightShift = 1; break;
+		case 'Ь': PressKey = 'key_44'; LightShift = 1; break;
+		case 'Б': PressKey = 'key_45'; LightShift = 1; break;
+		case 'Ю': PressKey = 'key_46'; LightShift = 1; break;
+		case '.': PressKey = 'key_47'; LightShift = 1; break;
+
+		case 'я': PressKey = 'key_38'; break;
+		case 'ч': PressKey = 'key_39'; break;
+		case 'с': PressKey = 'key_40'; break;
+		case 'м': PressKey = 'key_41'; break;
+		case 'и': PressKey = 'key_42'; break;
+		case 'т': PressKey = 'key_43'; break;
+		case 'ь': PressKey = 'key_44'; break;
+		case 'б': PressKey = 'key_45'; break;
+		case 'ю': PressKey = 'key_46'; break;
+		case '.': PressKey = 'key_47'; break;
 	}
 	return PressKey;
 
@@ -181,6 +284,8 @@ $(document).ready(function() {
 	var obj = jQuery.parseJSON(json);
 	console.log(obj);
 	text_db = obj.text;
+	text_db = text_db.trim();
+	
 	document.getElementById('errors').innerHTML = "Errors: " + errors;
 	document.getElementById('typed').innerHTML = "Typed: 0/" + text_db.length;
 	l = 110; // elements in string
@@ -217,7 +322,7 @@ window.onkeypress=function(){
 
 	input_key = isKeyDown();
 	char_e = String.fromCharCode(input_key);
-
+console.log("input_key="+input_key);
 	document.getElementById('input_text').value = str_input;
 	if (key <= text.length)
 	{	++counter;

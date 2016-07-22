@@ -1,17 +1,59 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>KeyboardTraining</title>
+    <title>Keyboard Training | Sing Up</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style2.css" />
+
 </head>
 <body>
-<h2 th:text="${text}"/>
-<form th:action="@{/registration}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><label> First name : <input type="text" name="firstName"/> </label></div>
-    <div><label> Second name : <input type="text" name="lastName"/> </label></div>
-    <div><input type="submit" value="Sign Up"/></div>
-</form>
+<div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1><a th:href="@{/}">Keyboard </a>Training</h1>
+        <nav id="nav">
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="container 75%">
+        <header>
+            <h2>Sign up</h2>
+            <p>Sign up to track statistics</p>
+            <h2 th:text="${text}"/>
+        </header>
+        <div class="box">
+            <form method="post" th:action="@{/registration}">
+                <div class="row uniform 50%">
+                    <div class="6u 12u(mobilep)">
+                        <input type="text" name="username" id="name" value="" placeholder="Login" />
+                    </div>
+                    <div class="6u 12u(mobilep)">
+                        <input type="password" name="password" id="email" value="" placeholder="Password" />
+                    </div>
+                    <div class="6u 12u(mobilep)">
+                        <input type="text" name="firstName" id="name" value="" placeholder="Name" />
+                    </div>
+                    <div class="6u 12u(mobilep)">
+                        <input type="text" name="lastName" id="name" value="" placeholder="Surname" />
+                    </div>
+                </div>
+                <div class="row uniform">
+                    <div class="12u">
+                        <ul class="actions align-center">
+                            <li><input type="submit" value="Sign Up" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
 </body>
 </html>

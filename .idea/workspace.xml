@@ -3,11 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="63f7047c-5bea-42d8-81e1-5182c15fdac9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/CustomSuccessHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/CustomSuccessHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/MvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/MvcConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/WebAppConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/WebAppConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/WebSecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/WebSecurityConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/css/style.css" afterPath="$PROJECT_DIR$/src/main/resources/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/key.js" afterPath="$PROJECT_DIR$/src/main/resources/js/key.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" afterPath="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/create.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/exchange.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/exchange.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/finish.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/finish.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/moderator.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/moderator.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/panel.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/panel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/rename.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/rename.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/tryagain.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/tryagain.html" />
     </list>
     <ignored path="KeyboardTraining.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,69 +45,7 @@
     <favorites_list name="KeyboardTraining" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="88" selection-end-column="49" />
-              <folding>
-                <marker date="1469098066102" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
-                <marker date="1469098066102" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
-                <marker date="1469098066102" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
-                <marker date="1469098066102" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
-                <marker date="1469098066102" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
-                <marker date="1469098066102" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
-                <marker date="1469098066102" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
-                <marker date="1469098066102" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
-                <marker date="1469098066102" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
-                <marker date="1469098066102" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
-                <marker date="1469098066102" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
-                <marker date="1469098066102" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
-                <marker date="1469098066102" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
-                <marker date="1469098066102" expanded="true" signature="3092:3110" ph="select * fro... user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="key.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="167" column="51" selection-start-line="167" selection-start-column="51" selection-end-line="167" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssigmentRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssignmentController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="137" column="8" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
-              <folding>
-                <element signature="e#3775#3787#0" expanded="true" />
-                <element signature="method#RenameLesson#0;class#AssignmentController#0" expanded="false" />
-                <element signature="method#renameNameLesson#0;class#AssignmentController#0" expanded="false" />
-                <element signature="method#exchangeLesson#0;class#AssignmentController#0" expanded="false" />
-                <element signature="method#saveExchangeLesson#0;class#AssignmentController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,7 +102,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/ProgressRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Progress.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/moderator.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/ModeratorController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/domain/Assignment.java" />
@@ -162,12 +114,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/tryagain.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/TrainingController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/panel.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/js/key.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/profile.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/js/keyForLesson.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/js/key.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -273,7 +226,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -385,6 +337,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyboardTraining" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyboardTraining" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -425,6 +403,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -1498,14 +1477,10 @@
       <workItem from="1468936831214" duration="668000" />
       <workItem from="1468996153248" duration="28949000" />
       <workItem from="1469082387962" duration="1555000" />
-      <workItem from="1469084185696" duration="23472000" />
-    </task>
-    <task id="LOCAL-00002" summary="updated">
-      <created>1467717846456</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1467717846456</updated>
+      <workItem from="1469084185696" duration="24089000" />
+      <workItem from="1469163245473" duration="1143000" />
+      <workItem from="1469169830950" duration="2204000" />
+      <workItem from="1469177062748" duration="13000" />
     </task>
     <task id="LOCAL-00003" summary="updated">
       <created>1467720703703</created>
@@ -1843,11 +1818,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469098894579</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="updated">
+      <created>1469116760787</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1469116760787</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354172000" />
+    <option name="totallyTimeSpent" value="358149000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1860,32 +1842,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30932897" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.89689034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30786687" sideWeight="0.48341233" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31751227" sideWeight="0.49394855" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.89689034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21440262" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.4969743" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30559757" sideWeight="0.48341233" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30711043" sideWeight="0.5165877" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1893,8 +1871,12 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39966556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31751227" sideWeight="0.49394855" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21440262" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1950,7 +1932,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/resources/js/key.js</url>
+          <line>38</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1979,20 +1968,17 @@
         <state relative-caret-position="0">
           <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
           <folding>
-            <marker date="1469098066102" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
-            <marker date="1469098066102" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
-            <marker date="1469098066102" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
-            <marker date="1469098066102" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
-            <marker date="1469098066102" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
-            <marker date="1469098066102" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
-            <marker date="1469098066102" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
-            <marker date="1469098066102" expanded="true" signature="3092:3110" ph="select * fro... user" />
+            <marker date="1469176405088" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
+            <marker date="1469176405088" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
+            <marker date="1469176405088" expanded="true" signature="1614:1626" ph="INSERT INTO User... " />
+            <marker date="1469176405088" expanded="true" signature="2429:2431" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2481:2580" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2630:2729" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2779:2878" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2999:3074" ph="INSERT INTO Progress... " />
+            <marker date="1469176405088" expanded="true" signature="3125:3197" ph="INSERT INTO Moderator... " />
+            <marker date="1469176405088" expanded="true" signature="3247:3319" ph="INSERT INTO Moderator... " />
+            <marker date="1469176405088" expanded="true" signature="3368:3386" ph="select * fro... user" />
           </folding>
         </state>
       </provider>
@@ -2031,7 +2017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2039,7 +2024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="60" column="40" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2056,9 +2040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2066,7 +2047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2088,7 +2068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2103,7 +2082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="36" column="54" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2155,7 +2133,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="25" column="24" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2177,7 +2154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2185,7 +2161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="49" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2193,7 +2168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2201,7 +2175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2209,9 +2182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="26" column="29" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="29" />
-          <folding>
-            <element signature="method#Assignment#1;class#Assignment#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2219,7 +2189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="79" column="47" selection-start-line="79" selection-start-column="47" selection-end-line="79" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2231,19 +2200,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/keyForLesson.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="176" column="31" selection-start-line="176" selection-start-column="31" selection-end-line="176" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/4.3.11.Final/hibernate-entitymanager-4.3.11.Final.jar!/org/hibernate/jpa/internal/QueryImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2251,7 +2211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2259,7 +2218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2267,46 +2225,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="90" column="50" selection-start-line="90" selection-start-column="50" selection-end-line="90" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/dao/AssigmentRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
+        <state relative-caret-position="527">
           <caret line="36" column="36" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="88" selection-end-column="49" />
-          <folding>
-            <marker date="1469098066102" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
-            <marker date="1469098066102" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
-            <marker date="1469098066102" expanded="true" signature="1614:1708" ph="INSERT INTO User... " />
-            <marker date="1469098066102" expanded="true" signature="1759:1859" ph="INSERT INTO User... " />
-            <marker date="1469098066102" expanded="true" signature="1910:1975" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="1910:2006" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2057:2155" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2205:2304" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2354:2453" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2503:2602" ph="INSERT INTO Assignment... " />
-            <marker date="1469098066102" expanded="true" signature="2723:2798" ph="INSERT INTO Progress... " />
-            <marker date="1469098066102" expanded="true" signature="2849:2921" ph="INSERT INTO Moderator... " />
-            <marker date="1469098066102" expanded="true" signature="2971:3043" ph="INSERT INTO Moderator... " />
-            <marker date="1469098066102" expanded="true" signature="3092:3110" ph="select * fro... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="167" column="51" selection-start-line="167" selection-start-column="51" selection-end-line="167" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2314,30 +2239,66 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="56" column="96" selection-start-line="54" selection-start-column="12" selection-end-line="56" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="133" column="17" selection-start-line="133" selection-start-column="17" selection-end-line="133" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="method#RenameLesson#0;class#AssignmentController#0" expanded="false" />
+            <element signature="method#renameNameLesson#0;class#AssignmentController#0" expanded="false" />
+            <element signature="method#exchangeLesson#0;class#AssignmentController#0" expanded="false" />
+            <element signature="method#saveExchangeLesson#0;class#AssignmentController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserPrivateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
+        <state relative-caret-position="952">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/AssignmentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/key.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="137" column="8" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
+        <state relative-caret-position="293">
+          <caret line="284" column="21" selection-start-line="284" selection-start-column="21" selection-end-line="284" selection-end-column="21" />
           <folding>
-            <element signature="e#3775#3787#0" expanded="true" />
-            <element signature="method#RenameLesson#0;class#AssignmentController#0" expanded="false" />
-            <element signature="method#renameNameLesson#0;class#AssignmentController#0" expanded="false" />
-            <element signature="method#exchangeLesson#0;class#AssignmentController#0" expanded="false" />
-            <element signature="method#saveExchangeLesson#0;class#AssignmentController#0" expanded="false" />
+            <element signature="e#917#10066#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/js/keyForLesson.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="184" column="29" selection-start-line="184" selection-start-column="29" selection-end-line="184" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/teaminternational/ui/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="73" column="72" selection-start-line="73" selection-start-column="72" selection-end-line="73" selection-end-column="72" />
+          <folding>
+            <marker date="1469176405088" expanded="true" signature="1373:1443" ph="INSERT INTO Role... " />
+            <marker date="1469176405088" expanded="true" signature="1494:1563" ph="INSERT INTO Role... " />
+            <marker date="1469176405088" expanded="true" signature="1614:1626" ph="INSERT INTO User... " />
+            <marker date="1469176405088" expanded="true" signature="2429:2431" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2481:2580" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2630:2729" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2779:2878" ph="INSERT INTO Assignment... " />
+            <marker date="1469176405088" expanded="true" signature="2999:3074" ph="INSERT INTO Progress... " />
+            <marker date="1469176405088" expanded="true" signature="3125:3197" ph="INSERT INTO Moderator... " />
+            <marker date="1469176405088" expanded="true" signature="3247:3319" ph="INSERT INTO Moderator... " />
+            <marker date="1469176405088" expanded="true" signature="3368:3386" ph="select * fro... user" />
           </folding>
         </state>
       </provider>

@@ -1,20 +1,48 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Finish</title>
+    <title>Keyboard Training</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="key.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="landing">
+<input type="hidden" id="text" th:value="${text}"/>
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1><a th:href="@{/}">Keyboard </a>Training</h1>
 
-<div th:if="${user} != null">
-    <div th:text="${user}"/>
-    <p> <a th:href="@{/profile}">Profile</a></p>
-    <form th:action="@{/logout}" method="post">
+        <nav id="nav" th:if="${user} == null">
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/login}" class="button">Sign In</a></li>
+                <li><a th:href="@{/registration}" class="button">Sign Up</a></li>
+            </ul>
+        </nav>
 
-        <input type="submit" value="Sign Out"/>
-    </form>
+        <nav id="nav" th:if="${user} != null">
+            <ul>
+                <li><span th:text="${user}"/></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="" type="submit" value="Sign Out"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <!-- Banner -->
+    <section id="banner">
+        <div class="endLesson"><h1>You have finished all lessons for today</h1></div>
+    </section>
 </div>
-
-<h1>You passed all lessons on this day!</h1>
-
 </body>
 </html>

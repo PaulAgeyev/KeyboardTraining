@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebAppConfig extends WebMvcConfigurerAdapter {
 
     private static final String[] RESOURCE_LOCATIONS = {
-            "classpath:/css/" ,"classpath:/js/"
+            "classpath:/css/" ,"classpath:/js/", "classpath:/css/" ,"classpath:/img/"
     };
 
     @Override

@@ -182,6 +182,7 @@ $(document).ready(function() {
     var obj = jQuery.parseJSON(json);
     console.log(obj);
     text_db = obj.text;
+    text_db = text_db.trim();
 
     document.getElementById('errors').innerHTML = "Errors: " + errors;
     document.getElementById('typed').innerHTML = "Typed: 0/" + text_db.length;

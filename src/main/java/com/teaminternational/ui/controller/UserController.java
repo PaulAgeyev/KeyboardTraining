@@ -51,12 +51,19 @@ class UserController{
                         "VALUES (2, 'ROLE_USER')");
 
         jdbcTemplate.update(
+                "INSERT INTO Role " +
+                        "VALUES (3, 'ROLE_MODERATOR')");
+
+        jdbcTemplate.update(
                 "INSERT INTO User " +
                         "VALUES (1, 'Paul', 'Ageyev', 'roter', 'root', 1)");
 
         jdbcTemplate.update(
                 "INSERT INTO User " +
                         "VALUES (2, 'Steven', 'McLaren', 'steven', 'steven', 2)");
+        jdbcTemplate.update(
+                "INSERT INTO User " +
+                        "VALUES (3, 'Steven', 'McLaren', 'moderator', 'root', 3)");
 
         jdbcTemplate.update(
                 "INSERT INTO Assignment " +

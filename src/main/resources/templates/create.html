@@ -1,62 +1,66 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Create</title>
+    <title>Keyboard Training | Create Lesson</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style2.css" />
 </head>
-<div th:inline="text">[[${#httpServletRequest.remoteUser}]]</div>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
-<style>
-    body {
-        width: 98%;
-        min-width: 1024px;
-        height: 95%;
-        background-color: #7FFFD4;;
-        color: #694221;
-        font-family: Bookman Old Style, sans-serif;
-        font-size: 14pt;
-    }
-    a, a:hover {text-decoration: none; color: #694221;}
-    #logo {
-        color: black;
-        font-size: 18pt;
-        text-align:center;
-        height: 100px;
-        line-height: 100px;
-    }
-    #admin {width: 80%; margin-left: 10%;}
-    #create {width:100%; height:30px; margin-top: 15px; text-align: center; padding-top: 10px; background-color: pink; margin-bottom: 20px;}
-    #text_lesson {width: 78%; float: left}
-    #text_lesson textarea {
-        font-family: Bookman Old Style, sans-serif;
-        width: 100%;
-        height: 70px;
-        resize: none;
-        font-size: 14pt;
-    }
-    #crudu {width:10%; height:30px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px; margin-top: 15px; }
-    #crudd {width:10%; height:30px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px; margin-top: 15px; }
-</style>
-
 <body>
+<div id="page-wrapper">
 
-    <h1>CREATE</h1>
+    <!-- Header -->
+    <header id="header">
+        <h1><a th:href="@{/}">Keyboard </a>Training</h1>
+        <nav id="nav">
+            <ul>
+                <li><span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span></li>
+                <li><a th:href="@{/}">Home</a></li>
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="" type="submit" value="Sign Out"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <div id="admin">
-        <form name="admin_form" id="admin_form" th:action="@{/createindb}" method="post">
-            <fieldset>
-                <legend>Fill in all fields</legend>
-                Lesson:
-                <input type="number" name="lesson" id="lesson" /><br/><br/>
-                Name of the lesson:
-                <input type="text" name="newNameLesson" id="newNameLesson"/> <br/><br/>
-                Text:<br/>
-                <div id="text_lesson"> <textarea name="text_db" id="text_db">  </textarea> </div>
-                <div id="crudu"><button type="submit">CREATE</button></div>
-            </fieldset>
-        </form>
-    </div>
+    <!-- Main -->
+    <section id="main" class="container">
+        <header>
+            <h2>Administrator Panel</h2>
+            <p>Creating lessons</p>
+            <!--<div th:text="${EmptyLesson}" ></div>-->
+        </header>
+
+        <!-- Text -->
+        <div id="admin">
+            <form name="admin_form" id="admin_form" th:action="@{/createindb}" method="post">
+                <fieldset>
+
+                    <span>Lesson:</span>
+                    <br/>
+                    <input type="number" name="lesson" id="lesson" /><br/><br/>
+                    <span>Name of the lesson:</span>
+                    <input type="text" name="newNameLesson" id="newNameLesson"/> <br/><br/>
+                    <span> Text:</span>
+                    <div id="text_lesson_a"> <textarea name="text_db" id="text_db">  </textarea> </div>
+                    <br/>
+                    <br/>
+                    <div id="crudum"> <button class="button" type="submit">CREATE</button></div>
+                </fieldset>
+            </form>
+        </div>
+
+    </section>
+
+</div>
 
 </body>
 </html>
+

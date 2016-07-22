@@ -1,113 +1,134 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>KeyboardTraining</title>
+    <title>Keyboard Training</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="keyForLesson.js"></script>
-    <link href= "style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="landing">
 <input type="hidden" id="text" th:value="${text}"/>
 <input type="hidden" id="text2" th:value="${lesson}"/>
+<div id="page-wrapper">
+    <!-- Header -->
+    <header id="header" class="alt">
+        <h1><a th:href="@{/}">Keyboard </a>Training</h1>
+        <nav id="nav" th:if="${user} == null">
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/login}" class="button">Sign In</a></li>
+                <li><a th:href="@{/registration}" class="button">Sign Up</a></li>
+            </ul>
+        </nav>
 
-<div th:if="${user} != null">
-    <div th:text="${user}"/>
+        <nav id="nav" th:if="${user} != null">
+            <ul>
+                <li><span th:text="${user}"/></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="" type="submit" value="Sign Out"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
 
-    <label>Name Lesson: </label><div th:text="${nameLesson}"/>
+        <div id="typing">
+            <div id="info">
+                <span>Lesson: </span><span th:text="${lesson}"/>
+                <div id="typed">Typed: 0/0</div>
+                <div id="timer">Time: 00:00</div>
+                <div id="errors">Errors: 0</div>
+            </div>
+        </div>
+    </header>
 
-    <p> <a th:href="@{/profile}">Profile</a></p>
-    <form th:action="@{/logout}" method="post">
+    <!-- Banner -->
+    <section id="banner">
 
-        <input type="submit" value="Sign Out"/>
-    </form>
-</div>
+        <div id="text_type">
+            <span id="next"></span>
+        </div>
+        <br/>
+        <div class = "inds">
+            <form name="input_form" id="input_form" action="">
+                <textarea name="input_text" id="input_text"  spellcheck="false" onkeydown="if(event.keyCode == 13){ if (event.shiftKey==1) { return true;} else { return false;}}" ></textarea>
+            </form>
 
-<div id="logo">
-    <h1>Trainer</h1>
-</div>
-<div id="typing">
-    <div id="info">
-        <div id="typed"></div>
-        <div id="timer">Время: 00:00</div>
-        <div id="errors"></div>
-    </div>
-    <div id="text_type">
-        <span id="next">text from bd</span>
-    </div>
-    <div>
-        <form name="input_form" id="input_form" action="">
-            <textarea name="input_text" id="input_text"  spellcheck="false" onkeydown="if(event.keyCode == 13){ if (event.shiftKey==1) { return true;} else { return false;}}" ></textarea>
-        </form>
-    </div>
+            <div class="kb">
 
+                <div id="key_1" class="key_1 key key_two">  <div class="key_top">~</div><div class="key_bottom">`</div> </div>
+                <div id="key_2" class="key_2 key key_two"><div class="key_top">!</div><div class="key_bottom">1</div></div>
+                <div id="key_3" class="key_3 key key_two"><div class="key_top">@</div><div class="key_bottom">2</div></div>
+                <div id="key_4" class="key_4 key key_two"><div class="key_top">#</div><div class="key_bottom">3</div></div>
+                <div id="key_5" class="key_5 key key_two"><div class="key_top">$</div><div class="key_bottom">4</div></div>
+                <div id="key_6" class="key_6 key key_two"><div class="key_top">%</div><div class="key_bottom">5</div></div>
+                <div id="key_7" class="key_7 key key_two"><div class="key_top">^</div><div class="key_bottom">6</div></div>
+                <div id="key_8" class="key_8 key key_two"><div class="key_top">&amp;</div><div class="key_bottom">7</div></div>
+                <div id="key_9" class="key_9 key key_two"><div class="key_top">*</div><div class="key_bottom">8</div></div>
+                <div id="key_10" class="key_10 key key_two"><div class="key_top">(</div><div class="key_bottom">9</div></div>
+                <div id="key_11" class="key_11 key key_two"><div class="key_top">)</div><div class="key_bottom">0</div></div>
+                <div id="key_12" class="key_12 key key_two"><div class="key_top">_</div><div class="key_bottom">-</div></div>
+                <div id="key_13" class="key_13 key key_two"><div class="key_top">+</div><div class="key_bottom">=</div></div>
+                <div id="key_x" class="key key_back">Back</div>
 
-    <div class="kb">
+                <div id="key_x" class="key key_tab">Tab</div>
+                <div id="key_14" class="key_14 key">q</div>
+                <div id="key_15" class="key_15 key">w</div>
+                <div id="key_16" class="key_16 key">e</div>
+                <div id="key_17" class="key_17 key">r</div>
+                <div id="key_18" class="key_18 key">t</div>
+                <div id="key_19" class="key_19 key">y</div>
+                <div id="key_20" class="key_20 key">u</div>
+                <div id="key_21" class="key_21 key">i</div>
+                <div id="key_22" class="key_22 key">o</div>
+                <div id="key_23" class="key_23 key">p</div>
+                <div id="key_24" class="key_24 key key_two"><div class="key_top">{</div><div class="key_bottom">[</div></div>
+                <div id="key_25" class="key_25 key key_two"><div class="key_top">}</div><div class="key_bottom">]</div></div>
+                <div id="key_26" class="key_26 key key_two key_backslash_rgt"><div class="key_top">|</div><div class="key_bottom">\</div></div>
 
-        <div id="key_1" class="key_1 key key_two">	<div class="key_top">~</div><div class="key_bottom">`</div>	</div>
-        <div id="key_2" class="key_2 key key_two"><div class="key_top">!</div><div class="key_bottom">1</div></div>
-        <div id="key_3" class="key_3 key key_two"><div class="key_top">@</div><div class="key_bottom">2</div></div>
-        <div id="key_4" class="key_4 key key_two"><div class="key_top">#</div><div class="key_bottom">3</div></div>
-        <div id="key_5" class="key_5 key key_two"><div class="key_top">$</div><div class="key_bottom">4</div></div>
-        <div id="key_6" class="key_6 key key_two"><div class="key_top">%</div><div class="key_bottom">5</div></div>
-        <div id="key_7" class="key_7 key key_two"><div class="key_top">^</div><div class="key_bottom">6</div></div>
-        <div id="key_8" class="key_8 key key_two"><div class="key_top">&amp;</div><div class="key_bottom">7</div></div>
-        <div id="key_9" class="key_9 key key_two"><div class="key_top">*</div><div class="key_bottom">8</div></div>
-        <div id="key_10" class="key_10 key key_two"><div class="key_top">(</div><div class="key_bottom">9</div></div>
-        <div id="key_11" class="key_11 key key_two"><div class="key_top">)</div><div class="key_bottom">0</div></div>
-        <div id="key_12" class="key_12 key key_two"><div class="key_top">_</div><div class="key_bottom">-</div></div>
-        <div id="key_13" class="key_13 key key_two"><div class="key_top">+</div><div class="key_bottom">=</div></div>
-        <div id="key_x" class="key key_back">Back</div>
+                <div id="key_x" class="key key_caps">Caps</div>
+                <div id="key_27" class="key_27 key">a</div>
+                <div id="key_28" class="key_28 key">s</div>
+                <div id="key_29" class="key_29 key">d</div>
+                <div id="key_30" class="key_30 key">f</div>
+                <div id="key_31" class="key_31 key">g</div>
+                <div id="key_32" class="key_32 key">h</div>
+                <div id="key_33" class="key_33 key">j</div>
+                <div id="key_34" class="key_34 key">k</div>
+                <div id="key_35" class="key_35 key">l</div>
+                <div id="key_36" class="key_36 key key_two"><div class="key_top">:</div><div class="key_bottom">;</div></div>
+                <div id="key_37" class="key_37 key key_two"><div class="key_top">"</div><div class="key_bottom">'</div></div>
+                <div id="key_x" class="key key_enter">Enter</div>
 
-        <div id="key_x" class="key key_tab">Tab</div>
-        <div id="key_14" class="key_14 key">q</div>
-        <div id="key_15" class="key_15 key">w</div>
-        <div id="key_16" class="key_16 key">e</div>
-        <div id="key_17" class="key_17 key">r</div>
-        <div id="key_18" class="key_18 key">t</div>
-        <div id="key_19" class="key_19 key">y</div>
-        <div id="key_20" class="key_20 key">u</div>
-        <div id="key_21" class="key_21 key">i</div>
-        <div id="key_22" class="key_22 key">o</div>
-        <div id="key_23" class="key_23 key">p</div>
-        <div id="key_24" class="key_24 key key_two"><div class="key_top">{</div><div class="key_bottom">[</div></div>
-        <div id="key_25" class="key_25 key key_two"><div class="key_top">}</div><div class="key_bottom">]</div></div>
-        <div id="key_26" class="key_26 key key_two key_backslash_rgt"><div class="key_top">|</div><div class="key_bottom">\</div></div>
+                <div id="key_shift_lft_long" class="key key_shift_lft_long">Shift</div>
+                <div id="key_38" class="key_38 key">z</div>
+                <div id="key_39" class="key_39 key">x</div>
+                <div id="key_40" class="key_40 key">c</div>
+                <div id="key_41" class="key_41 key">v</div>
+                <div id="key_42" class="key_42 key">b</div>
+                <div id="key_43" class="key_43 key">n</div>
+                <div id="key_44" class="key_44 key">m</div>
+                <div id="key_45" class="key_45 key key_two"><div class="key_top">&lt;</div><div class="key_bottom">,</div></div>
+                <div id="key_46" class="key_46 key key_two "><div class="key_top">&gt;</div><div class="key_bottom">.</div></div>
+                <div id="key_47" class="key_47 key key_two"><div class="key_top">?</div><div class="key_bottom">/</div></div>
+                <div id="key_x" class="key key_shift_rgt">Shift</div>
 
-        <div id="key_x" class="key key_caps">Caps</div>
-        <div id="key_27" class="key_27 key">a</div>
-        <div id="key_28" class="key_28 key">s</div>
-        <div id="key_29" class="key_29 key">d</div>
-        <div id="key_30" class="key_30 key">f</div>
-        <div id="key_31" class="key_31 key">g</div>
-        <div id="key_32" class="key_32 key">h</div>
-        <div id="key_33" class="key_33 key">j</div>
-        <div id="key_34" class="key_34 key">k</div>
-        <div id="key_35" class="key_35 key">l</div>
-        <div id="key_36" class="key_36 key key_two"><div class="key_top">:</div><div class="key_bottom">;</div></div>
-        <div id="key_37" class="key_37 key key_two"><div class="key_top">"</div><div class="key_bottom">'</div></div>
-        <div id="key_x" class="key key_enter">Enter</div>
+                <div id="key_x" class="key key_ctrl_lft">Ctrl</div>
 
-        <div id="key_shift_lft_long" class="key key_shift_lft_long">Shift</div>
-        <div id="key_38" class="key_38 key">z</div>
-        <div id="key_39" class="key_39 key">x</div>
-        <div id="key_40" class="key_40 key">c</div>
-        <div id="key_41" class="key_41 key">v</div>
-        <div id="key_42" class="key_42 key">b</div>
-        <div id="key_43" class="key_43 key">n</div>
-        <div id="key_44" class="key_44 key">m</div>
-        <div id="key_45" class="key_45 key key_two"><div class="key_top">&lt;</div><div class="key_bottom">,</div></div>
-        <div id="key_46" class="key_46 key key_two "><div class="key_top">&gt;</div><div class="key_bottom">.</div></div>
-        <div id="key_47" class="key_47 key key_two"><div class="key_top">?</div><div class="key_bottom">/</div></div>
-        <div id="key_x" class="key key_shift_rgt">Shift</div>
+                <div id="key_x" class="key key_alt_lft">Alt</div>
+                <div id="key_48" class="key_48 key key_space"> </div>
+                <div id="key_x" class="key key_alt_rgt">Alt</div>
 
-        <div id="key_x" class="key key_ctrl_lft">Ctrl</div>
-        <div id="key_x" class="key key_alt_lft">Alt</div>
-        <div id="key_48" class="key_48 key key_space"> </div>
-        <div id="key_x" class="key key_alt_rgt">Alt</div>
-        <div id="key_x" class="key key_ctrl_rgt">Ctrl</div>
+                <div id="key_x" class="key key_ctrl_rgt">Ctrl</div>
 
-    </div>
-
+            </div>
+        </div>
+        <br/>
+    </section>
 </div>
 </body>
 </html>

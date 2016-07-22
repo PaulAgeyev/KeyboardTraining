@@ -38,17 +38,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web
                 .ignoring()
 
+                .antMatchers("/style2.css");
+        web
+                .ignoring()
+
                 .antMatchers("/key.js");
         web
                 .ignoring()
 
+                .antMatchers("/keyForLesson.jpg");
+        web
+                .ignoring()
+
                 .antMatchers("/jquery.js");
+        web
+                .ignoring()
+
+                .antMatchers("/banner.jpg");
     }
 
     @Autowired
     CustomSuccessHandler customSuccessHandler;
 
-    @Override
+   @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http
@@ -57,8 +69,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/home").permitAll()
                 .antMatchers("/registration").permitAll()
+                .antMatchers("/finish").hasRole("USER")
+                .antMatchers("/profile").hasRole("USER")
+                .antMatchers("/tryagain").hasRole("USER")
                 .antMatchers("/panel").hasRole("ADMIN")
-                .antMatchers("/moderator").permitAll()
+                .antMatchers("/create").hasRole("ADMIN")
+                .antMatchers("/exchange").hasRole("ADMIN")
+                .antMatchers("/rename").hasRole("ADMIN")
+                .antMatchers("/moderator").hasRole("MODERATOR")
                 .anyRequest().authenticated()
                 .and()
 

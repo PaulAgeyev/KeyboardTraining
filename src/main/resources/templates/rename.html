@@ -1,15 +1,55 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Rename Lesson</title>
+    <title>Keyboard Training | Exchange Lesson</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style2.css" />
 </head>
 <body>
+<div id="page-wrapper">
 
-    <form th:action="@{/saveRenameLesson}" method="post">
-        Rename this lesson: <br/>
-        <input type="text" name="newNameLesson" id="newNameLesson" th:value="${NameLesson}" />
-        <input type="hidden" name="assignment_id" id="idassignment_id" th:value="${assignment_id}"/>
-        <button type="submit">Rename</button>
-    </form>
+    <!-- Header -->
+    <header id="header">
+        <h1><a th:href="@{/}">Keyboard </a>Training</h1>
+        <nav id="nav">
+            <ul>
+                <li><span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span></li>
+                <li><a th:href="@{/}">Home</a></li>
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="" type="submit" value="Sign Out"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="container">
+        <header>
+            <h2>Administrator Panel</h2>
+            <p>Rename lesson</p>
+            <!--<div th:text="${EmptyLesson}" ></div>-->
+        </header>
+
+        <!-- Text -->
+        <form th:action="@{/saveRenameLesson}" method="post">
+            Rename this lesson: <br/>
+            <input type="text" name="newNameLesson" id="newNameLesson" th:value="${NameLesson}" />
+            <input type="hidden" name="assignment_id" id="idassignment_id" th:value="${assignment_id}"/>
+            <br/>
+            <br/>
+            <div id="crudumu"><button class="button" type="submit">Rename</button></div>
+        </form>
+    </section>
+
+</div>
 
 </body>
 </html>

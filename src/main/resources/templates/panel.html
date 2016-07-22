@@ -1,82 +1,69 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Admin</title>
+    <title>Keyboard Training | Administrator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style2.css" />
 </head>
-
-<style>
-    body {
-        width: 98%;
-        min-width: 1024px;
-        height: 95%;
-        background-color: #7FFFD4;;
-        color: #694221;
-        font-family: Bookman Old Style, sans-serif;
-        font-size: 14pt;
-    }
-    a, a:hover {text-decoration: none; color: #694221;}
-    #logo {
-        color: black;
-        font-size: 18pt;
-        text-align:center;
-        height: 100px;
-        line-height: 100px;
-    }
-    #admin {width: 80%; margin-left: 10%;}
-    #create {width:100%; height:30px; margin-top: 15px; text-align: center; padding-top: 10px; background-color: pink; margin-bottom: 20px;}
-    #text_lesson {width: 78%; float: left}
-    #text_lesson textarea {
-        font-family: Bookman Old Style, sans-serif;
-        width: 100%;
-        height: 70px;
-        resize: none;
-        font-size: 14pt;
-    }
-    #crudu {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
-    #crudd {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
-    #rename {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
-    #exchange {width:10%; height:25px; background-color: pink; float:left; margin-left: 1%;  text-align: center; padding-top: 10px;  }
-
-
-</style>
-<div th:inline="text">[[${#httpServletRequest.remoteUser}]]</div>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
 <body>
+<div id="page-wrapper">
 
-<div th:text="${EmptyLesson}" ></div>
+    <!-- Header -->
+    <header id="header">
+        <h1><a th:href="@{/}">Keyboard </a>Training</h1>
+        <nav id="nav">
+            <ul>
+                <li><span th:inline="text">[[${#httpServletRequest.remoteUser}]]</span></li>
+                <li><a th:href="@{/}">Home</a></li>
+                <li>
+                    <form th:action="@{/logout}" method="post">
+                        <input class="" type="submit" value="Sign Out"/>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <section id="main" class="container">
+        <header>
+            <h2>Administrator Panel</h2>
+            <p>Management for lessons</p>
+        </header>
+
+        <!-- Text -->
+        <div class = "csss" th:each="message : ${message}">
+            <form  name="admin_form" id="admin_form" th:action="@{/update}" method="post">
+
+                <div style="width: 5%; float: left" th:inline="text">[[ ${message.lesson}]]</div>
+
+                <fieldset>
+                    <legend id ="lesson" th:inline="text"> Lesson: "[[ ${message.nameLesson}]]"  </legend>
 
 
-<div id="logo"><h1>Assignment</h1></div>
-<div id="admin">
-    <form name="form" id="form" th:action="@{/create}" method="post">
-        <div id="create"><button type="submit">CREATE</button> </div>
-    </form>
+                    <div id="text_lessoni"> <textarea name="text_db" id="idtext_db"  spellcheck="false"  th:text="${message.text}" > text_db </textarea> </div>
+                    <input type="hidden" name="lesson_change" id="idlesson_change" th:value="${message.lesson}"/>
+                    <input type="hidden" name="assignment_id" id="assignment_id" th:value="${message.Id}"/>
+                    <input type="hidden" name="NameLesson" id="NameLesson" th:value="${message.nameLesson}"/>
 
+                    <div class = "dpack">
+                    <div id="crudu"><button type="submit" class = "button">UPDATE</button></div>
+                    <div id="crudd"><button type="submit" class = "button" th:formaction="@{/delete}" >DELETE</button></div>
+                        <br/>
+                    <div id="rename"><button type="submit" class = "button" th:formaction="@{/rename}" >Rename</button></div>
+                    <div id="exchange"><button type="submit" class = "button" th:formaction="@{/exchange}" >Exchange</button></div>
+                    </div>
+                </fieldset>
 
-
-
-        <form  name="admin_form" id="admin_form" th:action="@{/update}" method="post"  th:each="message : ${message}">
-
-            <div style="width: 5%; float: left" th:inline="text">[[ ${message.lesson}]]</div>
-
-
-            <fieldset>
-                <legend id ="lesson" th:inline="text"> Lesson: "[[ ${message.nameLesson}]]"  </legend>
-
-
-                <div id="text_lesson"> <textarea name="text_db" id="idtext_db"  spellcheck="false"  th:text="${message.text}" > text_db </textarea> </div>
-                <input type="hidden" name="lesson_change" id="idlesson_change" th:value="${message.lesson}"/>
-                <input type="hidden" name="assignment_id" id="assignment_id" th:value="${message.Id}"/>
-                <input type="hidden" name="NameLesson" id="NameLesson" th:value="${message.nameLesson}"/>
-
-                <div id="crudu"><button type="submit">UPDATE</button></div>
-                <div id="crudd"><button type="submit" th:formaction="@{/delete}" >DELETE</button></div>
-                <div id="rename"><button type="submit" th:formaction="@{/rename}" >Rename</button></div>
-                <div id="exchange"><button type="submit" th:formaction="@{/exchange}" >Exchange</button></div>
-            </fieldset>
-
-        </form>
+            </form>
+        </div>
+    </section>
 
 </div>
 
